@@ -12,6 +12,7 @@ public class Jogador {
 	private Integer nivelHabilidade;  // (0 a 100)
 	private BigDecimal salario;
 	
+	
 	public Jogador() { }
 	
 	public Jogador(Long id, Time time, String nome, LocalDate dataNascimento, Integer nivelHabilidade, BigDecimal salario) {

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static code.desafios.TimeInMemoryBD.*;
+import static code.desafios.InMemoryMockBD.*;
 
 public class DesafioCodenation1  {
 		
@@ -24,7 +24,10 @@ public class DesafioCodenation1  {
 	}
 
 	public void definirCapitao(Long idJogador) {
-		throw new UnsupportedOperationException();
+		Optional<Jogador> jogadorEncontrado = obterJogador(idJogador);
+		Jogador jogador = jogadorEncontrado.orElseThrow(JogadorNaoEncontradoException::new);
+		Time time = jogador.getTime();
+		time.setCapitao(jogador);
 	}
 
 	public Long buscarCapitaoDoTime(Long idTime) {
@@ -69,6 +72,11 @@ public class DesafioCodenation1  {
 
 	public String buscarCorCamisaTimeDeFora(Long timeDaCasa, Long timeDeFora) {
 		throw new UnsupportedOperationException();
+	}
+	
+	
+	private Optional<Jogador> obterJogador(Long idJogador) {
+		return bancoDeDadosJogadores.stream().filter(j -> j.getId().longValue() == idJogador).findFirst();
 	}
 
 }

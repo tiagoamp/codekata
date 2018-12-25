@@ -1,13 +1,14 @@
 package code.desafios;
 
 import static org.junit.Assert.*;
-import static code.desafios.TimeInMemoryBD.*;
+import static code.desafios.InMemoryMockBD.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class DesafioCodenation1Test {
@@ -63,61 +64,106 @@ public class DesafioCodenation1Test {
 		desafio.incluirJogador(2L, 10L, "nome", LocalDate.now(), 100, new BigDecimal(100));
 	}
 
+	@Test(expected = JogadorNaoEncontradoException.class)
+	public void testDefinirCapitao_nonExistingJogador_shouldThrowException() {
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(2L, 10L, "nome", LocalDate.now(), 100, new BigDecimal(100));
+		desafio.definirCapitao(30L);
+	}
+	
 	@Test
-	public void testDefinirCapitao() {
-		fail("Not yet implemented");
+	public void testDefinirCapitao_existingJogador_shouldSetJogadorAsCapitao() {
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(2L, 10L, "nome", LocalDate.now(), 100, new BigDecimal(100));
+		desafio.definirCapitao(2L);
+		assertEquals(2L, bancoDeDadosTimes.get(0).getCapitao().getId().longValue());
+	}
+	
+	@Test
+	public void testDefinirCapitao_existingCapitao_shouldReplaceCapitao() {
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(2L, 10L, "nome", LocalDate.now(), 100, new BigDecimal(100));
+		desafio.definirCapitao(2L);
+		desafio.incluirJogador(3L, 10L, "nome", LocalDate.now(), 100, new BigDecimal(100));
+		desafio.definirCapitao(3L);		
+		assertEquals(3L, bancoDeDadosTimes.get(0).getCapitao().getId().longValue());
 	}
 
-	@Test
-	public void testBuscarCapitaoDoTime() {
-		fail("Not yet implemented");
+	@Test(expected = CapitaoNaoInformadoException.class)
+	public void testBuscarCapitaoDoTime_timeWithNoCapitao_shouldThrowException() {
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.buscarCapitaoDoTime(10L);
 	}
 
+	@Test(expected = TimeNaoEncontradoException.class)
+	public void testBuscarCapitaoDoTime_nonExistingTime_shouldThrowException() {
+		desafio.buscarCapitaoDoTime(50L);
+	}
+	
+	@Test
+	public void testBuscarCapitaoDoTime_existingCapitao_shouldReturnCapitaoId() {
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(2L, 10L, "nome", LocalDate.now(), 100, new BigDecimal(100));
+		desafio.definirCapitao(2L);
+		Long result = desafio.buscarCapitaoDoTime(10L);
+		assertEquals(2L, result.longValue());
+	}
+	
+	@Ignore
 	@Test
 	public void testBuscarNomeJogador() {
 		fail("Not yet implemented");
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarNomeTime() {
 		fail("Not yet implemented");
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarJogadoresDoTime() {
 		fail("Not yet implemented");
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarMelhorJogadorDoTime() {
 		fail("Not yet implemented");
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarJogadorMaisVelho() {
 		fail("Not yet implemented");
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarTimes() {
 		fail("Not yet implemented");
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarJogadorMaiorSalario() {
 		fail("Not yet implemented");
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarSalarioDoJogador() {
 		fail("Not yet implemented");
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarTopJogadores() {
 		fail("Not yet implemented");
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarCorCamisaTimeDeFora() {
 		fail("Not yet implemented");
