@@ -109,16 +109,29 @@ public class DesafioCodenation1Test {
 		assertEquals(2L, result.longValue());
 	}
 	
-	@Ignore
+	@Test(expected = JogadorNaoEncontradoException.class)
+	public void testBuscarNomeJogador_nonExistingJogador_shouldThrowException() {
+		desafio.buscarNomeJogador(10L);
+	}
+	
 	@Test
-	public void testBuscarNomeJogador() {
-		fail("Not yet implemented");
+	public void testBuscarNomeJogador_existingJogador_shouldReturnName() {
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(2L, 10L, "nome", LocalDate.now(), 100, new BigDecimal(100));
+		String result = desafio.buscarNomeJogador(2L);
+		assertNotNull(result);
 	}
 
-	@Ignore
+	@Test(expected = TimeNaoEncontradoException.class)
+	public void testBuscarNomeTime_nonExistingTime_shouldThrowException() {
+		desafio.buscarNomeTime(10L);
+	}
+	
 	@Test
-	public void testBuscarNomeTime() {
-		fail("Not yet implemented");
+	public void testBuscarNomeTime_existingTime_shouldReturnNome() {
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		String result = desafio.buscarNomeTime(10L);
+		assertNotNull(result);
 	}
 
 	@Ignore

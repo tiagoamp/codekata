@@ -38,11 +38,15 @@ public class DesafioCodenation1  {
 	}
 
 	public String buscarNomeJogador(Long idJogador) {
-		throw new UnsupportedOperationException();
+		Optional<Jogador> jogadorEncontrado = obterJogador(idJogador);
+		Jogador jogador = jogadorEncontrado.orElseThrow(JogadorNaoEncontradoException::new);
+		return jogador.getNome();
 	}
 
 	public String buscarNomeTime(Long idTime) {
-		throw new UnsupportedOperationException();
+		Optional<Time> timeEncontrado = obterTime(idTime);
+		Time time = timeEncontrado.orElseThrow(TimeNaoEncontradoException::new);
+		return time.getNome();
 	}
 
 	public List<Long> buscarJogadoresDoTime(Long idTime) {
