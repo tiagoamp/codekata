@@ -1,7 +1,8 @@
 package code.desafios;
 
+import static code.desafios.InMemoryMockDB.bancoDeDadosJogadores;
+import static code.desafios.InMemoryMockDB.bancoDeDadosTimes;
 import static org.junit.Assert.*;
-import static code.desafios.InMemoryMockBD.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -9,7 +10,6 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class DesafioCodenation1Test {
@@ -162,46 +162,187 @@ public class DesafioCodenation1Test {
 		assertTrue(result.isEmpty());		
 	}
 
-	@Ignore
+	@Test(expected = TimeNaoEncontradoException.class)
+	public void testBuscarMelhorJogadorDoTime_nonExistingTime_shouldThrowException() {
+		desafio.buscarMelhorJogadorDoTime(10L);
+	}
+	
 	@Test
-	public void testBuscarMelhorJogadorDoTime() {
-		fail("Not yet implemented");
+	public void testBuscarMelhorJogadorDoTime_existingTime_shouldReturnJogador() {
+		// given
+		final Long idTime = 10L;
+		final Long idBestPlayer = 2L;
+		desafio.incluirTime(idTime, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(3L, idTime, "nome", LocalDate.now(), 50, new BigDecimal(100));
+		desafio.incluirJogador(idBestPlayer, idTime, "nome", LocalDate.now(), 70, new BigDecimal(100));
+		// when		
+		Long result = desafio.buscarMelhorJogadorDoTime(idTime);
+		// then		
+		assertEquals(idBestPlayer.longValue(), result.longValue());
+	}
+	
+	@Test
+	public void testBuscarMelhorJogadorDoTime_emptyTime_shouldReturnJogador() {
+		// given
+		final Long idTime = 10L;
+		desafio.incluirTime(idTime, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		// when		
+		Long result = desafio.buscarMelhorJogadorDoTime(idTime);
+		// then		
+		assertNull(result);
 	}
 
-	@Ignore
+	@Test(expected = TimeNaoEncontradoException.class)
+	public void testBuscarJogadorMaisVelho_nonExistingTime_shouldThrowException() {
+		desafio.buscarJogadorMaisVelho(10L);
+	}
+	
 	@Test
-	public void testBuscarJogadorMaisVelho() {
-		fail("Not yet implemented");
+	public void testBuscarJogadorMaisVelho_noAgeDraw_should() {
+		// given
+		final Long idTime = 10L;
+		final Long idOldestPlayer = 2L;
+		desafio.incluirTime(idTime, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(3L, idTime, "nome", LocalDate.now(), 50, new BigDecimal(100));
+		desafio.incluirJogador(idOldestPlayer, idTime, "nome", LocalDate.now().minusDays(5L), 70, new BigDecimal(100));
+		// when		
+		Long result = desafio.buscarJogadorMaisVelho(idTime);
+		// then		
+		assertEquals(idOldestPlayer.longValue(), result.longValue());
+	}
+	
+	@Test
+	public void testBuscarJogadorMaisVelho_ageDraw_should() {
+		// given
+		final Long idTime = 10L;
+		final Long idOldestPlayer = 2L;
+		desafio.incluirTime(idTime, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(4L, idTime, "nome", LocalDate.now(), 50, new BigDecimal(100));
+		desafio.incluirJogador(3L, idTime, "nome", LocalDate.now().minusDays(5L), 50, new BigDecimal(100));
+		desafio.incluirJogador(idOldestPlayer, idTime, "nome", LocalDate.now().minusDays(5L), 70, new BigDecimal(100));
+		// when		
+		Long result = desafio.buscarJogadorMaisVelho(idTime);
+		// then		
+		assertEquals(idOldestPlayer.longValue(), result.longValue());
 	}
 
-	@Ignore
 	@Test
-	public void testBuscarTimes() {
-		fail("Not yet implemented");
+	public void testBuscarTimes_nonExistingTime_shouldReturnEmptyList() {
+		List<Long> result = desafio.buscarTimes();
+		assertTrue(result.isEmpty());
+	}
+	
+	@Test
+	public void testBuscarTimes_existingTime_shouldReturnSortedList() {
+		desafio.incluirTime(20L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		List<Long> result = desafio.buscarTimes();
+		assertEquals(2L,  result.size());
+		assertEquals(10L, result.get(0).longValue());
+		assertEquals(20L, result.get(1).longValue());
 	}
 
-	@Ignore
+	@Test(expected = TimeNaoEncontradoException.class)
+	public void testBuscarJogadorMaiorSalario_nonExistingTime_shouldThrowException() {
+		desafio.buscarJogadorMaiorSalario(10L);
+	}
+	
 	@Test
-	public void testBuscarJogadorMaiorSalario() {
-		fail("Not yet implemented");
+	public void testBuscarJogadorMaiorSalario_noSalaryDraw_shouldReturnJogadorId() {
+		// given
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(4L, 10L, "nome", LocalDate.now(), 50, new BigDecimal(100));
+		desafio.incluirJogador(5L, 10L, "nome", LocalDate.now(), 50, new BigDecimal(200));
+		// when
+		Long result = desafio.buscarJogadorMaiorSalario(10L);
+		// then 
+		assertEquals(5L, result.longValue());
+	}
+	
+	@Test
+	public void testBuscarJogadorMaiorSalario_salaryDraw_shouldReturnLowerJogadorId() {
+		// given
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(5L, 10L, "nome", LocalDate.now(), 50, new BigDecimal(100));
+		desafio.incluirJogador(4L, 10L, "nome", LocalDate.now(), 50, new BigDecimal(100));
+		// when
+		Long result = desafio.buscarJogadorMaiorSalario(10L);
+		// then 
+		assertEquals(4L, result.longValue());
 	}
 
-	@Ignore
+	@Test(expected = JogadorNaoEncontradoException.class)
+	public void testBuscarSalarioDoJogador_nonExistingJogador_shouldThrowException() {
+		desafio.buscarSalarioDoJogador(10L);
+	}
+	
 	@Test
-	public void testBuscarSalarioDoJogador() {
-		fail("Not yet implemented");
+	public void testBuscarSalarioDoJogador_existingJogador_shouldReturnSalario() {
+		// given
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(5L, 10L, "nome", LocalDate.now(), 50, new BigDecimal(100));
+		// when
+		BigDecimal result = desafio.buscarSalarioDoJogador(5L);
+		// then 
+		assertTrue(new BigDecimal(100).compareTo(result) == 0);
 	}
 
-	@Ignore
 	@Test
-	public void testBuscarTopJogadores() {
-		fail("Not yet implemented");
+	public void testBuscarTopJogadores_noRegisteredJogadores_shouldReturnEmptyList() {
+		List<Long> result = desafio.buscarTopJogadores(10);
+		assertTrue(result.isEmpty());		
+	}
+	
+	@Test
+	public void testBuscarTopJogadores_noDraw_shouldReturnTopParamItems() {
+		// given
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(5L, 10L, "nome", LocalDate.now(), 50, new BigDecimal(100));  // middle
+		desafio.incluirJogador(3L, 10L, "nome", LocalDate.now(), 0, new BigDecimal(100));   // worst
+		desafio.incluirJogador(4L, 10L, "nome", LocalDate.now(), 100, new BigDecimal(100)); // best
+		// when
+		List<Long> result = desafio.buscarTopJogadores(2);
+		// then 
+		assertEquals(2, result.size());
+		assertEquals(4L, result.get(0).longValue());
+		assertEquals(5L, result.get(1).longValue());
+	}
+	
+	@Test
+	public void testBuscarTopJogadores_drawCondition_shouldReturnTopParamItems() {
+		// given
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(5L, 10L, "nome", LocalDate.now(), 50, new BigDecimal(100));  // middle
+		desafio.incluirJogador(3L, 10L, "nome", LocalDate.now(), 50, new BigDecimal(100));   // worst
+		desafio.incluirJogador(4L, 10L, "nome", LocalDate.now(), 100, new BigDecimal(100)); // best
+		// when
+		List<Long> result = desafio.buscarTopJogadores(2);
+		// then 
+		assertEquals(2, result.size());
+		assertEquals(4L, result.get(0).longValue());
+		assertEquals(3L, result.get(1).longValue());
 	}
 
-	@Ignore
 	@Test
-	public void testBuscarCorCamisaTimeDeFora() {
-		fail("Not yet implemented");
+	public void testBuscarCorCamisaTimeDeFora_differentColors_shouldReturnCorCamisaPrincipal() {
+		// given
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "amarelo", "azul");
+		desafio.incluirTime(20L, "nome", LocalDate.now(), "vermelho", "roxo");
+		// when
+		String result = desafio.buscarCorCamisaTimeDeFora(10L, 20L);
+		// then
+		assertEquals("vermelho", result.toString());
+	}
+	
+	@Test
+	public void testBuscarCorCamisaTimeDeFora_sameColors_shouldReturnCorCamisaSecundario() {
+		// given
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "amarelo", "azul");
+		desafio.incluirTime(20L, "nome", LocalDate.now(), "amarelo", "roxo");
+		// when
+		String result = desafio.buscarCorCamisaTimeDeFora(10L, 20L);
+		// then
+		assertEquals("roxo", result.toString());
 	}
 
 }

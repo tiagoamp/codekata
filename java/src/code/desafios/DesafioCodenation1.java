@@ -1,10 +1,11 @@
 package code.desafios;
 
-import static code.desafios.InMemoryMockBD.bancoDeDadosJogadores;
-import static code.desafios.InMemoryMockBD.bancoDeDadosTimes;
+import static code.desafios.InMemoryMockDB.bancoDeDadosJogadores;
+import static code.desafios.InMemoryMockDB.bancoDeDadosTimes;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -51,7 +52,7 @@ public class DesafioCodenation1  {
 		Time time = obterTime(idTime);
 		List<Long> ids = bancoDeDadosJogadores.stream()
 				.filter(j -> j.getTime().getId().longValue() == time.getId().longValue())
-				.sorted((j1, j2) -> j1.getId().compareTo(j2.getId()))
+				.sorted(Comparator.comparing(Jogador::getId))
 				.map(j -> j.getId())
 				.collect(Collectors.toList());
 		return ids;
@@ -59,31 +60,59 @@ public class DesafioCodenation1  {
 	}
 
 	public Long buscarMelhorJogadorDoTime(Long idTime) {
-		throw new UnsupportedOperationException();
+		List<Long> idsJogadoresDoTime = buscarJogadoresDoTime(idTime);
+		List<Jogador> jogadoresDoTime = idsJogadoresDoTime.stream().map(id -> obterJogador(id)).collect(Collectors.toList());
+		Long idMelhorJogador = jogadoresDoTime.stream()
+				.sorted(Comparator.comparing(Jogador::getNivelHabilidade).reversed())
+				.map(j -> j.getId())
+				.findFirst().orElse(null);
+		return idMelhorJogador;
 	}
 
 	public Long buscarJogadorMaisVelho(Long idTime) {
-		throw new UnsupportedOperationException();
+		List<Long> idsJogadoresDoTime = buscarJogadoresDoTime(idTime);
+		List<Jogador> jogadoresDoTime = idsJogadoresDoTime.stream().map(id -> obterJogador(id)).collect(Collectors.toList());		
+		Jogador jogadorMaisVelho = jogadoresDoTime.stream()
+				.sorted(Comparator.comparing(Jogador::getDataNascimento).thenComparing(Jogador::getId))
+				.findFirst().get();		
+		return jogadorMaisVelho.getId();
 	}
 
 	public List<Long> buscarTimes() {
-		throw new UnsupportedOperationException();
+		List<Long> idsTimes = bancoDeDadosTimes.stream()
+				.sorted(Comparator.comparing(Time::getId))
+				.map(t -> t.getId())
+				.collect(Collectors.toList());
+		return idsTimes;		
 	}
 
 	public Long buscarJogadorMaiorSalario(Long idTime) {
-		throw new UnsupportedOperationException();
+		List<Long> idsJogadoresDoTime = buscarJogadoresDoTime(idTime);
+		List<Jogador> jogadoresDoTime = idsJogadoresDoTime.stream().map(id -> obterJogador(id)).collect(Collectors.toList());		
+		Jogador jogadorComMaiorSalario = jogadoresDoTime.stream()
+			.sorted(Comparator.comparing(Jogador::getSalario).reversed().thenComparing(Jogador::getId))
+			.findFirst().get();			
+		return jogadorComMaiorSalario.getId();
 	}
 
 	public BigDecimal buscarSalarioDoJogador(Long idJogador) {
-		throw new UnsupportedOperationException();
+		Jogador jogador = obterJogador(idJogador);
+		return jogador.getSalario();
 	}
 
 	public List<Long> buscarTopJogadores(Integer top) {
-		throw new UnsupportedOperationException();
+		List<Long> idsTopsJogadores = bancoDeDadosJogadores.stream()
+				.sorted(Comparator.comparing(Jogador::getNivelHabilidade).reversed().thenComparing(Jogador::getId))
+				.limit(top.longValue())
+				.map(j -> j.getId())
+				.collect(Collectors.toList());
+		return idsTopsJogadores;
 	}
 
 	public String buscarCorCamisaTimeDeFora(Long timeDaCasa, Long timeDeFora) {
-		throw new UnsupportedOperationException();
+		Time timeCasa = obterTime(timeDaCasa);
+		Time timeFora = obterTime(timeDeFora);
+		return timeCasa.getCorUniformePrincipal().equals(timeFora.getCorUniformePrincipal()) ? timeFora.getCorUniformeSecundario() : timeFora.getCorUniformePrincipal();		
 	}
 	
 	
