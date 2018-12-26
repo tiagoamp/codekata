@@ -1,7 +1,7 @@
-package code.desafios;
+package test.code.desafio;
 
-import static code.desafios.InMemoryMockDB.bancoDeDadosJogadores;
-import static code.desafios.InMemoryMockDB.bancoDeDadosTimes;
+import static code.desafios.repo.InMemoryMockDB.bancoDeDadosJogadores;
+import static code.desafios.repo.InMemoryMockDB.bancoDeDadosTimes;
 import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
@@ -12,13 +12,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DesafioCodenation1Test {
+import code.desafios.Desafio1;
+import code.desafios.exception.CapitaoNaoInformadoException;
+import code.desafios.exception.IdentificadorUtilizadoException;
+import code.desafios.exception.JogadorNaoEncontradoException;
+import code.desafios.exception.TimeNaoEncontradoException;
 
-	private DesafioCodenation1 desafio;
+public class Desafio1Test {
+
+	private Desafio1 desafio;
 	
 	@Before
 	public void setup() {
-		desafio = new DesafioCodenation1();
+		desafio = new Desafio1();
 		bancoDeDadosTimes.clear();
 		bancoDeDadosJogadores.clear();
 	}

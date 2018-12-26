@@ -1,4 +1,4 @@
-package code.desafios;
+package code.desafios.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
