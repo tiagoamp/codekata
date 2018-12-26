@@ -1,11 +1,13 @@
 package code.desafios;
 
+import static code.desafios.InMemoryMockBD.bancoDeDadosJogadores;
+import static code.desafios.InMemoryMockBD.bancoDeDadosTimes;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-
-import static code.desafios.InMemoryMockBD.*;
+import java.util.stream.Collectors;
 
 public class DesafioCodenation1  {
 		
@@ -24,33 +26,36 @@ public class DesafioCodenation1  {
 	}
 
 	public void definirCapitao(Long idJogador) {
-		Optional<Jogador> jogadorEncontrado = obterJogador(idJogador);
-		Jogador jogador = jogadorEncontrado.orElseThrow(JogadorNaoEncontradoException::new);
+		Jogador jogador = obterJogador(idJogador);
 		Time time = jogador.getTime();
 		time.setCapitao(jogador);
 	}
 
 	public Long buscarCapitaoDoTime(Long idTime) {
-		Optional<Time> timeEncontrado = obterTime(idTime);
-		Time time = timeEncontrado.orElseThrow(TimeNaoEncontradoException::new);
+		Time time = obterTime(idTime);
 		if (time.getCapitao() == null) throw new CapitaoNaoInformadoException();
 		return time.getCapitao().getId();
 	}
 
 	public String buscarNomeJogador(Long idJogador) {
-		Optional<Jogador> jogadorEncontrado = obterJogador(idJogador);
-		Jogador jogador = jogadorEncontrado.orElseThrow(JogadorNaoEncontradoException::new);
+		Jogador jogador = obterJogador(idJogador);
 		return jogador.getNome();
 	}
 
 	public String buscarNomeTime(Long idTime) {
-		Optional<Time> timeEncontrado = obterTime(idTime);
-		Time time = timeEncontrado.orElseThrow(TimeNaoEncontradoException::new);
+		Time time = obterTime(idTime);
 		return time.getNome();
 	}
 
 	public List<Long> buscarJogadoresDoTime(Long idTime) {
-		throw new UnsupportedOperationException();
+		Time time = obterTime(idTime);
+		List<Jogador> jogadoresDoTime = bancoDeDadosJogadores.stream()
+				.filter(j -> j.getTime().getId().longValue() == time.getId().longValue())
+				.collect(Collectors.toList());
+		jogadoresDoTime.sort((j1, j2) -> j1.getId().compareTo(j2.getId()));
+		List<Long> ids = jogadoresDoTime.stream().map(j -> j.getId()).collect(Collectors.toList());
+		return ids;
+		
 	}
 
 	public Long buscarMelhorJogadorDoTime(Long idTime) {
@@ -82,12 +87,14 @@ public class DesafioCodenation1  {
 	}
 	
 	
-	private Optional<Jogador> obterJogador(Long idJogador) {
-		return bancoDeDadosJogadores.stream().filter(j -> j.getId().longValue() == idJogador).findFirst();
+	private Jogador obterJogador(Long idJogador) {
+		Optional<Jogador> jogadorEncontrado = bancoDeDadosJogadores.stream().filter(j -> j.getId().longValue() == idJogador).findFirst();
+		return jogadorEncontrado.orElseThrow(JogadorNaoEncontradoException::new);
 	}
 	
-	private Optional<Time> obterTime(Long idTime) {
-		return bancoDeDadosTimes.stream().filter(t -> t.getId().longValue() == idTime).findFirst();
+	private Time obterTime(Long idTime) {
+		Optional<Time> timeEncontrado = bancoDeDadosTimes.stream().filter(t -> t.getId().longValue() == idTime).findFirst();
+		return timeEncontrado.orElseThrow(TimeNaoEncontradoException::new);
 	}
 
 }

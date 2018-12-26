@@ -5,6 +5,7 @@ import static code.desafios.InMemoryMockBD.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -133,11 +134,32 @@ public class DesafioCodenation1Test {
 		String result = desafio.buscarNomeTime(10L);
 		assertNotNull(result);
 	}
-
-	@Ignore
+	
+	@Test(expected = TimeNaoEncontradoException.class)
+	public void testBuscarJogadoresDoTime_nonExistingTime_shouldThrowException() {
+		desafio.buscarJogadoresDoTime(10L);
+	}
+	
 	@Test
-	public void testBuscarJogadoresDoTime() {
-		fail("Not yet implemented");
+	public void testBuscarJogadoresDoTime_existingJogadores_shouldReturnSortedList() {
+		// given
+		final Long idTime = 10L;
+		desafio.incluirTime(idTime, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		desafio.incluirJogador(3L, idTime, "nome", LocalDate.now(), 100, new BigDecimal(100));
+		desafio.incluirJogador(2L, idTime, "nome", LocalDate.now(), 100, new BigDecimal(100));
+		// when		
+		List<Long> result = desafio.buscarJogadoresDoTime(idTime);
+		// then		
+		assertEquals(2, result.size());
+		assertEquals(2L, result.get(0).longValue());
+		assertEquals(3L, result.get(1).longValue());
+	}
+	
+	@Test
+	public void testBuscarJogadoresDoTime_existingTimeButNoJogadores_shouldReturnEmptyList() {
+		desafio.incluirTime(10L, "nome", LocalDate.now(), "corUniformePrincipal", "corUniformeSecundario");
+		List<Long> result = desafio.buscarJogadoresDoTime(10L);
+		assertTrue(result.isEmpty());		
 	}
 
 	@Ignore
