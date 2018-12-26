@@ -49,11 +49,11 @@ public class DesafioCodenation1  {
 
 	public List<Long> buscarJogadoresDoTime(Long idTime) {
 		Time time = obterTime(idTime);
-		List<Jogador> jogadoresDoTime = bancoDeDadosJogadores.stream()
+		List<Long> ids = bancoDeDadosJogadores.stream()
 				.filter(j -> j.getTime().getId().longValue() == time.getId().longValue())
+				.sorted((j1, j2) -> j1.getId().compareTo(j2.getId()))
+				.map(j -> j.getId())
 				.collect(Collectors.toList());
-		jogadoresDoTime.sort((j1, j2) -> j1.getId().compareTo(j2.getId()));
-		List<Long> ids = jogadoresDoTime.stream().map(j -> j.getId()).collect(Collectors.toList());
 		return ids;
 		
 	}
