@@ -1,4 +1,4 @@
-package test.code.desafio;
+package code.desafio;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
