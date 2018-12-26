@@ -1,7 +1,7 @@
 package code.desafios;
 
-import static code.desafios.InMemoryMockDB.bancoDeDadosJogadores;
-import static code.desafios.InMemoryMockDB.bancoDeDadosTimes;
+import static code.desafios.repo.InMemoryMockDB.bancoDeDadosJogadores;
+import static code.desafios.repo.InMemoryMockDB.bancoDeDadosTimes;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -10,7 +10,14 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class DesafioCodenation1  {
+import code.desafios.exception.CapitaoNaoInformadoException;
+import code.desafios.exception.IdentificadorUtilizadoException;
+import code.desafios.exception.JogadorNaoEncontradoException;
+import code.desafios.exception.TimeNaoEncontradoException;
+import code.desafios.model.Jogador;
+import code.desafios.model.Time;
+
+public class Desafio1  {
 		
 	public void incluirTime(Long id, String nome, LocalDate dataCriacao, String corUniformePrincipal, String corUniformeSecundario) {
 		Time time = new Time(id, nome, dataCriacao, corUniformePrincipal, corUniformeSecundario);

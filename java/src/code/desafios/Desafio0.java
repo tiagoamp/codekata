@@ -3,7 +3,7 @@ package code.desafios;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DesafioCodeNation {
+public class Desafio0 {
 
 	/* Método que retorne uma lista java.util.List com os primeiro números Integer de série de Fibonacci até passar de 350.
 	 * A série de Fibonacci é a seguinte: 0, 1, 1, 2, 3, 5, 8, 13, etc... 

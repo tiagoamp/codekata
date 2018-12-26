@@ -1,14 +1,18 @@
-package code.desafios;
+package test.code.desafio;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
 import org.junit.Test;
 
-public class DesafioCodeNationTest {
+import code.desafios.Desafio0;
 
-	private DesafioCodeNation desafio = new DesafioCodeNation();
+public class Desafio0Test {
+
+	private Desafio0 desafio = new Desafio0();
 	
 	@Test
 	public void testFibonacciUntil350() {
