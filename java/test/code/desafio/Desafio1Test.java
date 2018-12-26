@@ -1,4 +1,4 @@
-package test.code.desafio;
+package code.desafio;
 
 import static code.desafios.repo.InMemoryMockDB.bancoDeDadosJogadores;
 import static code.desafios.repo.InMemoryMockDB.bancoDeDadosTimes;
