@@ -31,7 +31,10 @@ public class DesafioCodenation1  {
 	}
 
 	public Long buscarCapitaoDoTime(Long idTime) {
-		throw new UnsupportedOperationException();
+		Optional<Time> timeEncontrado = obterTime(idTime);
+		Time time = timeEncontrado.orElseThrow(TimeNaoEncontradoException::new);
+		if (time.getCapitao() == null) throw new CapitaoNaoInformadoException();
+		return time.getCapitao().getId();
 	}
 
 	public String buscarNomeJogador(Long idJogador) {
@@ -77,6 +80,10 @@ public class DesafioCodenation1  {
 	
 	private Optional<Jogador> obterJogador(Long idJogador) {
 		return bancoDeDadosJogadores.stream().filter(j -> j.getId().longValue() == idJogador).findFirst();
+	}
+	
+	private Optional<Time> obterTime(Long idTime) {
+		return bancoDeDadosTimes.stream().filter(t -> t.getId().longValue() == idTime).findFirst();
 	}
 
 }
