@@ -1,10 +1,7 @@
-package code.desafios.repo;
+package code.desafios.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import code.desafios.model.Jogador;
-import code.desafios.model.Time;
 
 public class InMemoryMockDB {
 	
