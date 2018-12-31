@@ -1,7 +1,7 @@
 package code.desafios;
 
-import static code.desafios.repo.InMemoryMockDB.bancoDeDadosJogadores;
-import static code.desafios.repo.InMemoryMockDB.bancoDeDadosTimes;
+import static code.desafios.model.InMemoryMockDB.bancoDeDadosJogadores;
+import static code.desafios.model.InMemoryMockDB.bancoDeDadosTimes;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import code.desafios.exception.CapitaoNaoInformadoException;
-import code.desafios.exception.IdentificadorUtilizadoException;
-import code.desafios.exception.JogadorNaoEncontradoException;
-import code.desafios.exception.TimeNaoEncontradoException;
+import code.desafios.model.CapitaoNaoInformadoException;
+import code.desafios.model.IdentificadorUtilizadoException;
 import code.desafios.model.Jogador;
+import code.desafios.model.JogadorNaoEncontradoException;
 import code.desafios.model.Time;
+import code.desafios.model.TimeNaoEncontradoException;
 
 public class Desafio1  {
 		

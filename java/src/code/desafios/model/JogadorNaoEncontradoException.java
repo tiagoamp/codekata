@@ -1,4 +1,4 @@
-package code.desafios.exception;
+package code.desafios.model;
 
 public class JogadorNaoEncontradoException extends RuntimeException {
 
