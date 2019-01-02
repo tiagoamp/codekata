@@ -34,21 +34,14 @@ public class CodePractices {
 	
 	/* Superdigit = sum of digits until its result has only 1 digit */
 	public static int superdigit(String n, int k) {
-		String nVal = superdigit(n);
-		String multiplied = String.valueOf( Integer.valueOf(nVal) * k );
-		String result = superdigit(multiplied);
-		return Integer.parseInt(result);
-	}
-	
-	private static String superdigit(String value) {
-		if (value.length() <= 1) return value;		
+		if (n.length() <= 1) return Integer.parseInt(n);
 		int sum = 0;
-		for (int i = 0; i < value.length(); i++) {
-			Integer digit = Character.getNumericValue(value.charAt(i));
+		for (int i = 0; i < n.length(); i++) {
+			Integer digit = Character.getNumericValue(n.charAt(i));
 			sum += digit;
 		}		
-		return superdigit( String.valueOf(sum) );
+		if (k > 1) sum *= k;
+		return superdigit(String.valueOf(sum), 1);
 	}
-	
 	
 }
