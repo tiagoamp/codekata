@@ -29,5 +29,25 @@ public class CodePracticesTest {
 		result = superdigit(n,k);
 		assertTrue(result > 0);
 	}
+	
+	@Test
+	public void testCountApplesAndOranges() {
+		// sample case
+		int s = 7, t = 11;  // house
+		int a = 5, b = 15;  // tree
+		int[] apples = {-2, 2, 1};   // fruits array
+		int[] oranges = {5, -6};     // fruits array
+		int[] result = countApplesAndOranges(s, t, a, b, apples, oranges);
+		assertEquals(1, result[0]);
+		assertEquals(1, result[1]);
+		// test case 2
+		s = 2; t = 3;
+		a = 1; b = 5;
+		apples = new int[] {2};
+		oranges = new int[] {-2};
+		result = countApplesAndOranges(s, t, a, b, apples, oranges);
+		assertEquals(1, result[0]);
+		assertEquals(1, result[1]);
+	}
 
 }
