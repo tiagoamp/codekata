@@ -49,5 +49,13 @@ public class CodePracticesTest {
 		assertEquals(1, result[0]);
 		assertEquals(1, result[1]);
 	}
+	
+	@Test
+	public void testMinMaxSum() {
+		int[] arr = {1, 2, 3, 4, 5};
+		long[] result = minMaxSum(arr);
+		assertEquals(10L, result[0]);
+		assertEquals(14L, result[1]);
+	}
 
 }
