@@ -1,6 +1,11 @@
 package code;
-import static code.CodePractices.*;
-import static org.junit.Assert.*;
+import static code.CodePractices.bestDivisor;
+import static code.CodePractices.countApplesAndOranges;
+import static code.CodePractices.fibonacci;
+import static code.CodePractices.minMaxSum;
+import static code.CodePractices.superdigit;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -56,6 +61,12 @@ public class CodePracticesTest {
 		long[] result = minMaxSum(arr);
 		assertEquals(10L, result[0]);
 		assertEquals(14L, result[1]);
+	}
+	
+	@Test
+	public void testFibonacci_positionEquals10() {
+		int result = fibonacci(10);
+		assertEquals(55, result);
 	}
 
 }
