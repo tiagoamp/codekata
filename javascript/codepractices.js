@@ -2,6 +2,7 @@ module.exports = {
 
     hello: function() { return 'hello' }, 
     
+
     bestDivisor: function(input) {
         const arr = Array(input).fill().map((item, index) => index + 1);
         const divisors = arr.filter(x => input % x == 0);
@@ -19,4 +20,5 @@ module.exports = {
 		return bestNumber;
     }
 
+    
 }
