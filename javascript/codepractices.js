@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = obj = {
 
     hello: function() { return 'hello' }, 
     
@@ -18,7 +18,19 @@ module.exports = {
         const indexOfMaxSummedNr = sums.indexOf(maxSummedNr);
         const bestNumber = divisors[indexOfMaxSummedNr];
 		return bestNumber;
+    },
+
+
+    // Superdigit = sum of digits until its result has only 1 digit
+	superdigit: function(n, k) {
+        if (n.length <= 1) return parseInt(n);
+        let sum = 0;
+        for (let i = 0; i < n.length; i++) {
+            const digit = n.charAt(i);
+            sum += parseInt(digit);
+        }
+        if (k > 1) sum *= k;
+        return obj.superdigit(sum.toString(), 1);
     }
 
-    
 }
