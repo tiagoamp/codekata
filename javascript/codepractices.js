@@ -31,6 +31,21 @@ module.exports = obj = {
         }
         if (k > 1) sum *= k;
         return obj.superdigit(sum.toString(), 1);
+    }, 
+
+
+    countApplesAndOranges: function(s, t, a, b, apples, oranges) {
+		let appleCount = 0;
+		for (let i = 0; i < apples.length; i++) {
+			let distance = apples[i] + a;
+			if ( distance >= s && distance <= t ) appleCount++;
+		}
+		let orangeCount = 0;
+		for (let i = 0; i < oranges.length; i++) {
+			let distance = oranges[i] + b;
+			if ( distance >= s && distance <= t ) orangeCount++;
+        }
+        return [appleCount, orangeCount];
     }
 
 }

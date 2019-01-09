@@ -49,12 +49,12 @@ public class CodePractices {
 		int appleCount = 0;
 		for (int i = 0; i < apples.length; i++) {
 			int distance = apples[i] + a;
-			if ( distance >= s && distance <= t ) appleCount ++;
+			if ( distance >= s && distance <= t ) appleCount++;
 		}
 		int orangeCount = 0;
 		for (int i = 0; i < oranges.length; i++) {
 			int distance = oranges[i] + b;
-			if ( distance >= s && distance <= t ) orangeCount ++;
+			if ( distance >= s && distance <= t ) orangeCount++;
 		}
 		return new int[] {appleCount, orangeCount};
     }
