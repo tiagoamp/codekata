@@ -45,3 +45,10 @@ test("CountApplesAndOranges", () => {
     expect(1).toEqual(result[0]);
     expect(1).toEqual(result[1]);
 });
+
+test("minMaxSum", () => {
+    const arr = [1, 2, 3, 4, 5];
+    const result = practices.minMaxSum(arr);
+    expect(10).toEqual(result[0]);
+    expect(14).toEqual(result[1]);    
+});
