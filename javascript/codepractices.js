@@ -46,6 +46,18 @@ module.exports = obj = {
 			if ( distance >= s && distance <= t ) orangeCount++;
         }
         return [appleCount, orangeCount];
+    },
+
+
+    minMaxSum: function(arr) {
+        arr.sort(function(a, b){return a-b});
+        let min = 0, max = 0;
+    	const len = 5;    	
+    	for (let i = 0; i < arr.length; i++) {
+			if (i < len-1) min += arr[i];
+			if (i > 0) max += arr[i];
+		}
+    	return [min,max];
     }
 
 }
