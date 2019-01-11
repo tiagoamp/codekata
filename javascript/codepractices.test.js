@@ -52,3 +52,8 @@ test("minMaxSum", () => {
     expect(10).toEqual(result[0]);
     expect(14).toEqual(result[1]);    
 });
+
+test("Fibonacci", () => {
+    let result = practices.fibonacci(10);
+    expect(55).toEqual(result);
+});
