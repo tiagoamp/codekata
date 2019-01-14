@@ -66,6 +66,21 @@ module.exports = obj = {
 		if (n == 0) return 0;
 		else if (n == 1 || n == 2) return 1;
 		else return obj.fibonacci(n-2) + obj.fibonacci(n-1);
-	}
+	},
 
+
+    staircase: function(n) {
+		if (n == 0) return null;
+        const stairMatrix = [];
+        for (let row = 0; row < n; row++) {
+            let mRow = [];
+			for (let col = 0; col < n; col++) {
+                const value = (col >=  parseInt((n-row) - 1 )) ? '#' : ' ';
+                mRow.push(value);
+            }
+            stairMatrix.push(mRow);
+        }        
+		return stairMatrix;
+    }
+    
 }
