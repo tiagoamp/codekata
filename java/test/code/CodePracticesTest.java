@@ -1,9 +1,6 @@
 package code;
-import static code.CodePractices.bestDivisor;
-import static code.CodePractices.countApplesAndOranges;
-import static code.CodePractices.fibonacci;
-import static code.CodePractices.minMaxSum;
-import static code.CodePractices.superdigit;
+
+import static code.CodePractices.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -67,6 +64,15 @@ public class CodePracticesTest {
 	public void testFibonacci_positionEquals10() {
 		int result = fibonacci(10);
 		assertEquals(55, result);
+	}
+	
+	@Test
+	public void testStaircase() {
+		int n = 6;
+		Character[][] result = staircase(n);
+		for (int i = 0; i < n; i++) assertEquals(result[0][i].toString(), String.valueOf( (i >= 5) ? '#' : ' ') );
+		for (int i = 0; i < n; i++) assertEquals(result[1][i].toString(), String.valueOf( (i >= 4) ? '#' : ' ') );
+		for (int i = 0; i < n; i++) assertEquals(result[5][i].toString(), String.valueOf( (i >= 0) ? '#' : ' ') );
 	}
 
 }
