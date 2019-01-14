@@ -83,4 +83,15 @@ public class CodePractices {
 		else return fibonacci(n-2) + fibonacci(n-1);
 	}
 	
+	public static Character[][] staircase(int n) {
+		if (n == 0) return null;
+		Character[][] stairMatrix = new Character[n][n];		
+		for (int row = 0; row < n; row++) {
+			for (int col = 0; col < n; col++) {
+				stairMatrix[row][col] = col >= ( (n-row) - 1 ) ? '#' : ' ';
+			}
+		}		
+		return stairMatrix;
+	}
+	
 }
