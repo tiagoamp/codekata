@@ -74,5 +74,20 @@ public class CodePracticesTest {
 		for (int i = 0; i < n; i++) assertEquals(result[1][i].toString(), String.valueOf( (i >= 4) ? '#' : ' ') );
 		for (int i = 0; i < n; i++) assertEquals(result[5][i].toString(), String.valueOf( (i >= 0) ? '#' : ' ') );
 	}
+	
+	@Test
+	public void testBirthdayCakeCandles() {
+		int[] arr = {3, 2, 1, 3};
+		int result = birthdayCakeCandles(arr);
+		assertEquals(2, result);
+		// threshold case 
+		int n = 100000;
+		arr = new int[n];
+		for (int i=0; i<n; i++) {
+			arr[i] = 9999999;
+		}
+		result = birthdayCakeCandles(arr);
+		assertEquals(100000, result);		
+	}
 
 }

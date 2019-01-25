@@ -94,4 +94,16 @@ public class CodePractices {
 		return stairMatrix;
 	}
 	
+	public static int birthdayCakeCandles(int[] arr) {
+		Arrays.sort(arr);
+		int lastIndex = arr.length -1;
+		int tallest = arr[lastIndex];
+		int count = 0;		
+		for (int i = lastIndex; i >= 0; i--) {
+			if (arr[i] == tallest) count++;
+			else break;			
+		}		
+		return count;
+    }
+	
 }
