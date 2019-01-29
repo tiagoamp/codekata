@@ -106,4 +106,12 @@ public class CodePractices {
 		return count;
     }
 	
+	// kangaroo problem
+    public static String kangaroo(int x1, int v1, int x2, int v2) {
+    	if (x2 > x1 && v2 >= v1) return "NO";  // second kangaroo is and and is faster than the 1th one 
+    	// x1 + n * v1 = x2 + n * v2 , then n = (x2-x1)%(v1-v2) must be == 0 to make them meet
+    	String result = Math.abs((x2-x1)) % Math.abs((v1-v2)) == 0 ? "YES" : "NO";
+    	return result;
+    }
+	
 }

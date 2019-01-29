@@ -89,5 +89,18 @@ public class CodePracticesTest {
 		result = birthdayCakeCandles(arr);
 		assertEquals(100000, result);		
 	}
+	
+	@Test
+	public void testKangaroo() {
+		int x1 = 0, v1 = 3, x2 = 4, v2 = 2;
+		String result = kangaroo(x1, v1, x2, v2);
+		assertTrue(result.equals("YES"));
+		x1 = 0; v1 = 2; x2 = 5; v2 = 3;
+		result = kangaroo(x1, v1, x2, v2);
+		assertTrue(result.equals("NO"));
+		x1 = 43; v1 = 2; x2 = 70; v2 = 2;
+		result = kangaroo(x1, v1, x2, v2);
+		assertTrue(result.equals("NO"));
+	}
 
 }
