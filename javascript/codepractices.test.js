@@ -65,3 +65,26 @@ test("Staircase", () => {
 	for (let i = 0; i < n; i++) expect(result[1][i]).toEqual( (i >= 4) ? '#' : ' ');
 	for (let i = 0; i < n; i++) expect(result[5][i]).toEqual( (i >= 0) ? '#' : ' ');
 });
+
+test("birthdayCakeCandles", () => {
+    let arr = [3, 2, 1, 3];
+	let result = practices.birthdayCakeCandles(arr);
+	expect(2).toEqual(result);
+	// threshold case 
+	const n = 100000;
+	arr = Array(n).fill(9999999);
+	result = practices.birthdayCakeCandles(arr);
+	expect(100000).toEqual(result);
+});
+
+test("kangaroo", () => {
+    let x1 = 0; v1 = 3; x2 = 4; v2 = 2;
+	let result = practices.kangaroo(x1, v1, x2, v2);
+	expect("YES").toEqual(result);
+	x1 = 0; v1 = 2; x2 = 5; v2 = 3;
+	result = practices.kangaroo(x1, v1, x2, v2);
+	expect("NO").toEqual(result);
+	x1 = 43; v1 = 2; x2 = 70; v2 = 2;
+	result = practices.kangaroo(x1, v1, x2, v2);
+    expect("NO").toEqual(result);
+});
