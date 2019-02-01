@@ -65,3 +65,18 @@ test("Staircase", () => {
 	for (let i = 0; i < n; i++) expect(result[1][i]).toEqual( (i >= 4) ? '#' : ' ');
 	for (let i = 0; i < n; i++) expect(result[5][i]).toEqual( (i >= 0) ? '#' : ' ');
 });
+
+test("birthdayCakeCandles", () => {
+    let arr = [3, 2, 1, 3];
+	let result = practices.birthdayCakeCandles(arr);
+	expect(2).toEqual(result);
+	// threshold case 
+	const n = 100000;
+	//arr = [];
+	// for (let i=0; i<n; i++) {
+	// 	arr[i] = 9999999;
+    // }
+    arr = Array(n).fill(9999999);
+	result = practices.birthdayCakeCandles(arr);
+	expect(100000).toEqual(result);
+});

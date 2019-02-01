@@ -81,6 +81,21 @@ module.exports = obj = {
             stairMatrix.push(mRow);
         }        
 		return stairMatrix;
+    },
+
+
+    birthdayCakeCandles: function(arr) {
+        arr.sort(function(a, b) {
+                return a - b;
+            });
+        const lastIndex = arr.length -1;
+		let tallest = arr[lastIndex];
+		let count = 0;		
+		for (let i = lastIndex; i >= 0; i--) {
+			if (arr[i] == tallest) count++;
+			else break;			
+		}		
+		return count;
     }
     
 }
