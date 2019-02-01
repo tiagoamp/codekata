@@ -96,6 +96,14 @@ module.exports = obj = {
 			else break;			
 		}		
 		return count;
+    },
+
+
+    kangaroo: function(x1, v1, x2, v2) {
+    	if (x2 > x1 && v2 >= v1) return "NO";  // second kangaroo is and and is faster than the 1th one 
+    	// x1 + n * v1 = x2 + n * v2 , then n = (x2-x1)%(v1-v2) must be == 0 to make them meet
+    	const result = Math.abs((x2-x1)) % Math.abs((v1-v2)) == 0 ? "YES" : "NO";
+    	return result;
     }
     
 }
