@@ -4,29 +4,25 @@ import ( "testing" )
 
 
 func TestCountApplesAndOranges(t *testing.T) {
-    // sample case
-    s1 := 7; t1 := 11;  // house 
-    a1 := 5; b1 := 15;  // tree
-    apples := []int {-2, 2, 1}   // fruits array
-    oranges := []int {5, -6}     // fruits array
-    appleCount, orangeCount := CountApplesAndOranges(s1, t1, a1, b1, apples, oranges)    
-    if appleCount != 1 {
-        t.Errorf("Result of apple count is incorrect, got: %d, want: %d.", appleCount, 1)
+    type testpair struct {
+        values []int
+        appleArr []int
+        orangeArr []int
+        resultCount []int
     }
-    if orangeCount != 1 {
-        t.Errorf("Result of orange count is incorrect, got: %d, want: %d.", orangeCount, 1)
+    
+    var tests = []testpair{
+        { []int{7,11,5,15}, []int {-2, 2, 1}, []int {5, -6}, []int{1,1} },  // sample test case
+        { []int{2,3,1,5}, []int {2}, []int {-2}, []int{1,1} },  // test case 2
     }
-    // test case 2
-    s2 := 2; t2 := 3;
-    a2 := 1; b2 := 5;
-    apples = []int {2};
-    oranges = []int {-2};
-    appleCount, orangeCount = CountApplesAndOranges(s2, t2, a2, b2, apples, oranges);
-    if appleCount != 1 {
-        t.Errorf("Result of apple count is incorrect, got: %d, want: %d.", appleCount, 1)
+
+    for _, pair := range tests {
+        v1, v2 := CountApplesAndOranges(pair.values[0], pair.values[1], pair.values[2], pair.values[3], pair.appleArr, pair.orangeArr)
+        if v1 != pair.resultCount[0] || v2 != pair.resultCount[1] {
+            t.Error(
+            "For", pair.values, "expected", pair.resultCount, "got", v1, ",", v2 )
+        }
     }
-    if orangeCount != 1 {
-        t.Errorf("Result of orange count is incorrect, got: %d, want: %d.", orangeCount, 1)
-    }    
+
 }
 
