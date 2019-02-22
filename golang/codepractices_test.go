@@ -26,3 +26,35 @@ func TestCountApplesAndOranges(t *testing.T) {
 
 }
 
+func TestStaircase(t *testing.T) {
+    n := 6
+    result := Staircase(n)
+
+    for i := 0; i < n; i++ {
+        value := result[0][i]
+        if (i >= 5 && value != "#") {
+            t.Error( "For [0][", i, "] expected", "#", "got", value )
+        } else if (i < 5 && value != " ") {
+            t.Error( "For [0][", i, "] expected", " ", "got", value )
+        }
+    }
+    
+    for i := 0; i < n; i++ {
+        value := result[1][i]
+        if (i >= 4 && value != "#") {
+            t.Error( "For [1][", i, "] expected", "#", "got", value )
+        } else if (i < 4 && value != " ") {
+            t.Error( "For [1][", i, "] expected", " ", "got", value )
+        }
+    }
+
+    for i := 0; i < n; i++ {
+        value := result[5][i]
+        if (i >= 0 && value != "#") {
+            t.Error( "For [5][", i, "] expected", "#", "got", value )
+        } else if (i < 0 && value != " ") {
+            t.Error( "For [5][", i, "] expected", " ", "got", value )
+        }
+    }
+
+}
