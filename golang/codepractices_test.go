@@ -75,3 +75,13 @@ func TestMinMaxSum(t *testing.T) {
         }
     }
 }
+
+func TestFibonacci(t *testing.T) {
+    const value = 10
+    const expectedVal = 55
+    result := Fibonacci(value)
+    if (result != expectedVal) {
+        t.Error( "For", value, "expected", expectedVal, "got", result )
+    }
+}
+
