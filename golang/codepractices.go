@@ -40,3 +40,19 @@ func Staircase(n int) [][]string {
 	}
 	return matrix
 }
+
+func MinMaxSum(arr []int) (int64,int64) {
+	sort.Ints(arr)
+	var min int64 = 0
+	var max int64 = 0
+	const len int = 5
+	for i, val := range arr {
+		if (i < len-1) {
+			min += int64(val);
+		}
+		if (i > 0) {
+			max += int64(val);
+		}
+	}
+	return min,max;
+}
