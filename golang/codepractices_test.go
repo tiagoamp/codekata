@@ -56,5 +56,22 @@ func TestStaircase(t *testing.T) {
             t.Error( "For [5][", i, "] expected", " ", "got", value )
         }
     }
+}
 
+func TestMinMaxSum(t *testing.T) {
+    type testpair struct {
+        values []int
+        result []int64
+    }
+    
+    var tests = []testpair{
+        { []int{1, 2, 3, 4, 5}, []int64{10, 14} },
+    }
+
+    for _, pair := range tests {
+        v1, v2 := MinMaxSum(pair.values)
+        if v1 != pair.result[0] || v2 != pair.result[1] {
+            t.Error( "For", pair.values, "expected", pair.result, "got", v1, ",", v2 )
+        }
+    }
 }
