@@ -102,5 +102,18 @@ public class CodePracticesTest {
 		result = kangaroo(x1, v1, x2, v2);
 		assertTrue(result.equals("NO"));
 	}
+	
+	@Test
+	public void testBreakingRecords() {
+		int[] sample0 = {10, 5, 20, 20, 4, 5, 2, 25, 1};
+		int[] result = breakingRecords(sample0);
+		assertEquals(2, result[0]);
+		assertEquals(4, result[1]);
+		int[] sample1 = {3, 4, 21, 36, 10, 28, 35, 5, 24, 42};
+		result = breakingRecords(sample1);
+		assertEquals(4, result[0]);
+		assertEquals(0, result[1]);
+		
+	}
 
 }
