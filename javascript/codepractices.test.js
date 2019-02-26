@@ -88,3 +88,14 @@ test("kangaroo", () => {
 	result = practices.kangaroo(x1, v1, x2, v2);
     expect("NO").toEqual(result);
 });
+
+test("breakingRecords", () => {
+    const sample0 = [10, 5, 20, 20, 4, 5, 2, 25, 1];
+	let result = practices.breakingRecords(sample0);
+	expect(2).toEqual(result[0]);
+	expect(4).toEqual(result[1]);
+	const sample1 = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42];
+	result = practices.breakingRecords(sample1);
+	expect(4).toEqual(result[0]);
+	expect(0).toEqual(result[1]);
+});
