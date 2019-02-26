@@ -85,3 +85,22 @@ func TestFibonacci(t *testing.T) {
     }
 }
 
+func TestBreakingRecords(t *testing.T) {
+    type testpair struct {
+        values []int
+        resultMax int
+        resultMin int
+    }
+    
+    var tests = []testpair{
+        { []int{10, 5, 20, 20, 4, 5, 2, 25, 1}, 2, 4 },
+        { []int{3, 4, 21, 36, 10, 28, 35, 5, 24, 42}, 4, 0 },
+    }
+
+    for _, pair := range tests {
+        v1, v2 := BreakingRecords(pair.values)
+        if v1 != pair.resultMax || v2 != pair.resultMin {
+            t.Error( "For", pair.values, "expected", pair.resultMax, pair.resultMin, "got", v1, ",", v2 )
+        }
+    }    	
+}
