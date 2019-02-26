@@ -113,5 +113,22 @@ public class CodePractices {
     	String result = Math.abs((x2-x1)) % Math.abs((v1-v2)) == 0 ? "YES" : "NO";
     	return result;
     }
+    
+    public static int[] breakingRecords(int[] scores) {
+    	int countMin = 0, countMax = 0;
+    	int min = scores[0], max = scores[0];
+    	
+    	for (int i = 0; i < scores.length; i++) {
+			if (scores[i] < min) {
+				min = scores[i];
+				countMin++;
+			} else if (scores[i] > max) {
+				max = scores[i];
+				countMax++;
+			}
+		}
+
+    	return new int[]{countMax, countMin};
+    }
 	
 }
