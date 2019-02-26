@@ -66,3 +66,20 @@ func Fibonacci(n int) int {
 		return Fibonacci(n-2) + Fibonacci(n-1);
 	}
 }
+
+func BreakingRecords(scores []int) (int,int) {
+	countMin := 0; countMax := 0;
+    min := scores[0]; max := scores[0];
+    	
+	for _, val := range scores {
+		if (val < min) {
+			min = val
+			countMin++
+		} else if (val > max) {
+			max = val
+			countMax++
+		}
+	}
+
+    return countMax, countMin
+}
