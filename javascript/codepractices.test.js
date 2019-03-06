@@ -99,3 +99,14 @@ test("breakingRecords", () => {
 	expect(4).toEqual(result[0]);
 	expect(0).toEqual(result[1]);
 });
+
+test("sockMerchant", () => {
+    let n = 9;
+    let arr = [10, 20, 20, 10, 10, 30, 50, 10, 20];
+    let result = practices.sockMerchant(n, arr);
+    expect(3).toEqual(result);
+    n = 10;
+    arr = [1, 1, 3, 1, 2, 1, 3, 3, 3, 3];
+    result = practices.sockMerchant(n, arr);
+    expect(4).toEqual(result);
+});

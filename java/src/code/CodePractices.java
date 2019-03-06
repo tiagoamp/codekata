@@ -1,6 +1,8 @@
 package code;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.IntStream;
 
 public class CodePractices {
@@ -129,6 +131,20 @@ public class CodePractices {
 		}
 
     	return new int[]{countMax, countMin};
+    }
+    
+    public static int sockMerchant(int n, int[] arr) {
+    	Set<Integer> colors = new HashSet<>();
+        int pairs = 0;
+        for (int i = 0; i < n; i++) {
+            if (!colors.contains(arr[i])) {
+                colors.add(arr[i]);
+            } else {
+                pairs++;
+                colors.remove(arr[i]);
+            }
+        }
+        return pairs;
     }
 	
 }
