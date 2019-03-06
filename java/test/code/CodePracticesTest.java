@@ -115,5 +115,17 @@ public class CodePracticesTest {
 		assertEquals(0, result[1]);
 		
 	}
+	
+	@Test
+	public void testSockMerchant() {
+		int n = 9;
+		int[] arr = {10, 20, 20, 10, 10, 30, 50, 10, 20};
+		int result = sockMerchant(n, arr);
+		assertEquals(3, result);
+		n = 10;
+		arr = new int[]{1, 1, 3, 1, 2, 1, 3, 3, 3, 3};
+		result = sockMerchant(n, arr);
+		assertEquals(4, result);		
+	}
 
 }
