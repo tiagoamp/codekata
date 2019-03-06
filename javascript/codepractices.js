@@ -122,7 +122,20 @@ module.exports = obj = {
         
         const result = [countMax, countMin];
     	return result;
-    }
+    },
 
-    
+    sockMerchant: function(n, arr) {
+    	const colors = [];
+        let pairs = 0;
+        for (let i = 0; i < n; i++) {
+            if (!colors.includes(arr[i])) {
+                colors.push(arr[i]);
+            } else {
+                pairs++;
+                const index = arr.indexOf(arr[i]);
+                colors.splice(index, 1);
+            }
+        }
+        return pairs;
+    }
 }
