@@ -4,6 +4,10 @@ import static code.CodePractices.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
 public class CodePracticesTest {
@@ -126,6 +130,30 @@ public class CodePracticesTest {
 		arr = new int[]{1, 1, 3, 1, 2, 1, 3, 3, 3, 3};
 		result = sockMerchant(n, arr);
 		assertEquals(4, result);		
+	}
+	
+	@Test
+	public void testMinPrice() {
+		List<List<Integer>> cost = new ArrayList<>();
+		// sample 0
+		cost.add( Arrays.asList(1,2,2) );
+		cost.add( Arrays.asList(2,2,1) );
+		cost.add( Arrays.asList(2,1,2) );
+		int result = minPrice(cost);
+		assertEquals(3, result);
+		// sample 1
+		cost.clear();
+		cost.add( Arrays.asList(1,2,2) );
+		cost.add( Arrays.asList(2,3,3) );
+		cost.add( Arrays.asList(3,3,1) );
+		result = minPrice(cost);
+		assertEquals(5, result);
+		// sample 3
+		cost.clear();
+		cost.add( Arrays.asList(1,10,20) );
+		cost.add( Arrays.asList(2,100,100) );
+		result = minPrice(cost);
+		assertEquals(12, result);
 	}
 
 }
