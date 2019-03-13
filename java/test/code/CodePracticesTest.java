@@ -155,5 +155,21 @@ public class CodePracticesTest {
 		result = minPrice(cost);
 		assertEquals(12, result);
 	}
+	
+	@Test
+	public void testBirthdayChoc() {
+		List<Integer> s = Arrays.asList(1, 2, 1, 3, 2);
+		int d = 3, m = 2;
+		int result = birthdayChoc(s, d, m);
+		assertEquals(2, result);
+		s = Arrays.asList(1, 1, 1, 1, 1, 1);
+		result = birthdayChoc(s, d, m);
+		assertEquals(0, result);
+		s = Arrays.asList(2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1);
+		d = 18; m = 7;
+		result = birthdayChoc(s, d, m);
+		assertEquals(3, result);
+		
+	}
 
 }
