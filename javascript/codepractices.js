@@ -134,5 +134,21 @@ module.exports = obj = {
             }
         }
         return pairs;
+    },
+
+    birthdayChoc: function(s, d, m) {
+    	let result = 0, index  = 0;
+    	if (s == null || s.length == 0) return result;
+    	let isOver = m > s.length;
+    	while (!isOver) {    		
+    		let inner = s.slice(index, m);
+    		let sum = inner.reduce((x,y) => x+y, 0);
+    		if (sum == d) result++;
+    		index++;
+    		m++;
+    		isOver = m > s.length;
+    	}    	
+    	return result;
     }
+
 }
