@@ -86,3 +86,22 @@ func BreakingRecords(scores []int) (int, int) {
 	return countMax, countMin
 }
 
+func birthdayChoc(s []int, d int, m int) int {
+	result, index := 0, 0
+	var isOver bool = m > len(s)
+	for !isOver {
+		var inner = s[index:m]
+		var sum = 0
+		for _, v := range inner {
+			sum += v
+		}
+		if sum == d {
+			result++
+		}
+		index++
+		m++
+		isOver = m > len(s)
+	}
+	return result
+}
+

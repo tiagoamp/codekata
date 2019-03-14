@@ -102,3 +102,25 @@ func TestBreakingRecords(t *testing.T) {
 	}
 }
 
+func TestBirthdayChoc(t *testing.T) {
+	type testpair struct {
+		inputArr []int
+		d        int
+		m        int
+		result   int
+	}
+
+	var tests = []testpair{
+		{[]int{1, 2, 1, 3, 2}, 3, 2, 2},
+		{[]int{1, 1, 1, 1, 1, 1}, 3, 2, 0},
+		{[]int{2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1}, 18, 7, 3},
+	}
+
+	for _, pair := range tests {
+		v := birthdayChoc(pair.inputArr, pair.d, pair.m)
+		if v != pair.result {
+			t.Error("For", pair.inputArr, "expected", pair.result, "got", v)
+		}
+	}
+}
+
