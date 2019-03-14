@@ -106,3 +106,17 @@ test("sockMerchant", () => {
     result = practices.sockMerchant(n, arr);
     expect(result).toEqual(4);
 });
+
+test("birthdayChoc", () => {
+    let s = [1, 2, 1, 3, 2];
+	let d = 3, m = 2;
+	let result = practices.birthdayChoc(s, d, m);
+	expect(result).toEqual(2);
+	s = [1, 1, 1, 1, 1, 1];
+	result = practices.birthdayChoc(s, d, m);
+	expect(result).toEqual(0);
+	s = [2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1];
+	d = 18; m = 7;
+	result = practices.birthdayChoc(s, d, m);
+	expect(result).toEqual(3);
+})
