@@ -170,5 +170,13 @@ public class CodePracticesTest {
 		result = birthdayChoc(s, d, m);
 		assertEquals(3, result);		
 	}
+	
+	@Test
+	public void testBigSorting() {
+		String[] input = {"1", "2", "100", "12303479849857341718340192371", "3084193741082937", "3084193741082938", "111", "200"};
+		String[] result = bigSorting(input);
+		String[] expectedArr = {"1", "2", "100", "111", "200", "3084193741082937", "3084193741082938", "12303479849857341718340192371"};
+		assertEquals(Arrays.toString(expectedArr), Arrays.toString(result));
+	}
 
 }
