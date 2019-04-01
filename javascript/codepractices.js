@@ -149,6 +149,26 @@ module.exports = obj = {
     		isOver = m > s.length;
     	}    	
     	return result;
+    },
+
+    bigSorting: function(unsorted) {    	
+        const comparator = (a, b) => {
+            // different sizes
+            if (a.length != b.length) 
+                return a.length - b.length;
+            // same sizes, compare per digits
+            for (let i = 0; i < a.length; i++) {
+                //let digitFromA = a.toString()[i];
+                let digitFromA = a.charAt(i);
+                let digitFromB = b.charAt(i);
+                if (digitFromA != digitFromB) 
+                    return digitFromA - digitFromB;
+            }
+            // numbers are the same.
+            return 0;
+        };
+        const result = unsorted.sort(comparator);
+    	return result;
     }
 
 }
