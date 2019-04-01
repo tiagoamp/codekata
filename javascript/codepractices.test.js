@@ -119,4 +119,11 @@ test("birthdayChoc", () => {
 	d = 18; m = 7;
 	result = practices.birthdayChoc(s, d, m);
 	expect(result).toEqual(3);
-})
+});
+
+test("bigSorting", () => {
+    let input = ["1", "2", "100", "12303479849857341718340192371", "3084193741082937", "3084193741082938", "111", "200"];
+    let result = practices.bigSorting(input);
+    let expectedArr = ["1", "2", "100", "111", "200", "3084193741082937", "3084193741082938", "12303479849857341718340192371"];
+    expect(result).toEqual(expectedArr);
+});
