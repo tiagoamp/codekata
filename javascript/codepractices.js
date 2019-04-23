@@ -158,7 +158,6 @@ module.exports = obj = {
                 return a.length - b.length;
             // same sizes, compare per digits
             for (let i = 0; i < a.length; i++) {
-                //let digitFromA = a.toString()[i];
                 let digitFromA = a.charAt(i);
                 let digitFromB = b.charAt(i);
                 if (digitFromA != digitFromB) 
