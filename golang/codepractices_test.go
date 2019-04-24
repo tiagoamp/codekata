@@ -124,3 +124,16 @@ func TestBirthdayChoc(t *testing.T) {
 	}
 }
 
+func TestBigSorting(t *testing.T) {
+	input := []string{"2", "100", "1"}
+	result := bigSorting(input)
+	if result[0] != 1 {
+		t.Error("For index 0 expected 1 got", result[0])
+	}
+	if result[1] != 2 {
+		t.Error("For index 1 expected 2 got", result[0])
+	}
+	if result[2] != 100 {
+		t.Error("For index 2 expected 100 got", result[0])
+	}
+}
