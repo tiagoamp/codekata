@@ -105,3 +105,12 @@ func birthdayChoc(s []int, d int, m int) int {
 	return result
 }
 
+func bigSorting(unsorted []string) []int {
+	var arr = make([]int, len(unsorted))
+	for i, val := range unsorted {
+		var v, _ = strconv.Atoi(val)
+		arr[i] = v
+	}
+	sort.Ints(arr)
+	return arr
+}
