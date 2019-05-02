@@ -127,3 +127,12 @@ test("bigSorting", () => {
     let expectedArr = ["1", "2", "100", "111", "200", "3084193741082937", "3084193741082938", "12303479849857341718340192371"];
     expect(result).toEqual(expectedArr);
 });
+
+test("catAndMouse", () => {
+    let x = 1, y = 2, z = 3;
+	let result = practices.catAndMouse(x, y, z);
+	expect(result).toEqual("Cat B");
+	x = 1; y = 3; z = 2;
+    result = practices.catAndMouse(x, y, z);
+    expect(result).toEqual("Mouse C");
+});
