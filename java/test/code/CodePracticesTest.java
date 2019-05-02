@@ -178,5 +178,15 @@ public class CodePracticesTest {
 		String[] expectedArr = {"1", "2", "100", "111", "200", "3084193741082937", "3084193741082938", "12303479849857341718340192371"};
 		assertEquals(Arrays.toString(expectedArr), Arrays.toString(result));
 	}
+	
+	@Test
+	public void testCatAndMouse() {
+		int x = 1, y = 2, z = 3;
+		String result = catAndMouse(x, y, z);
+		assertEquals("Cat B", result);
+		x = 1; y = 3; z = 2;
+		result = catAndMouse(x, y, z);
+		assertEquals("Mouse C", result);
+	}
 
 }

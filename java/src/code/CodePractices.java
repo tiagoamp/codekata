@@ -224,5 +224,12 @@ public class CodePractices {
     	String[] result = Arrays.stream(unsorted).sorted(comparator).toArray(String[]::new);    	
         return result;
     }
+    
+    public static String catAndMouse(int x, int y, int z) {
+    	int distanceCatAFromMouse = Math.abs(z - x);
+    	int distanceCatBFromMouse = Math.abs(z - y);
+    	if (distanceCatAFromMouse == distanceCatBFromMouse) return "Mouse C";
+    	return distanceCatAFromMouse < distanceCatBFromMouse ? "Cat A" : "Cat B";
+    }
 	
 }
