@@ -114,3 +114,23 @@ func bigSorting(unsorted []string) []int {
 	sort.Ints(arr)
 	return arr
 }
+
+func catAndMouse(x int, y int, z int) string {
+	distanceCatAFromMouse := z - x
+	distanceCatBFromMouse := z - y
+	if distanceCatAFromMouse < 0 {
+		distanceCatAFromMouse = -1 * distanceCatAFromMouse
+	}
+	if distanceCatBFromMouse < 0 {
+		distanceCatBFromMouse = -1 * distanceCatBFromMouse
+	}
+	if distanceCatAFromMouse == distanceCatBFromMouse {
+		return "Mouse C"
+	}
+	if distanceCatAFromMouse < distanceCatBFromMouse {
+		return "Cat A"
+	} else {
+		return "Cat B"
+	}
+}
+

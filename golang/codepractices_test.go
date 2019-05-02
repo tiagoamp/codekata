@@ -137,3 +137,25 @@ func TestBigSorting(t *testing.T) {
 		t.Error("For index 2 expected 100 got", result[0])
 	}
 }
+
+func TestCatAndMouse(t *testing.T) {
+	type testpair struct {
+		x      int
+		y      int
+		z      int
+		result string
+	}
+
+	var tests = []testpair{
+		{1, 2, 3, "Cat B"},
+		{1, 3, 2, "Mouse C"},
+	}
+
+	for _, pair := range tests {
+		v := catAndMouse(pair.x, pair.y, pair.z)
+		if v != pair.result {
+			t.Error("For", pair, "expected", pair.result, "got", v)
+		}
+	}
+}
+
