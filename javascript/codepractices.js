@@ -168,6 +168,13 @@ module.exports = obj = {
         };
         const result = unsorted.sort(comparator);
     	return result;
+    }, 
+
+    catAndMouse: function(x, y, z) {
+    	const distanceCatAFromMouse = Math.abs(z - x);
+    	const distanceCatBFromMouse = Math.abs(z - y);
+    	if (distanceCatAFromMouse == distanceCatBFromMouse) return "Mouse C";
+    	return distanceCatAFromMouse < distanceCatBFromMouse ? "Cat A" : "Cat B";
     }
 
 }
