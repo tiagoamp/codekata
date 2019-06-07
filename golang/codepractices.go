@@ -45,8 +45,7 @@ func Staircase(n int) [][]string {
 
 func MinMaxSum(arr []int) (int64, int64) {
 	sort.Ints(arr)
-	var min int64 = 0
-	var max int64 = 0
+	var min, max int64 = 0, 0
 	const len int = 5
 	for i, val := range arr {
 		if i < len-1 {
