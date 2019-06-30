@@ -1,6 +1,20 @@
 package code;
 
-import static code.CodePractices.*;
+import static code.CodePractices.bestDivisor;
+import static code.CodePractices.bigSorting;
+import static code.CodePractices.birthdayCakeCandles;
+import static code.CodePractices.birthdayChoc;
+import static code.CodePractices.breakingRecords;
+import static code.CodePractices.catAndMouse;
+import static code.CodePractices.countApplesAndOranges;
+import static code.CodePractices.fibonacci;
+import static code.CodePractices.gradingStudents;
+import static code.CodePractices.kangaroo;
+import static code.CodePractices.minMaxSum;
+import static code.CodePractices.minPrice;
+import static code.CodePractices.sockMerchant;
+import static code.CodePractices.staircase;
+import static code.CodePractices.superdigit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -187,6 +201,16 @@ public class CodePracticesTest {
 		x = 1; y = 3; z = 2;
 		result = catAndMouse(x, y, z);
 		assertEquals("Mouse C", result);
+	}
+	
+	@Test
+	public void testGradingStudents() {
+		List<Integer> input = Arrays.asList(73, 67, 38, 33);
+		List<Integer> expected = Arrays.asList(75,67,40,33);
+		List<Integer> result = gradingStudents(input);
+		for (int i = 0; i < result.size(); i++) {
+			assertEquals(expected.get(i), result.get(i));
+		}
 	}
 
 }

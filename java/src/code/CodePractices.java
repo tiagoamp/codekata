@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class CodePractices {
@@ -230,6 +231,19 @@ public class CodePractices {
     	int distanceCatBFromMouse = Math.abs(z - y);
     	if (distanceCatAFromMouse == distanceCatBFromMouse) return "Mouse C";
     	return distanceCatAFromMouse < distanceCatBFromMouse ? "Cat A" : "Cat B";
+    }
+    
+    public static List<Integer> gradingStudents(List<Integer> grades) {
+    	if (grades == null || grades.isEmpty()) return grades;
+    	List<Integer> roundedGrades = grades.stream().map(n -> {
+    		if (n < 38) {
+    			return n;
+    		} else {
+    			int nextMultipleOfFive = (int) (5*Math.ceil(Double.valueOf(n)/5));
+    			return (nextMultipleOfFive - n) < 3 ? nextMultipleOfFive : n;
+    		}
+    	}).collect(Collectors.toList());
+    	return roundedGrades;
     }
 	
 }
