@@ -136,3 +136,12 @@ test("catAndMouse", () => {
     result = practices.catAndMouse(x, y, z);
     expect(result).toEqual("Mouse C");
 });
+
+test("gradingStudents", () => {
+    const input = [73, 67, 38, 33];
+	const expected = [75,67,40,33];
+	const result = practices.gradingStudents(input);
+	for (let i = 0; i < result.length; i++) {
+        expect(expected[i]).toEqual(result[i]);
+	}
+});
