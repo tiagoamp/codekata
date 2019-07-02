@@ -175,6 +175,19 @@ module.exports = obj = {
     	const distanceCatBFromMouse = Math.abs(z - y);
     	if (distanceCatAFromMouse == distanceCatBFromMouse) return "Mouse C";
     	return distanceCatAFromMouse < distanceCatBFromMouse ? "Cat A" : "Cat B";
-    }
+    },
+
+    gradingStudents: function(grades) {
+        if (grades == null || grades.length === 0) return grades;
+    	const roundedGrades = grades.map(n => {
+    		if (n < 38) {
+    			return n;
+    		} else {
+    			const nextMultipleOfFive = 5*Math.ceil(n/5);
+    			return (nextMultipleOfFive - n) < 3 ? nextMultipleOfFive : n;
+    		}
+    	});
+    	return roundedGrades;
+    },
 
 }
