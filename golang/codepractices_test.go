@@ -159,3 +159,14 @@ func TestCatAndMouse(t *testing.T) {
 	}
 }
 
+func TestGradingStudents(t *testing.T) {
+	input := []int{73, 67, 38, 33}
+	expected := []int{75, 67, 40, 33}
+	result := gradingStudents(input)
+	for i, val := range result {
+		if result[i] != expected[i] {
+			t.Error("For index", i, "expected", expected[i], " got", val)
+		}
+	}
+}
+
