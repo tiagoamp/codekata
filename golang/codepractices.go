@@ -133,3 +133,21 @@ func catAndMouse(x int, y int, z int) string {
 	}
 }
 
+func gradingStudents(grades []int) []int {
+	if len(grades) == 0 {
+		return grades
+	}
+	var roundedGrades = make([]int, len(grades))
+	for i, val := range grades {
+		if val < 38 {
+			roundedGrades[i] = val
+		} else {
+			if val%5 > 2 {
+				roundedGrades[i] = ((val / 5) + 1) * 5
+			} else {
+				roundedGrades[i] = val
+			}
+		}
+	}
+	return roundedGrades
+}
