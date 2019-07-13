@@ -245,5 +245,11 @@ public class CodePractices {
     	}).collect(Collectors.toList());
     	return roundedGrades;
     }
+    
+    public static int hurdleRace(int k, int[] height) {
+    	Arrays.sort(height);
+    	int max = height[height.length-1];
+    	return k >= max ? 0 : (max-k);
+    }
 	
 }
