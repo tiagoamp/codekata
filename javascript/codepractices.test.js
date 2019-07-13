@@ -145,3 +145,12 @@ test("gradingStudents", () => {
         expect(expected[i]).toEqual(result[i]);
 	}
 });
+
+test("hurdleRace", () => {
+    const k0 = 4, k1 = 7;
+    const height0 = [1, 6, 3, 5, 2], height1 = [2, 5, 4, 5, 2];
+    let result = practices.hurdleRace(k0, height0);
+    expect(2).toEqual(result);
+    result = practices.hurdleRace(k1, height1);
+    expect(0).toEqual(result);
+});
