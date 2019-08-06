@@ -154,3 +154,11 @@ test("hurdleRace", () => {
     result = practices.hurdleRace(k1, height1);
     expect(0).toEqual(result);
 });
+
+test("utopianTree", () => {
+    const inputs = [0, 1, 4];
+	const expected = [1, 2, 7];
+	for (let i=0; i<inputs.length; i++) {
+        expect(expected[i]).toEqual(practices.utopianTree(inputs[i]));
+	}
+});

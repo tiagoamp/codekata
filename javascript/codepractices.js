@@ -196,6 +196,16 @@ module.exports = obj = {
         });
         const max = height[height.length-1];
     	return k >= max ? 0 : (max-k);
+    },
+
+    utopianTree: function(n) {
+    	let result = 1;
+    	if (n == 0) return result;
+    	for(let i=1; i <=n; i++) {
+    		let shouldDoubleSize = i%2 != 0; // odd numbers double size
+    		result = shouldDoubleSize ? result * 2 : result + 1; 
+    	}
+    	return result;
     }
 
 }
