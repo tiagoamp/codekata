@@ -15,6 +15,7 @@ import static code.CodePractices.minPrice;
 import static code.CodePractices.sockMerchant;
 import static code.CodePractices.staircase;
 import static code.CodePractices.superdigit;
+import static code.CodePractices.utopianTree;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -210,6 +211,15 @@ public class CodePracticesTest {
 		List<Integer> result = gradingStudents(input);
 		for (int i = 0; i < result.size(); i++) {
 			assertEquals(expected.get(i), result.get(i));
+		}
+	}
+	
+	@Test
+	public void testUtopianTree() {
+		Integer[] inputs = {0, 1, 4};
+		Integer[] expected = {1, 2, 7};
+		for (int i=0; i<inputs.length; i++) {
+			assertEquals(expected[i].intValue(), utopianTree(inputs[i]));
 		}
 	}
 

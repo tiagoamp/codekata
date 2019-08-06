@@ -245,5 +245,17 @@ public class CodePractices {
     	}).collect(Collectors.toList());
     	return roundedGrades;
     }
+    
+    public static int utopianTree(int n) {
+    	final int initialSize = 1;
+    	int result = 1;
+    	if (n == 0) return initialSize;
+    	boolean shouldDoubleSize;
+    	for(int i=1; i <=n; i++) {
+    		shouldDoubleSize = i%2 != 0; // odd numbers double size
+    		result = shouldDoubleSize ? result * 2 : result + 1; 
+    	}
+    	return result;
+    }
 	
 }
