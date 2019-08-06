@@ -9,6 +9,7 @@ import static code.CodePractices.catAndMouse;
 import static code.CodePractices.countApplesAndOranges;
 import static code.CodePractices.fibonacci;
 import static code.CodePractices.gradingStudents;
+import static code.CodePractices.hurdleRace;
 import static code.CodePractices.kangaroo;
 import static code.CodePractices.minMaxSum;
 import static code.CodePractices.minPrice;
@@ -215,6 +216,15 @@ public class CodePracticesTest {
 	}
 	
 	@Test
+	public void testHurdleRace() {
+		int k0 = 4, k1 = 7;
+		int[] height0 = {1, 6, 3, 5, 2}, height1 = {2, 5, 4, 5, 2};
+		int result = hurdleRace(k0, height0);
+		assertEquals(2, result);
+		result = hurdleRace(k1, height1);
+		assertEquals(0, result);
+	}
+	
 	public void testUtopianTree() {
 		Integer[] inputs = {0, 1, 4};
 		Integer[] expected = {1, 2, 7};

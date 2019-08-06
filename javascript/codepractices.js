@@ -190,4 +190,12 @@ module.exports = obj = {
     	return roundedGrades;
     },
 
+    hurdleRace: function(k, height) {
+        height.sort(function(a, b) {
+            return a - b;
+        });
+        const max = height[height.length-1];
+    	return k >= max ? 0 : (max-k);
+    }
+
 }

@@ -246,6 +246,12 @@ public class CodePractices {
     	return roundedGrades;
     }
     
+    public static int hurdleRace(int k, int[] height) {
+    	Arrays.sort(height);
+    	int max = height[height.length-1];
+    	return k >= max ? 0 : (max-k);
+    }
+    
     public static int utopianTree(int n) {
     	final int initialSize = 1;
     	int result = 1;
