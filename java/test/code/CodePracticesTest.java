@@ -1,7 +1,25 @@
 package code;
 
-import static code.CodePractices.*;
-import static org.junit.Assert.*;
+import static code.CodePractices.bestDivisor;
+import static code.CodePractices.bigSorting;
+import static code.CodePractices.birthdayCakeCandles;
+import static code.CodePractices.birthdayChoc;
+import static code.CodePractices.breakingRecords;
+import static code.CodePractices.catAndMouse;
+import static code.CodePractices.countApplesAndOranges;
+import static code.CodePractices.fibonacci;
+import static code.CodePractices.gradingStudents;
+import static code.CodePractices.hurdleRace;
+import static code.CodePractices.kangaroo;
+import static code.CodePractices.minMaxSum;
+import static code.CodePractices.minPrice;
+import static code.CodePractices.sockMerchant;
+import static code.CodePractices.staircase;
+import static code.CodePractices.superdigit;
+import static code.CodePractices.utopianTree;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -205,6 +223,14 @@ public class CodePracticesTest {
 		assertEquals(2, result);
 		result = hurdleRace(k1, height1);
 		assertEquals(0, result);
+	}
+	
+	public void testUtopianTree() {
+		Integer[] inputs = {0, 1, 4};
+		Integer[] expected = {1, 2, 7};
+		for (int i=0; i<inputs.length; i++) {
+			assertEquals(expected[i].intValue(), utopianTree(inputs[i]));
+		}
 	}
 
 }
