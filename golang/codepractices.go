@@ -151,3 +151,13 @@ func gradingStudents(grades []int) []int {
 	}
 	return roundedGrades
 }
+
+func hurdleRace(k int, height []int) int {
+	sort.Ints(height)
+	max := height[len(height)-1]
+	if k >= max {
+		return 0
+	} else {
+		return max - k
+	}
+}
