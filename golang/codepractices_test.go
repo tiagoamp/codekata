@@ -170,3 +170,18 @@ func TestGradingStudents(t *testing.T) {
 	}
 }
 
+func TestHurdleRace(t *testing.T) {
+	k0 := 4
+	k1 := 7
+	height0 := []int{1, 6, 3, 5, 2}
+	height1 := []int{2, 5, 4, 5, 2}
+	result := hurdleRace(k0, height0)
+	if result != 2 {
+		t.Error("Expected", 2, " got", result)
+	}
+	result = hurdleRace(k1, height1)
+	if result != 0 {
+		t.Error("Expected", 0, " got", result)
+	}
+}
+
