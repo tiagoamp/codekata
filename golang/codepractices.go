@@ -161,3 +161,20 @@ func hurdleRace(k int, height []int) int {
 		return max - k
 	}
 }
+
+func utopianTree(n int) int {
+	result := 1
+	if n == 0 {
+		return result
+	}
+	for i := 1; i <= n; i++ {
+		shouldDoubleSize := i%2 != 0 // odd numbers double size
+		if shouldDoubleSize {
+			result = result * 2
+		} else {
+			result = result + 1
+		}
+	}
+	return result
+}
+

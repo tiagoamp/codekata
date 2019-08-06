@@ -185,3 +185,21 @@ func TestHurdleRace(t *testing.T) {
 	}
 }
 
+func TestUtopianTree(t *testing.T) {
+	type testpair struct {
+		input  int
+		result int
+	}
+
+	var tests = []testpair{
+		{0, 1}, {1, 2}, {4, 7},
+	}
+
+	for _, pair := range tests {
+		v := utopianTree(pair.input)
+		if v != pair.result {
+			t.Error("For", pair, "expected", pair.result, "got", v)
+		}
+	}
+}
+
