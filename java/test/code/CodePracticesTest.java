@@ -225,6 +225,7 @@ public class CodePracticesTest {
 		assertEquals(0, result);
 	}
 	
+	@Test
 	public void testUtopianTree() {
 		Integer[] inputs = {0, 1, 4};
 		Integer[] expected = {1, 2, 7};
@@ -232,5 +233,6 @@ public class CodePracticesTest {
 			assertEquals(expected[i].intValue(), utopianTree(inputs[i]));
 		}
 	}
+	
 
 }
