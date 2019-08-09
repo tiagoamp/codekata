@@ -1,22 +1,6 @@
 package code;
 
-import static code.CodePractices.bestDivisor;
-import static code.CodePractices.bigSorting;
-import static code.CodePractices.birthdayCakeCandles;
-import static code.CodePractices.birthdayChoc;
-import static code.CodePractices.breakingRecords;
-import static code.CodePractices.catAndMouse;
-import static code.CodePractices.countApplesAndOranges;
-import static code.CodePractices.fibonacci;
-import static code.CodePractices.gradingStudents;
-import static code.CodePractices.hurdleRace;
-import static code.CodePractices.kangaroo;
-import static code.CodePractices.minMaxSum;
-import static code.CodePractices.minPrice;
-import static code.CodePractices.sockMerchant;
-import static code.CodePractices.staircase;
-import static code.CodePractices.superdigit;
-import static code.CodePractices.utopianTree;
+import static code.CodePractices.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -234,5 +218,15 @@ public class CodePracticesTest {
 		}
 	}
 	
+	@Test
+	public void testFormingMagicSquare() {
+		int[][] sample0 = { {4,9,2},{3,5,7},{8,1,5} };
+		int[][] sample1 = { {4,8,2},{4,5,7},{6,1,6} };
+		int expectedResult0 = 1, expectedResult1 = 4;
+		int result = formingMagicSquare(sample0);
+		assertEquals(expectedResult0, result);
+		result = formingMagicSquare(sample1);
+		assertEquals(expectedResult1, result);
+	}	
 
 }
