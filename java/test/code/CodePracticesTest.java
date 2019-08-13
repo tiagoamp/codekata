@@ -227,6 +227,18 @@ public class CodePracticesTest {
 		assertEquals(expectedResult0, result);
 		result = formingMagicSquare(sample1);
 		assertEquals(expectedResult1, result);
-	}	
+	}
+	
+	@Test
+	public void testPickingNumbers() {
+		List<Integer> sample0 = Arrays.asList(4, 6, 5, 3, 3, 1);
+		int expected0 = 3;
+		List<Integer> sample1 = Arrays.asList(1, 2, 2, 3, 1, 2);
+		int expected1 = 5;
+		int result = pickingNumbers(sample0);
+		assertEquals(expected0, result);
+		 result = pickingNumbers(sample1);
+		assertEquals(expected1, result);
+	}
 
 }

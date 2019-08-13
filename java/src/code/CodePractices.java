@@ -5,7 +5,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -275,6 +278,17 @@ public class CodePractices {
         }   
         int minCost = Arrays.stream(costs).min().getAsInt();
         return minCost;
+    }
+    
+    public static int pickingNumbers(List<Integer> a) {
+        Map<Integer, Integer> map = new TreeMap<>();
+        a.forEach(i -> {
+        	Integer qtt = map.getOrDefault(i, 0);
+        	map.put(i, qtt+1);
+        });
+        int maxRange = map.keySet().stream()
+        		.map(k -> map.get(k) + map.getOrDefault(k+1, 0)).max(Integer::compare).get();
+        return maxRange;
     }
         
 }
