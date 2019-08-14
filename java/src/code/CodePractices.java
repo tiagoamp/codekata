@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
@@ -289,6 +288,25 @@ public class CodePractices {
         int maxRange = map.keySet().stream()
         		.map(k -> map.get(k) + map.getOrDefault(k+1, 0)).max(Integer::compare).get();
         return maxRange;
+    }
+    
+    public static int[] climbingLeaderboard(int[] scores, int[] alice) {
+    	int[] uniqueScores = Arrays.stream(scores).distinct().toArray();
+    	int[] result = new int[alice.length];
+    	int i = uniqueScores.length-1;
+        for(int j=0; j<alice.length; j++) {
+        	int  a = alice[j];
+            while(i>=0) {
+                if(a>=uniqueScores[i]) 
+                	i--;
+                else {
+                	result[j] = i+2; 
+                	break;
+                }
+            }
+            if(i<0) result[j] = 1;;
+        }
+        return result;
     }
         
 }
