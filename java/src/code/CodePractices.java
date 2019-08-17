@@ -304,9 +304,15 @@ public class CodePractices {
                 	break;
                 }
             }
-            if(i<0) result[j] = 1;;
+            if(i<0) result[j] = 1;
         }
         return result;
+    }
+    
+    public static int saveThePrisoner(int n, int m, int s) {
+    	int r = s + (m-1);
+    	if (r <= n) return r;
+    	return (r%n == 0) ? n : r%n;
     }
         
 }

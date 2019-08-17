@@ -266,5 +266,24 @@ public class CodePracticesTest {
 		for (int i=0; i<expected3.length; i++) 
 			assertEquals(expected3[i], result[i]);
 	}
+	
+	@Test
+	public void testSaveThePrisoner() {
+		int n = 5, m = 2, s = 1, expected = 2;
+		int result = saveThePrisoner(n, m, s);
+		assertEquals(expected, result);
+		n = 5; m = 2; s = 2; expected = 3;
+		result = saveThePrisoner(n, m, s);
+		assertEquals(expected, result);
+		n = 7; m = 19; s = 2; expected = 6;
+		result = saveThePrisoner(n, m, s);
+		assertEquals(expected, result);
+		n = 3; m = 7; s = 3; expected = 3;
+		result = saveThePrisoner(n, m, s);
+		assertEquals(expected, result);
+		n= 352926151; m = 380324688; s = 94730870; expected = 122129406;
+		result = saveThePrisoner(n, m, s);
+		assertEquals(expected, result);
+	}
 
 }
