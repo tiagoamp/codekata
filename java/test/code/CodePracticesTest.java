@@ -285,5 +285,35 @@ public class CodePracticesTest {
 		result = saveThePrisoner(n, m, s);
 		assertEquals(expected, result);
 	}
+	
+	@Test 
+	public void testAppendAndDelete() {
+		String s = "hackerhappy", t = "hackerrank"; int k = 9;
+		String result = appendAndDelete(s, t, k);
+		assertEquals("Yes", result);
+		s = "aba"; t = "aba"; k = 7;
+		result = appendAndDelete(s, t, k);
+		assertEquals("Yes", result);
+		s = "ashley"; t = "ash"; k = 2;
+		result = appendAndDelete(s, t, k);
+		assertEquals("No", result);
+		s = "y"; t = "yu"; k = 2;
+		result = appendAndDelete(s, t, k);
+		assertEquals("No", result);
+		s = "asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv"; 
+		t = "asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv";
+		k = 20;
+		result = appendAndDelete(s, t, k);
+		assertEquals("Yes", result);
+		s = "abcd"; t = "abcdert"; k = 10;
+		result = appendAndDelete(s, t, k);
+		assertEquals("No", result);
+		s = "abcdef"; t = "fedcba"; k = 15;
+		result = appendAndDelete(s, t, k);
+		assertEquals("Yes", result);
+		s = "aaa"; t = "a"; k = 5;
+		result = appendAndDelete(s, t, k);
+		assertEquals("Yes", result);
+    }
 
 }
