@@ -162,3 +162,13 @@ test("utopianTree", () => {
         expect(expected[i]).toEqual(practices.utopianTree(inputs[i]));
 	}
 });
+
+test("formingMagicSquare", () => {
+    const sample0 = [ [4,9,2],[3,5,7],[8,1,5] ];
+	const sample1 = [ [4,8,2],[4,5,7],[6,1,6] ];
+	const expectedResult0 = 1, expectedResult1 = 4;
+	let result = practices.formingMagicSquare(sample0);
+	expect(result).toEqual(expectedResult0);
+	result = practices.formingMagicSquare(sample1);
+	expect(result).toEqual(expectedResult1);
+});
