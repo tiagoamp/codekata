@@ -172,3 +172,18 @@ test("formingMagicSquare", () => {
 	result = practices.formingMagicSquare(sample1);
 	expect(result).toEqual(expectedResult1);
 });
+
+test("climbingLeaderboard", () => {
+    const scores1 = [100, 100, 50, 40, 40, 20, 10];
+	const alice1 = [5, 25, 50, 120];
+	const expected1 = [6, 4, 2, 1];
+	const scores2 = [100, 90, 90, 80, 75, 60];
+	const alice2 = [50, 65, 77, 90, 102];
+	const expected2 = [6, 5, 4, 2, 1];
+    let result = practices.climbingLeaderboard(scores1, alice1);
+    for(let i=0; i<expected1.length; i++) 
+        expect(result[i]).toEqual(expected1[i]); 
+    result = practices.climbingLeaderboard(scores2, alice2);
+    for(let i=0; i<expected1.length; i++) 
+        expect(result[i]).toEqual(expected2[i]);
+});
