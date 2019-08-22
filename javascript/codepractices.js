@@ -221,6 +221,25 @@ module.exports = obj = {
         }
         const minCost = Math.min( ...costs );
         return minCost;
+    },
+
+    climbingLeaderboard(scores, alice) {
+    	const uniqueScores = [...new Set(scores)];
+    	let result = [];
+    	let i = uniqueScores.length-1;
+        for(let j=0; j<alice.length; j++) {
+        	const a = alice[j];
+            while(i>=0) {
+                if(a>=uniqueScores[i]) 
+                	i--;
+                else {
+                	result[j] = i+2; 
+                	break;
+                }
+            }
+            if(i<0) result[j] = 1;
+        }
+        return result;
     }
 
 }
