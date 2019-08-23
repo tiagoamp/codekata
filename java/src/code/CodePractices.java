@@ -336,5 +336,19 @@ public class CodePractices {
     	if (k > diffOfS.length()+diffOfT.length()) return k > 2 ? "Yes" : "No";
     	return (k >= diffOfS.length()+diffOfT.length()) && (k - diffOfS.length()+diffOfT.length())%2==0 ? "Yes" : "No";
     }
+    
+    public static long repeatedString(String s, long n) {
+    	if (s.length() == 1) return s.equals("a") ? n : 0L;
+    	if (!s.contains("a")) return 0L;
+    	long count = 0;
+    	for (char ch : s.toCharArray()) 
+			if (ch == 'a') count++;
+        long d = n / s.length();
+        long r =  n % s.length();
+        count *=  d;
+        for(int i=0;i<r;i++)
+            if(s.charAt(i) == 'a') count++;
+        return count;
+    }
         
 }

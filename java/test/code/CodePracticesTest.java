@@ -315,5 +315,19 @@ public class CodePracticesTest {
 		result = appendAndDelete(s, t, k);
 		assertEquals("Yes", result);
     }
+	
+	@Test
+	public void testRepeatedString() {
+		String sample0 = "aba"; long n0 = 10L; long expected0 = 7;
+		String sample1 = "a"; long n1 = 1000000000000L; long expected1 = 1000000000000L;
+		String sample7 = "kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm";
+		long n7 = 736778906400L; long expected7 = 51574523448L;
+		long result0 = repeatedString(sample0, n0);
+		long result1 = repeatedString(sample1, n1);
+		long result7 = repeatedString(sample7, n7);
+		assertEquals(expected0, result0);
+		assertEquals(expected1, result1);
+		assertEquals(expected7, result7);
+    }
 
 }
