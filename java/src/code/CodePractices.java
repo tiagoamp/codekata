@@ -1,5 +1,7 @@
 package code;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -349,6 +351,20 @@ public class CodePractices {
         for(int i=0;i<r;i++)
             if(s.charAt(i) == 'a') count++;
         return count;
+    }
+    
+    public static int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
+    	if (y1 > y2) return 10_000;
+    	LocalDate returnedDate = LocalDate.of(y1, m1, d1);
+    	LocalDate dueDate = LocalDate.of(y2, m2, d2);
+    	if (returnedDate.isBefore(dueDate) || returnedDate.isEqual(dueDate))
+    		return 0;
+    	if (returnedDate.getMonth() == dueDate.getMonth()) {
+    		int daysLate = Period.between(dueDate, returnedDate).getDays();
+    		return 15 * daysLate;
+    	}
+    	int monthsLate = m1-m2;
+    	return 500 * monthsLate;
     }
         
 }
