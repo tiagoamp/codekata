@@ -366,5 +366,12 @@ public class CodePractices {
     	int monthsLate = m1-m2;
     	return 500 * monthsLate;
     }
+    
+    public static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles) {
+    	if (n == 0 || n == 1) return 0;
+    	
+    	//TODO: implement
+    	return -1;
+    }
         
 }
