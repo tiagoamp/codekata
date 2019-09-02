@@ -366,9 +366,6 @@ public class CodePracticesTest {
 		assertEquals(expected1, result1);
 		n = 1; k = 0; r_q = 1; c_q = 1; 
 		obstacles = new int[0][2];
-		obstacles[0][0] = 5; obstacles[0][1] = 5; 
-		obstacles[1][0] = 4; obstacles[1][1] = 2;
-		obstacles[2][0] = 2; obstacles[2][1] = 3;
 		int expected2 = 0;
 		int result2 = queensAttack(n, k, r_q, c_q, obstacles);
 		assertEquals(expected2, result2);

@@ -370,6 +370,16 @@ public class CodePractices {
     public static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles) {
     	if (n == 0 || n == 1) return 0;
     	
+    	int qRowsCount = (n-1) + (n-1);
+    	int qDiagCount = Integer.min( n - r_q , c_q - 1) + Integer.min( r_q - 1 , c_q - 1 ) + 
+    			         Integer.min( n - r_q , n - c_q) + Integer.min( r_q - 1, n - c_q);
+    	int count = qRowsCount + qDiagCount;
+    	
+    	if (k == 0) return count;
+    	
+    	//TODO: identify the closest obstacle in each 8 directions
+    	
+    	System.out.println(count);
     	//TODO: implement
     	return -1;
     }
