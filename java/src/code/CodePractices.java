@@ -368,18 +368,56 @@ public class CodePractices {
     }
     
     public static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles) {
+    	// if board size 'n' just fit the queen spot, return 0; 
     	if (n == 0 || n == 1) return 0;
     	
-    	int qRowsCount = (n-1) + (n-1);
-    	int qDiagCount = Integer.min( n - r_q , c_q - 1) + Integer.min( r_q - 1 , c_q - 1 ) + 
-    			         Integer.min( n - r_q , n - c_q) + Integer.min( r_q - 1, n - c_q);
-    	int count = qRowsCount + qDiagCount;
+    	// if no obstacles, return all queen's cells to be attacked
+    	if (k == 0) {
+    		int qRowsCount = (n-1) + (n-1);
+    		int qDiagCount = Integer.min( n - r_q , c_q - 1) + Integer.min( r_q - 1 , c_q - 1 ) + 
+    						 Integer.min( n - r_q , n - c_q) + Integer.min( r_q - 1, n - c_q);
+    		return qRowsCount + qDiagCount;
+    	}
     	
-    	if (k == 0) return count;
+    	// Identify the closest obstacle in each 8 directions
+    	int min_distance_ob_left = c_q-1, min_distance_ob_right = k-c_q, min_distance_ob_up = k-r_q, min_distance_ob_under = r_q-1, 
+    		min_distance_ob_left_up = , diag_ob_left_down, diag_ob_right_up, diag_ob_right_down;
     	
-    	//TODO: identify the closest obstacle in each 8 directions
+    	for (int i=0; i<k; i++) {
+    		int r_o = obstacles[k][0], c_o = obstacles[k][1];
+    		
+    		// case same row
+    		if (r_o == r_q) {   
+    			if ( (c_o < c_q) && ((c_q - c_o - 1) < min_distance_ob_left) ) {          // left of the queen
+    				min_distance_ob_left = c_q - c_o - 1;
+    			} else if ( (c_o > c_q) && ((c_o - c_q - 1) < min_distance_ob_right) ) {  // right of the queen
+    				min_distance_ob_right = c_o - c_q - 1;
+    			}
+    		}
+    		
+    		// case same column
+    		if (c_o == c_q) {   
+    			if ( (r_o > r_q) && ((r_o - r_q - 1) < min_distance_ob_up) ) {            // above the queen
+    				min_distance_ob_up = r_o - r_q - 1;
+    			} else if ( (r_o < r_q) && ((r_q - r_o - 1) < min_distance_ob_under) ) {  // under the queen
+    				min_distance_ob_under = r_q - r_o - 1;
+    			}
+    		}
+    		
+    		// case same diagonals
+    		if (Math.abs(r_q - r_o) == Math.abs(c_q - c_o)) {
+    			if ((r_o > r_q) && (c_o < c_q)) {  // diag left - up
+    				
+    			}
+    			
+    		}
+    		    		
+    	}
     	
-    	System.out.println(count);
+    	
+    	   	
+    	
+    	System.out.println("********");
     	//TODO: implement
     	return -1;
     }
