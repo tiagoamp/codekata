@@ -389,22 +389,20 @@ public class CodePractices {
     		
     		// case same row
     		if (r_o == r_q) {   
-    			if ( (c_o < c_q) && ((c_q - c_o - 1) < min_distance_ob_left) ) {          // left of the queen
+    			if ( (c_o < c_q) && ((c_q - c_o - 1) < min_distance_ob_left) ) {       
     				min_distance_ob_left = c_q - c_o - 1;
-    			} else if ( (c_o > c_q) && ((c_o - c_q - 1) < min_distance_ob_right) ) {  // right of the queen
+    			} else if ( (c_o > c_q) && ((c_o - c_q - 1) < min_distance_ob_right) ) {  
     				min_distance_ob_right = c_o - c_q - 1;
     			}
-    		}
-    		
+    		}    		
     		// case same column
     		if (c_o == c_q) {   
-    			if ( (r_o > r_q) && ((r_o - r_q - 1) < min_distance_ob_up) ) {            // above the queen
+    			if ( (r_o > r_q) && ((r_o - r_q - 1) < min_distance_ob_up) ) {            
     				min_distance_ob_up = r_o - r_q - 1;
-    			} else if ( (r_o < r_q) && ((r_q - r_o - 1) < min_distance_ob_down) ) {  // under the queen
+    			} else if ( (r_o < r_q) && ((r_q - r_o - 1) < min_distance_ob_down) ) {  
     				min_distance_ob_down = r_q - r_o - 1;
     			}
-    		}
-    		
+    		}    		
     		// case same diagonals
     		if (Math.abs(r_q - r_o) == Math.abs(c_q - c_o)) {
     			int distance = (Math.abs(r_q - r_o) - 1);
@@ -418,9 +416,6 @@ public class CodePractices {
     				min_distance_ob_right_down = distance;    			
     		}
     	}
-    	
-//    	System.out.println(min_distance_ob_left + " " + min_distance_ob_right + " " + min_distance_ob_up + " " + min_distance_ob_down + " " +  
-//    		min_distance_ob_left_up + " " + min_distance_ob_left_down + " " + min_distance_ob_right_up + " " + min_distance_ob_right_down);
     	
     	int sum = min_distance_ob_left + min_distance_ob_right + min_distance_ob_up + min_distance_ob_down +   
         		  min_distance_ob_left_up + min_distance_ob_left_down + min_distance_ob_right_up + min_distance_ob_right_down;
