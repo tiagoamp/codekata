@@ -421,5 +421,22 @@ public class CodePractices {
         		  min_distance_ob_left_up + min_distance_ob_left_down + min_distance_ob_right_up + min_distance_ob_right_down;
     	return sum;
     }
+    
+    public static String timeConversion(String s) {
+    	if (s.endsWith("AM")) {
+        	if (s.startsWith("12:")) {
+        		String[] timeFields = s.split(":");
+                timeFields[0] = "00";
+                s = String.join(":", timeFields);
+        	}
+        	return s.replace("AM", "");
+        }
+        // pm
+        if (s.startsWith("12:")) return s.replace("PM", "");
+        s = s.replace("PM", "");
+        String[] timeFields = s.split(":");
+        timeFields[0] = String.valueOf(Integer.valueOf(timeFields[0]) + 12);
+        return String.join(":", timeFields);
+    }
         
 }

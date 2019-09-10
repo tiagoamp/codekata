@@ -375,5 +375,30 @@ public class CodePracticesTest {
 		int result2 = queensAttack(n, k, r_q, c_q, obstacles);
 		assertEquals(expected2, result2);
 	}
+	
+	@Test
+	public void testTimeConversion() {
+        String sample0 = "07:05:45PM";
+        String expected0 = "19:05:45";
+        String result = timeConversion(sample0);
+        assertEquals(expected0, result);
+        String sample = "12:00:00AM";
+        String expected = "00:00:00";
+        result = timeConversion(sample);
+        assertEquals(expected, result);
+        sample = "12:00:00PM";
+        expected = "12:00:00";
+        result = timeConversion(sample);
+        assertEquals(expected, result);
+        String sample1 = "12:40:22AM";
+        String expected1 = "00:40:22";
+        result = timeConversion(sample1);
+        assertEquals(expected1, result);
+        String sample4 = "12:45:54PM";
+        String expected4 = "12:45:54";
+        result = timeConversion(sample4);
+        assertEquals(expected4, result);
+        
+    }
 
 }
