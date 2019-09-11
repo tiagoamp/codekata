@@ -205,3 +205,32 @@ test("saveThePrisoner", () => {
 	result = practices.saveThePrisoner(n, m, s);
 	expect(result).toBe(result);
 });
+
+test("appendAndDelete", () => {
+    let s = "hackerhappy", t = "hackerrank"; let k = 9;
+	let result = practices.appendAndDelete(s, t, k);
+	expect(result).toBe("Yes");
+	s = "aba"; t = "aba"; k = 7;
+	result = practices.appendAndDelete(s, t, k);
+	expect(result).toBe("Yes");
+	s = "ashley"; t = "ash"; k = 2;
+    result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("No");
+	s = "y"; t = "yu"; k = 2;
+    result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("No");
+	s = "asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv"; 
+	t = "asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv";
+	k = 20;
+    result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("Yes");
+	s = "abcd"; t = "abcdert"; k = 10;
+    result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("No");
+	s = "abcdef"; t = "fedcba"; k = 15;
+	result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("Yes");
+	s = "aaa"; t = "a"; k = 5;
+	result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("Yes");
+});
