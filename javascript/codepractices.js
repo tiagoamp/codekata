@@ -268,6 +268,22 @@ module.exports = obj = {
     	} 
     	if (k > diffOfS.length+diffOfT.length) return k > 2 ? "Yes" : "No";
     	return (k >= diffOfS.length+diffOfT.length) && (k - diffOfS.length+diffOfT.length)%2==0 ? "Yes" : "No";
-    },    
+    },  
+    
+    repeatedString(s, n) {
+    	if (s.length == 1) return s === "a" ? n : 0;
+    	if (!s.includes("a")) return 0;
+    	let count = 0;
+        for (let i = 0; i < s.length; i++) {
+            const ch = s.charAt(i);
+            if (ch == 'a') count++;
+        }
+        const d = n / s.length;
+        const r =  n % s.length;
+        count *=  Math.trunc(d);
+        for(let i=0;i<r;i++)
+            if(s.charAt(i) == 'a') count++;
+        return count;
+    },
 
 }

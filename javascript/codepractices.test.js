@@ -234,3 +234,16 @@ test("appendAndDelete", () => {
 	result = practices.appendAndDelete(s, t, k);
     expect(result).toBe("Yes");
 });
+
+test("repeatedString", () => {
+    const sample0 = "aba"; const n0 = 10; const expected0 = 7;
+	const sample1 = "a"; const n1 = 1000000000000; const expected1 = 1000000000000;
+	const sample7 = "kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm";
+	const n7 = 736778906400; const expected7 = 51574523448;
+	const result0 = practices.repeatedString(sample0, n0);
+	const result1 = practices.repeatedString(sample1, n1);
+	const result7 = practices.repeatedString(sample7, n7);
+    expect(result0).toBe(expected0);
+    expect(result1).toBe(expected1);
+    expect(result7).toBe(expected7);
+});
