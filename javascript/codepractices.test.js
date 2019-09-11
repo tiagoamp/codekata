@@ -187,3 +187,21 @@ test("climbingLeaderboard", () => {
     for(let i=0; i<expected1.length; i++) 
         expect(result[i]).toEqual(expected2[i]);
 });
+
+test("saveThePrisoner", () => {
+    let n = 5, m = 2, s = 1, expected = 2;
+	let result = practices.saveThePrisoner(n, m, s);
+	expect(result).toBe(expected);
+	n = 5; m = 2; s = 2; expected = 3;
+	result = practices.saveThePrisoner(n, m, s);
+	expect(result).toBe(result);
+	n = 7; m = 19; s = 2; expected = 6;
+	result = practices.saveThePrisoner(n, m, s);
+	expect(expected).toBe(result);
+	n = 3; m = 7; s = 3; expected = 3;
+	result = practices.saveThePrisoner(n, m, s);
+	expect(result).toBe(result);
+	n = 352926151; m = 380324688; s = 94730870; expected = 122129406;
+	result = practices.saveThePrisoner(n, m, s);
+	expect(result).toBe(result);
+});
