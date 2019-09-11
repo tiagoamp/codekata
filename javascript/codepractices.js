@@ -240,6 +240,12 @@ module.exports = obj = {
             if(i<0) result[j] = 1;
         }
         return result;
-    }
+    },
+
+    saveThePrisoner(n, m, s) {
+    	const r = s + (m-1);
+    	if (r <= n) return r;
+    	return (r%n == 0) ? n : r%n;
+    },
 
 }
