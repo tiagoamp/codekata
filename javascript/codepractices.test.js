@@ -205,3 +205,45 @@ test("saveThePrisoner", () => {
 	result = practices.saveThePrisoner(n, m, s);
 	expect(result).toBe(result);
 });
+
+test("appendAndDelete", () => {
+    let s = "hackerhappy", t = "hackerrank"; let k = 9;
+	let result = practices.appendAndDelete(s, t, k);
+	expect(result).toBe("Yes");
+	s = "aba"; t = "aba"; k = 7;
+	result = practices.appendAndDelete(s, t, k);
+	expect(result).toBe("Yes");
+	s = "ashley"; t = "ash"; k = 2;
+    result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("No");
+	s = "y"; t = "yu"; k = 2;
+    result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("No");
+	s = "asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv"; 
+	t = "asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv";
+	k = 20;
+    result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("Yes");
+	s = "abcd"; t = "abcdert"; k = 10;
+    result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("No");
+	s = "abcdef"; t = "fedcba"; k = 15;
+	result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("Yes");
+	s = "aaa"; t = "a"; k = 5;
+	result = practices.appendAndDelete(s, t, k);
+    expect(result).toBe("Yes");
+});
+
+test("repeatedString", () => {
+    const sample0 = "aba"; const n0 = 10; const expected0 = 7;
+	const sample1 = "a"; const n1 = 1000000000000; const expected1 = 1000000000000;
+	const sample7 = "kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm";
+	const n7 = 736778906400; const expected7 = 51574523448;
+	const result0 = practices.repeatedString(sample0, n0);
+	const result1 = practices.repeatedString(sample1, n1);
+	const result7 = practices.repeatedString(sample7, n7);
+    expect(result0).toBe(expected0);
+    expect(result1).toBe(expected1);
+    expect(result7).toBe(expected7);
+});

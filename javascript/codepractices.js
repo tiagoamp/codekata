@@ -248,4 +248,42 @@ module.exports = obj = {
     	return (r%n == 0) ? n : r%n;
     },
 
+    appendAndDelete(s, t, k) {
+    	if (s === t) {
+    		if (k > s.length) return k > 2 ? "Yes" : "No";
+    		else return k%2 == 0 ? "Yes" : "No"; 
+    	}    		
+    	let commonChars = -1;  // find out index until 't' equals 's' 
+    	for (let i = 0; i < s.length; i++) {
+    		if ( (i > (t.length-1)) || s.charAt(i) != t.charAt(i) )
+    			break;
+			commonChars++;  // increment if same char in both strings
+		}
+    	const diffOfS = s.substring(commonChars+1);
+    	const diffOfT = t.substring(commonChars+1);
+    	if (diffOfS.length == 0) {
+    		return k >= diffOfT.length && (k - diffOfT.length)%2 == 0 ? "Yes": "No";
+    	} else if (diffOfT.length == 0) {
+    		return k >= diffOfS.length && (k > s.length || (k - diffOfS.length)%2 == 0) ? "Yes": "No";
+    	} 
+    	if (k > diffOfS.length+diffOfT.length) return k > 2 ? "Yes" : "No";
+    	return (k >= diffOfS.length+diffOfT.length) && (k - diffOfS.length+diffOfT.length)%2==0 ? "Yes" : "No";
+    },  
+    
+    repeatedString(s, n) {
+    	if (s.length == 1) return s === "a" ? n : 0;
+    	if (!s.includes("a")) return 0;
+    	let count = 0;
+        for (let i = 0; i < s.length; i++) {
+            const ch = s.charAt(i);
+            if (ch == 'a') count++;
+        }
+        const d = n / s.length;
+        const r =  n % s.length;
+        count *=  Math.trunc(d);
+        for(let i=0;i<r;i++)
+            if(s.charAt(i) == 'a') count++;
+        return count;
+    },
+
 }
