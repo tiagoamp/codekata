@@ -247,3 +247,26 @@ test("repeatedString", () => {
     expect(result1).toBe(expected1);
     expect(result7).toBe(expected7);
 });
+
+test("queensAttack", () => {
+	let n = 4, k = 0, r_q = 4, c_q = 4; 
+	let obstacles = [];
+	const expected0 = 9;
+	const result0 = practices.queensAttack(n, k, r_q, c_q, obstacles);
+	expect(result0).toBe(expected0);
+	n = 8; k = 0; r_q = 4; c_q = 4; 
+	obstacles = [];
+	const expected = 27;
+	const result = practices.queensAttack(n, k, r_q, c_q, obstacles);
+	expect(result).toBe(expected);
+	n = 5; k = 3; r_q = 4; c_q = 3; 
+	obstacles = [ [5,5], [4,2], [2,3] ];
+	const expected1 = 10;
+	const result1 = practices.queensAttack(n, k, r_q, c_q, obstacles);
+	expect(result1).toBe(expected1);
+	n = 1; k = 0; r_q = 1; c_q = 1; 
+	obstacles = [];
+	const expected2 = 0;
+	const result2 = practices.queensAttack(n, k, r_q, c_q, obstacles);
+	expect(result2).toBe(expected2);
+});
