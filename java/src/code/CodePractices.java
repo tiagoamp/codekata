@@ -1,5 +1,6 @@
 package code;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Arrays;
@@ -450,6 +451,27 @@ public class CodePractices {
     	if ( (password.length() + minCharstoAdd) < MIN_PASS_LEN )
     		minCharstoAdd += MIN_PASS_LEN - (password.length() + minCharstoAdd);
     	return minCharstoAdd;
+    }
+    
+    public static String pangrams(String s) {
+    	final String letters = "abcdefghijklmnopqrstuvxywz";
+    	char[] charArr = letters.toCharArray();
+    	int[] qt = new int[charArr.length];    	
+    	if (s == null || s.length() < charArr.length)
+    		return "not pangram";    	
+    	for (int i=0; i<s.length(); i++) {
+    		char currChar = s.toLowerCase().charAt(i);
+    		for(int j=0; j<charArr.length; j++) {
+    			if (currChar == charArr[j]) {
+    				qt[j]++;
+    				break;
+    			}
+    		}
+    	}    	
+    	boolean result = true;
+    	for(int j=0; j<charArr.length; j++) 
+    		result = result && (qt[j] > 0);
+    	return result ? "pangram" : "not pangram";	
     }
         
 }

@@ -413,5 +413,15 @@ public class CodePracticesTest {
 		result = minimumNumber(n, password);
 		assertEquals(1, result);
 	}
+	
+	@Test
+	public void testPangrams() {
+		String s = "We promptly judged antique ivory buckles for the next prize";
+		String result = pangrams(s);
+		assertEquals("pangram", result);
+		s = "We promptly judged antique ivory buckles for the prize";
+		result = pangrams(s);
+		assertEquals("not pangram", result);
+	}
 
 }
