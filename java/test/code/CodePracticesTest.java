@@ -2,6 +2,7 @@ package code;
 
 import static code.CodePractices.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -422,6 +423,19 @@ public class CodePracticesTest {
 		s = "We promptly judged antique ivory buckles for the prize";
 		result = pangrams(s);
 		assertEquals("not pangram", result);
+	}
+	
+	@Test
+	public void testIsAnagram() {
+		String a = "anagram", b = "margana";
+		boolean result = isAnagram(a, b);
+		assertTrue(result);
+		a = "anagramm"; b = "marganaa";
+		result = isAnagram(a, b);
+		assertFalse(result);
+		a = "Hello"; b = "hello";
+		result = isAnagram(a, b);
+		assertTrue(result);
 	}
 
 }
