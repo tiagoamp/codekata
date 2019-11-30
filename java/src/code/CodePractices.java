@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -437,6 +438,18 @@ public class CodePractices {
         String[] timeFields = s.split(":");
         timeFields[0] = String.valueOf(Integer.valueOf(timeFields[0]) + 12);
         return String.join(":", timeFields);
+    }
+    
+    public static int minimumNumber(int n, String password) {
+    	final int MIN_PASS_LEN = 6;
+    	int minCharstoAdd = 0;
+    	if (!Pattern.compile("[0-9]").matcher(password).find()) minCharstoAdd++;
+    	if (!Pattern.compile("[a-z]").matcher(password).find()) minCharstoAdd++;
+    	if (!Pattern.compile("[A-Z]").matcher(password).find()) minCharstoAdd++;
+    	if (!Pattern.compile("[!@#\\$%^&*()\\-\\+]").matcher(password).find()) minCharstoAdd++;
+    	if ( (password.length() + minCharstoAdd) < MIN_PASS_LEN )
+    		minCharstoAdd += MIN_PASS_LEN - (password.length() + minCharstoAdd);
+    	return minCharstoAdd;
     }
         
 }

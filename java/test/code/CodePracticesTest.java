@@ -400,5 +400,18 @@ public class CodePracticesTest {
         assertEquals(expected4, result);
         
     }
+	
+	@Test
+	public void testMinimumNumber() {
+		int n = 3; String password = "Ab1";
+		int result = minimumNumber(n, password);
+		assertEquals(3, result);
+		n = 11; password = "#HackerRank";
+		result = minimumNumber(n, password);
+		assertEquals(1, result);
+		n = 7; password = "AUzs-nV";
+		result = minimumNumber(n, password);
+		assertEquals(1, result);
+	}
 
 }
