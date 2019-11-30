@@ -19,8 +19,7 @@ public class CodePractices {
 
 	public static int bestDivisor(int input) {     
 		int[] divisors = IntStream.rangeClosed(1, input).filter(i -> input % i == 0).toArray();
-        
-		int[] sums = Arrays.stream(divisors).map(num -> {
+    	int[] sums = Arrays.stream(divisors).map(num -> {
 				int sum = 0;
 				while (num > 0) {
 		            sum = sum + num % 10;
@@ -30,16 +29,13 @@ public class CodePractices {
 			}).toArray();
 
 		int maxSummedNr = Arrays.stream(sums).max().getAsInt();
-		
 		int indexOfMaxSummedNr = 0;		
 		while (sums[indexOfMaxSummedNr] != maxSummedNr) {
 			indexOfMaxSummedNr++;
 		}
-		
 		int bestNumber = divisors[indexOfMaxSummedNr];
 		return bestNumber;
 	}    
-	
 	
 	/* Superdigit = sum of digits until its result has only 1 digit */
 	public static int superdigit(String n, int k) {
@@ -52,8 +48,7 @@ public class CodePractices {
 		if (k > 1) sum *= k;
 		return superdigit(String.valueOf(sum), 1);
 	}
-	
-	
+		
 	public static int[] countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
 		int appleCount = 0;
 		for (int i = 0; i < apples.length; i++) {
@@ -68,19 +63,13 @@ public class CodePractices {
 		return new int[] {appleCount, orangeCount};
     }
 	
-	
-	// MinMaxSum function
-    public static long[] minMaxSum(int[] arr) {
+	public static long[] minMaxSum(int[] arr) {
     	Arrays.sort(arr);
     	long min = 0, max = 0;
     	final int len = 5;    	
     	for (int i = 0; i < arr.length; i++) {
-			if (i < len-1) {
-				min += arr[i];
-			}
-			if (i > 0) {
-				max += arr[i];
-			}
+			if (i < len-1) min += arr[i];
+			if (i > 0) max += arr[i];
 		}
     	return new long[] {min,max};
     }
@@ -115,7 +104,6 @@ public class CodePractices {
 		return count;
     }
 	
-	// kangaroo problem
     public static String kangaroo(int x1, int v1, int x2, int v2) {
     	if (x2 > x1 && v2 >= v1) return "NO";  // second kangaroo is and and is faster than the 1th one 
     	// x1 + n * v1 = x2 + n * v2 , then n = (x2-x1)%(v1-v2) must be == 0 to make them meet
@@ -126,7 +114,6 @@ public class CodePractices {
     public static int[] breakingRecords(int[] scores) {
     	int countMin = 0, countMax = 0;
     	int min = scores[0], max = scores[0];
-    	
     	for (int i = 0; i < scores.length; i++) {
 			if (scores[i] < min) {
 				min = scores[i];
@@ -136,7 +123,6 @@ public class CodePractices {
 				countMax++;
 			}
 		}
-
     	return new int[]{countMax, countMin};
     }
     
@@ -166,11 +152,8 @@ public class CodePractices {
             for(int i = 0; i < list.size(); i++) { // for each color value
             	int val = list.get(i);
             	
-                if(prevIndex == i){
-                    val += prevSec;
-                }else{
-                    val += prevMin;
-                }
+                if(prevIndex == i) val += prevSec;
+                else val += prevMin;
                 list.set(i, val);
      
                 if(currMin > val){
