@@ -5,6 +5,7 @@ import java.time.Period;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -16,9 +17,6 @@ import java.util.stream.IntStream;
 
 public class CodePractices {
 
-	/* Given two positive different numbers: 
-     * The number whose digits sum to a larger number is better than the other. 
-     * If the sum of digits is equal for both numbers, then the smaller number is better. */
 	public static int bestDivisor(int input) {     
 		int[] divisors = IntStream.rangeClosed(1, input).filter(i -> input % i == 0).toArray();
         
@@ -160,9 +158,7 @@ public class CodePractices {
         if (cost == null || cost.isEmpty()) return 0;
         if (cost.size() == 1) return Collections.min(cost.get(0));
         
-        int prevMin=0;
-        int prevSec=0;
-        int prevIndex=-1; 
+        int prevMin=0 , prevSec=0, prevIndex=-1; 
      
         for(List<Integer> list : cost){ // for each blocks list
         	int currMin=Integer.MAX_VALUE, currSec = Integer.MAX_VALUE, currIndex = 0;
@@ -451,5 +447,38 @@ public class CodePractices {
     		minCharstoAdd += MIN_PASS_LEN - (password.length() + minCharstoAdd);
     	return minCharstoAdd;
     }
-        
+    
+    public static String pangrams(String s) {
+    	final String letters = "abcdefghijklmnopqrstuvxywz";
+    	char[] charArr = letters.toCharArray();
+    	int[] qt = new int[charArr.length];    	
+    	if (s == null || s.length() < charArr.length)
+    		return "not pangram";    	
+    	for (int i=0; i<s.length(); i++) {
+    		char currChar = s.toLowerCase().charAt(i);
+    		for(int j=0; j<charArr.length; j++) {
+    			if (currChar == charArr[j]) {
+    				qt[j]++;
+    				break;
+    			}
+    		}
+    	}    	
+    	boolean result = true;
+    	for(int j=0; j<charArr.length; j++) 
+    		result = result && (qt[j] > 0);
+    	return result ? "pangram" : "not pangram";	
+    }
+    
+    public static boolean isAnagram(String a, String b) {
+    	if (a.length() != b.length()) return false;
+    	int len = a.length();
+    	Map<Character, Integer> resultFrequency = new HashMap<>();
+    	for(int i=0; i<len; i++) 
+    		resultFrequency.compute(a.toLowerCase().charAt(i), (k,v) -> (v == null) ? 1 : v+1);
+    	for(int i=0; i<len; i++) 
+    		resultFrequency.computeIfPresent(b.toLowerCase().charAt(i), (k,v) -> v-1);
+    	Integer absSum = resultFrequency.values().stream().reduce(0, (x,y) -> Math.abs(x)+Math.abs(y));
+    	return absSum == 0;
+    }
+
 }
