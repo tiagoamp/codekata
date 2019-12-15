@@ -1,5 +1,13 @@
 const practices = require('./codepractices.js');
 
+test("pangrams", () => {
+	let s = "We promptly judged antique ivory buckles for the next prize";
+	let result = practices.pangrams(s);
+	expect(result).toBe("pangram");
+	s = "We promptly judged antique ivory buckles for the prize";
+	result = practices.pangrams(s);
+	expect(result).toBe("not pangram");
+}),
 
 test("queensAttack", () => {
 	let n = 4, k = 0, r_q = 4, c_q = 4; 
