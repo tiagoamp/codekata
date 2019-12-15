@@ -1,5 +1,26 @@
 module.exports = obj = {
 
+	pangrams(s) {
+    	const letters = "abcdefghijklmnopqrstuvxywz";
+    	let charArr = letters.split('');
+    	let qt = Array(charArr.length).fill(0);    	
+    	if (s == null || s.length < charArr.length)
+    		return "not pangram";    	
+    	for (let i=0; i<s.length; i++) {
+    		const currChar = s.toLowerCase().charAt(i);
+    		for(let j=0; j<charArr.length; j++) {
+    			if (currChar == charArr[j]) {
+    				qt[j]++;
+    				break;
+    			}
+    		}
+    	}    	
+    	let result = true;
+    	for(let j=0; j<charArr.length; j++) 
+    		result = result && (qt[j] > 0);
+    	return result ? "pangram" : "not pangram";	
+    },
+
 	queensAttack(n, k, r_q, c_q, obstacles) {
     	// if board size just fit the queen spot, return 0 
     	if (n == 0 || n == 1) return 0;
