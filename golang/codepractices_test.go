@@ -4,6 +4,7 @@ import (
 	"testing"
 )
 
+// https://www.hackerrank.com/challenges/utopian-tree/problem
 func TestUtopianTree(t *testing.T) {
 	type testpair struct {
 		input  int
@@ -22,6 +23,7 @@ func TestUtopianTree(t *testing.T) {
 	}
 }
 
+// https://www.hackerrank.com/challenges/the-hurdle-race/problem
 func TestHurdleRace(t *testing.T) {
 	k0 := 4
 	k1 := 7
@@ -37,6 +39,7 @@ func TestHurdleRace(t *testing.T) {
 	}
 }
 
+// https://www.hackerrank.com/challenges/grading/problem
 func TestGradingStudents(t *testing.T) {
 	input := []int{73, 67, 38, 33}
 	expected := []int{75, 67, 40, 33}
@@ -48,6 +51,7 @@ func TestGradingStudents(t *testing.T) {
 	}
 }
 
+// https://www.hackerrank.com/challenges/cats-and-a-mouse/problem
 func TestCatAndMouse(t *testing.T) {
 	type testpair struct {
 		x      int
@@ -83,6 +87,7 @@ func TestBigSorting(t *testing.T) {
 	}
 }
 
+// https://www.hackerrank.com/challenges/the-birthday-bar/problem
 func TestBirthdayChoc(t *testing.T) {
 	type testpair struct {
 		inputArr []int
@@ -105,6 +110,7 @@ func TestBirthdayChoc(t *testing.T) {
 	}
 }
 
+// https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
 func TestBreakingRecords(t *testing.T) {
 	type testpair struct {
 		values    []int
@@ -133,6 +139,7 @@ func TestFibonacci(t *testing.T) {
 	}
 }
 
+// https://www.hackerrank.com/challenges/mini-max-sum/problem
 func TestMinMaxSum(t *testing.T) {
 	type testpair struct {
 		values []int
@@ -151,6 +158,7 @@ func TestMinMaxSum(t *testing.T) {
 	}
 }
 
+// https://www.hackerrank.com/challenges/staircase/problem
 func TestStaircase(t *testing.T) {
 	n := 6
 	result := Staircase(n)
@@ -183,6 +191,7 @@ func TestStaircase(t *testing.T) {
 	}
 }
 
+// https://www.hackerrank.com/challenges/apple-and-orange/problem
 func TestCountApplesAndOranges(t *testing.T) {
 	type testpair struct {
 		values      []int
