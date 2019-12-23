@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
-	
+	// https://www.hackerrank.com/challenges/java-anagrams/problem
 	@Test
 	public void testIsAnagram() {
 		String a = "anagram", b = "margana";
@@ -27,6 +27,7 @@ public class CodePracticesTest {
 		assertTrue(result);
 	}
 	
+	// https://www.hackerrank.com/challenges/pangrams/problem
 	@Test
 	public void testPangrams() {
 		String s = "We promptly judged antique ivory buckles for the next prize";
@@ -50,6 +51,7 @@ public class CodePracticesTest {
 		assertEquals(1, result);
 	}
 
+	// https://www.hackerrank.com/challenges/time-conversion/problem
 	@Test
 	public void testTimeConversion() {
         String sample0 = "07:05:45PM", expected0 = "19:05:45";
@@ -69,6 +71,7 @@ public class CodePracticesTest {
         assertEquals(expected4, result);        
     }
 	
+	// https://www.hackerrank.com/challenges/queens-attack-2/problem
 	@Test
 	public void testQueensAttack() {
 		int n = 4, k = 0, r_q = 4, c_q = 4; 
@@ -96,6 +99,7 @@ public class CodePracticesTest {
 		assertEquals(expected2, result2);
 	}
 
+	// https://www.hackerrank.com/challenges/library-fine/problem
 	@Test
 	public void testLibraryFine() {
 		int d1=9, m1=6, y1=2015;
@@ -115,6 +119,7 @@ public class CodePracticesTest {
 		assertEquals(expected, result);
 	}
 	
+	// https://www.hackerrank.com/challenges/repeated-string/problem
 	@Test
 	public void testRepeatedString() {
 		String sample0 = "aba"; long n0 = 10L; long expected0 = 7;
@@ -129,6 +134,7 @@ public class CodePracticesTest {
 		assertEquals(expected7, result7);
     }
 	
+	// https://www.hackerrank.com/challenges/append-and-delete/problem
 	@Test 
 	public void testAppendAndDelete() {
 		String s = "hackerhappy", t = "hackerrank"; int k = 9;
@@ -159,6 +165,7 @@ public class CodePracticesTest {
 		assertEquals("Yes", result);
     }
 	
+	// https://www.hackerrank.com/challenges/save-the-prisoner/problem
 	@Test
 	public void testSaveThePrisoner() {
 		int n = 5, m = 2, s = 1, expected = 2;
@@ -178,6 +185,7 @@ public class CodePracticesTest {
 		assertEquals(expected, result);
 	}
 	
+	// https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
 	@Test
 	public void testClimbingLeaderboard() {
 		int[] scores1 = {100, 100, 50, 40, 40, 20, 10};
@@ -204,6 +212,7 @@ public class CodePracticesTest {
 			assertEquals(expected3[i], result[i]);
 	}
 	
+	// https://www.hackerrank.com/challenges/picking-numbers/problem
 	@Test
 	public void testPickingNumbers() {
 		List<Integer> sample0 = Arrays.asList(4, 6, 5, 3, 3, 1);
@@ -216,6 +225,7 @@ public class CodePracticesTest {
 		assertEquals(expected1, result);
 	}
 	
+	// https://www.hackerrank.com/challenges/magic-square-forming/problem
 	@Test
 	public void testFormingMagicSquare() {
 		int[][] sample0 = { {4,9,2},{3,5,7},{8,1,5} };
@@ -227,6 +237,7 @@ public class CodePracticesTest {
 		assertEquals(expectedResult1, result);
 	}
 	
+	// https://www.hackerrank.com/challenges/utopian-tree/problem
 	@Test
 	public void testUtopianTree() {
 		Integer[] inputs = {0, 1, 4}, expected = {1, 2, 7};
@@ -234,6 +245,7 @@ public class CodePracticesTest {
 			assertEquals(expected[i].intValue(), utopianTree(inputs[i]));
 	}
 	
+	// https://www.hackerrank.com/challenges/the-hurdle-race/problem
 	@Test
 	public void testHurdleRace() {
 		int k0 = 4, k1 = 7;
@@ -244,6 +256,7 @@ public class CodePracticesTest {
 		assertEquals(0, result);
 	}
 	
+	// https://www.hackerrank.com/challenges/grading/problem
 	@Test
 	public void testGradingStudents() {
 		List<Integer> input = Arrays.asList(73, 67, 38, 33);
@@ -253,6 +266,7 @@ public class CodePracticesTest {
 			assertEquals(expected.get(i), result.get(i));
 	}
 	
+	// https://www.hackerrank.com/challenges/cats-and-a-mouse/problem
 	@Test
 	public void testCatAndMouse() {
 		int x = 1, y = 2, z = 3;
@@ -263,6 +277,7 @@ public class CodePracticesTest {
 		assertEquals("Mouse C", result);
 	}
 	
+	// https://www.hackerrank.com/challenges/big-sorting/problem
 	@Test
 	public void testBigSorting() {
 		String[] input = {"1", "2", "100", "12303479849857341718340192371", "3084193741082937", "3084193741082938", "111", "200"};
@@ -271,6 +286,7 @@ public class CodePracticesTest {
 		assertEquals(Arrays.toString(expectedArr), Arrays.toString(result));
 	}
 	
+	// https://www.hackerrank.com/challenges/the-birthday-bar/problem
 	@Test
 	public void testBirthdayChoc() {
 		List<Integer> s = Arrays.asList(1, 2, 1, 3, 2);
@@ -310,6 +326,7 @@ public class CodePracticesTest {
 		assertEquals(12, result);
 	}
 	
+	// https://www.hackerrank.com/challenges/sock-merchant/problem
 	@Test
 	public void testSockMerchant() {
 		int n = 9;
@@ -322,6 +339,7 @@ public class CodePracticesTest {
 		assertEquals(4, result);		
 	}
 	
+	// https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
 	@Test
 	public void testBreakingRecords() {
 		int[] sample0 = {10, 5, 20, 20, 4, 5, 2, 25, 1};
@@ -334,6 +352,7 @@ public class CodePracticesTest {
 		assertEquals(0, result[1]);		
 	}
 	
+	// https://www.hackerrank.com/challenges/birthday-cake-candles/problem
 	@Test
 	public void testBirthdayCakeCandles() {
 		int[] arr = {3, 2, 1, 3};
@@ -348,6 +367,7 @@ public class CodePracticesTest {
 		assertEquals(100000, result);		
 	}
 	
+	// https://www.hackerrank.com/challenges/staircase/problem
 	@Test
 	public void testStaircase() {
 		int n = 6;
@@ -363,6 +383,7 @@ public class CodePracticesTest {
 		assertEquals(55, result);
 	}
 	
+	// https://www.hackerrank.com/challenges/mini-max-sum/problem
 	@Test
 	public void testMinMaxSum() {
 		int[] arr = {1, 2, 3, 4, 5};
@@ -371,6 +392,7 @@ public class CodePracticesTest {
 		assertEquals(14L, result[1]);
 	}
 	
+	// https://www.hackerrank.com/challenges/apple-and-orange/problem
 	@Test
 	public void testCountApplesAndOranges() {
 		// sample case
@@ -389,6 +411,7 @@ public class CodePracticesTest {
 		assertEquals(1, result[1]);
 	}
 	
+	// https://www.hackerrank.com/challenges/super-digit/problem
 	@Test
 	public void testSuperdit() {
 		String n = "148"; int k = 3, expected = 3, result = 0;
@@ -406,6 +429,7 @@ public class CodePracticesTest {
 		assertTrue(result > 0);
 	}
 	
+	// https://www.hackerrank.com/challenges/best-divisor/problem
 	@Test
 	public void test_bestDivisor() {
 		int sample = 12, expectedVal = 6;
