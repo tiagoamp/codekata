@@ -1,5 +1,6 @@
 const practices = require('./codepractices.js');
 
+// https://www.hackerrank.com/challenges/pangrams/problem
 test("pangrams", () => {
 	let s = "We promptly judged antique ivory buckles for the next prize";
 	let result = practices.pangrams(s);
@@ -9,6 +10,7 @@ test("pangrams", () => {
 	expect(result).toBe("not pangram");
 }),
 
+// https://www.hackerrank.com/challenges/queens-attack-2/problem
 test("queensAttack", () => {
 	let n = 4, k = 0, r_q = 4, c_q = 4; 
 	let obstacles = [];
@@ -32,6 +34,7 @@ test("queensAttack", () => {
 	expect(result2).toBe(expected2);
 });
 
+// https://www.hackerrank.com/challenges/repeated-string/problem
 test("repeatedString", () => {
     const sample0 = "aba"; const n0 = 10; const expected0 = 7;
 	const sample1 = "a"; const n1 = 1000000000000; const expected1 = 1000000000000;
@@ -45,6 +48,7 @@ test("repeatedString", () => {
     expect(result7).toBe(expected7);
 });
 
+// https://www.hackerrank.com/challenges/append-and-delete/problem
 test("appendAndDelete", () => {
     let s = "hackerhappy", t = "hackerrank"; let k = 9;
 	let result = practices.appendAndDelete(s, t, k);
@@ -74,6 +78,7 @@ test("appendAndDelete", () => {
     expect(result).toBe("Yes");
 });
 
+// https://www.hackerrank.com/challenges/save-the-prisoner/problem
 test("saveThePrisoner", () => {
     let n = 5, m = 2, s = 1, expected = 2;
 	let result = practices.saveThePrisoner(n, m, s);
@@ -92,6 +97,7 @@ test("saveThePrisoner", () => {
 	expect(result).toBe(result);
 });
 
+// https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
 test("climbingLeaderboard", () => {
     const scores1 = [100, 100, 50, 40, 40, 20, 10];
 	const alice1 = [5, 25, 50, 120];
@@ -107,6 +113,7 @@ test("climbingLeaderboard", () => {
         expect(result[i]).toEqual(expected2[i]);
 });
 
+// https://www.hackerrank.com/challenges/magic-square-forming/problem
 test("formingMagicSquare", () => {
     const sample0 = [ [4,9,2],[3,5,7],[8,1,5] ];
 	const sample1 = [ [4,8,2],[4,5,7],[6,1,6] ];
@@ -117,6 +124,7 @@ test("formingMagicSquare", () => {
 	expect(result).toEqual(expectedResult1);
 });
 
+// https://www.hackerrank.com/challenges/utopian-tree/problem
 test("utopianTree", () => {
     const inputs = [0, 1, 4];
 	const expected = [1, 2, 7];
@@ -124,6 +132,7 @@ test("utopianTree", () => {
         expect(expected[i]).toEqual(practices.utopianTree(inputs[i]));
 });
 
+// https://www.hackerrank.com/challenges/the-hurdle-race/problem
 test("hurdleRace", () => {
     const k0 = 4, k1 = 7;
     const height0 = [1, 6, 3, 5, 2], height1 = [2, 5, 4, 5, 2];
@@ -133,6 +142,7 @@ test("hurdleRace", () => {
     expect(0).toEqual(result);
 });
 
+// https://www.hackerrank.com/challenges/grading/problem
 test("gradingStudents", () => {
     const input = [73, 67, 38, 33];
 	const expected = [75,67,40,33];
@@ -142,6 +152,7 @@ test("gradingStudents", () => {
 	}
 });
 
+// https://www.hackerrank.com/challenges/cats-and-a-mouse/problem
 test("catAndMouse", () => {
     let x = 1, y = 2, z = 3;
 	let result = practices.catAndMouse(x, y, z);
@@ -151,6 +162,7 @@ test("catAndMouse", () => {
     expect(result).toEqual("Mouse C");
 });
 
+// https://www.hackerrank.com/challenges/big-sorting/problem
 test("bigSorting", () => {
     let input = ["1", "2", "100", "12303479849857341718340192371", "3084193741082937", "3084193741082938", "111", "200"];
     let result = practices.bigSorting(input);
@@ -158,6 +170,7 @@ test("bigSorting", () => {
     expect(result).toEqual(expectedArr);
 });
 
+// https://www.hackerrank.com/challenges/the-birthday-bar/problem
 test("birthdayChoc", () => {
     let s = [1, 2, 1, 3, 2];
 	let d = 3, m = 2;
@@ -172,6 +185,7 @@ test("birthdayChoc", () => {
 	expect(result).toEqual(3);
 });
 
+// https://www.hackerrank.com/challenges/sock-merchant/problem
 test("sockMerchant", () => {
     let n = 9;
     let arr = [10, 20, 20, 10, 10, 30, 50, 10, 20];
@@ -183,6 +197,7 @@ test("sockMerchant", () => {
     expect(result).toEqual(4);
 });
 
+// https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
 test("breakingRecords", () => {
     const sample0 = [10, 5, 20, 20, 4, 5, 2, 25, 1];
 	let result = practices.breakingRecords(sample0);
@@ -206,6 +221,7 @@ test("kangaroo", () => {
     expect(result).toEqual("NO");
 });
 
+// https://www.hackerrank.com/challenges/birthday-cake-candles/problem
 test("birthdayCakeCandles", () => {
     let arr = [3, 2, 1, 3];
 	let result = practices.birthdayCakeCandles(arr);
@@ -217,6 +233,7 @@ test("birthdayCakeCandles", () => {
 	expect(result).toEqual(100000);
 });
 
+// https://www.hackerrank.com/challenges/staircase/problem
 test("Staircase", () => {
     const n = 6;
     const result = practices.staircase(n);
@@ -230,6 +247,7 @@ test("Fibonacci", () => {
     expect(result).toEqual(55);
 });
 
+// https://www.hackerrank.com/challenges/mini-max-sum/problem
 test("minMaxSum", () => {
     const arr = [1, 2, 3, 4, 5];
     const result = practices.minMaxSum(arr);
@@ -237,6 +255,7 @@ test("minMaxSum", () => {
     expect(result[1]).toEqual(14);    
 });
 
+// https://www.hackerrank.com/challenges/apple-and-orange/problem
 test("CountApplesAndOranges", () => {
     // sample case
     let s = 7, t = 11;  // house
@@ -254,6 +273,7 @@ test("CountApplesAndOranges", () => {
     expect(result[1]).toEqual(1);
 });
 
+// https://www.hackerrank.com/challenges/super-digit/problem
 test("Superdigit", () => {
     let n = "148"; k = 3, expected = 3, result = 0;
     result = practices.superdigit(n,k);
@@ -269,6 +289,7 @@ test("Superdigit", () => {
     expect(result).toBeGreaterThan(0);
 });
 
+// https://www.hackerrank.com/challenges/best-divisor/problem
 test('Best Divisor', () => {
     const sample = 12; 
     const expectedVal = 6;
