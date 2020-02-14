@@ -13,6 +13,14 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
+	// https://www.hackerrank.com/challenges/java-string-compare/problem
+	@Test
+	public void testGetSmallestAndLargest() {
+		String s = "welcometojava"; int k = 3;
+		String result = getSmallestAndLargest(s, k);
+		assertTrue(result.contains("ava") && result.contains("wel"));
+	}
+	
 	// https://www.hackerrank.com/challenges/java-anagrams/problem
 	@Test
 	public void testIsAnagram() {
