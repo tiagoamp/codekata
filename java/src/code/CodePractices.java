@@ -2,6 +2,7 @@ package code;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -16,6 +17,15 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class CodePractices {
+	
+	public static String getSmallestAndLargest(String s, int k) {
+        List<String> substrings = new ArrayList<>();
+        for(int i=0; i<=s.length()-k; i++) 
+        	substrings.add(s.substring(i, i+k));
+        String smallest = substrings.stream().sorted().min(String::compareTo).get();
+        String largest = substrings.stream().sorted().max(String::compareTo).get();
+        return smallest + "\n" + largest;
+    }
 	
 	public static boolean isAnagram(String a, String b) {
     	if (a.length() != b.length()) return false;
