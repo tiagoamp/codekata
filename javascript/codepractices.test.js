@@ -1,5 +1,12 @@
 const practices = require('./codepractices.js');
 
+// https://www.hackerrank.com/challenges/java-string-compare/problem
+test("getSmallestAndLargest", () => {
+	const s = "welcometojava", k = 3;
+	const result = practices.getSmallestAndLargest(s, k);
+	expect(result).toBe("ava" + "\n" + "wel");
+}),
+
 // https://www.hackerrank.com/challenges/pangrams/problem
 test("pangrams", () => {
 	let s = "We promptly judged antique ivory buckles for the next prize";
