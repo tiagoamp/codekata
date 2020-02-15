@@ -1,5 +1,14 @@
 module.exports = obj = {
 
+	getSmallestAndLargest(s, k) {
+        const substrings = [];
+        for(let i=0; i<=s.length-k; i++) 
+        	substrings.push(s.substr(i, k));
+        const smallest = substrings.sort()[0];
+        const largest = substrings.sort()[substrings.length-1];
+        return smallest + "\n" + largest;
+	},
+	
 	pangrams(s) {
     	const letters = "abcdefghijklmnopqrstuvxywz";
     	let charArr = letters.split('');
