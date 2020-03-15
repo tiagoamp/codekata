@@ -1,5 +1,12 @@
 const practices = require('./codepractices.js');
 
+// https://www.hackerrank.com/challenges/counting-valleys/problem
+test("countingValleys", () => {
+	const n = 8, s = "UDDDUDUU";
+	const result = practices.countingValleys(n, s);
+	expect(result).toBe(1);		
+}),
+
 // https://www.hackerrank.com/challenges/java-string-compare/problem
 test("getSmallestAndLargest", () => {
 	const s = "welcometojava", k = 3;
