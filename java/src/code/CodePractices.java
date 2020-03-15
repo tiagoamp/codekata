@@ -18,6 +18,20 @@ import java.util.stream.IntStream;
 
 public class CodePractices {
 	
+	public static int countingValleys(int n, String s) {
+		int countOfValleys = 0, path = 0, seaLevel = 0;
+		boolean enteredValley = false;		
+		for (int i = 0; i < n; i++) {
+			Character letter = s.charAt(i);
+			if (letter.equals('U')) path += 1;
+			else if (letter.equals('D')) path -= 1;
+			if (path == seaLevel && enteredValley)
+				countOfValleys++;
+			enteredValley = path < 0;
+		}
+		return countOfValleys;
+    }
+	
 	public static String getSmallestAndLargest(String s, int k) {
         List<String> substrings = new ArrayList<>();
         for(int i=0; i<=s.length()-k; i++) 

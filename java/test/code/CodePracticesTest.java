@@ -13,6 +13,14 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
+	// https://www.hackerrank.com/challenges/counting-valleys/problem
+	@Test
+	public void testCountingValleys() {
+		int n = 8; String s = "UDDDUDUU";
+		int result = countingValleys(n, s);
+		assertEquals(1, result);		
+	}
+	
 	// https://www.hackerrank.com/challenges/java-string-compare/problem
 	@Test
 	public void testGetSmallestAndLargest() {
