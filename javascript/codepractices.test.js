@@ -1,5 +1,14 @@
 const practices = require('./codepractices.js');
 
+// https://www.hackerrank.com/challenges/plus-minus/problem
+test("plusMinus", () => {
+	const input = [-4, 3, -9, 0, 4, 1];
+	const result = practices.plusMinus(input);
+	expect(result[0]).toBe(0.500000.toFixed(6));
+	expect(result[1]).toBe(0.333333.toFixed(6));
+	expect(result[2]).toBe(0.166667.toFixed(6));
+}),
+
 // https://www.hackerrank.com/challenges/counting-valleys/problem
 test("countingValleys", () => {
 	const n = 8, s = "UDDDUDUU";

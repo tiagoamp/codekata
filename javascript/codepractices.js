@@ -1,5 +1,20 @@
 module.exports = obj = {
 
+	plusMinus(arr) {
+		let positives = 0, negatives = 0, zeros = 0;
+		for (let i = 0; i < arr.length; i++) {
+			if (arr[i] == 0) zeros++;
+			else if (arr[i] > 0) positives++;
+			else negatives++;
+		}
+		const length = arr.length;
+		const results = [];
+		results.push( (positives / length).toFixed(6) );
+		results.push( (negatives / length).toFixed(6) );
+		results.push( (zeros / length).toFixed(6) );
+		return results;
+    },
+
 	countingValleys(n, s) {
 		let countOfValleys = 0, path = 0, enteredValley = false;
 		const seaLevel = 0;		
