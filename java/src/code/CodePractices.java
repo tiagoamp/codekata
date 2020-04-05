@@ -9,6 +9,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -17,6 +18,21 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class CodePractices {
+	
+	public static String[] plusMinus(int[] arr) {
+		int positives = 0, negatives = 0, zeros = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == 0) zeros++;
+			else if (arr[i] > 0) positives++;
+			else negatives++;
+		}
+		int length = arr.length;
+		String[] results = new String[3];
+		results[0] = String.format(Locale.US, "%.06f", ((double) positives) / ((double) length));
+		results[1] = String.format(Locale.US, "%.06f", ((double) negatives) / ((double) length));
+		results[2] = String.format(Locale.US, "%.06f", ((double) zeros) / ((double) length));
+		return results;
+    }
 	
 	public static int countingValleys(int n, String s) {
 		int countOfValleys = 0, path = 0, seaLevel = 0;
