@@ -19,6 +19,17 @@ import java.util.stream.IntStream;
 
 public class CodePractices {
 	
+	public static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+		List<Integer> results = new ArrayList<>();
+		for (int i = 0; i < keyboards.length; i++) {
+			for (int j = 0; j < drives.length; j++) {
+				int sum = keyboards[i] + drives[j];
+				if (b >= sum) results.add(sum);
+			}
+		}
+		return results.isEmpty() ? -1 : Collections.max(results);
+	}
+	
 	public static String[] plusMinus(int[] arr) {
 		int positives = 0, negatives = 0, zeros = 0;
 		for (int i = 0; i < arr.length; i++) {

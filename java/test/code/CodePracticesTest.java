@@ -13,6 +13,19 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
+	// https://www.hackerrank.com/challenges/electronics-shop/problem
+	@Test
+	public void testGetMoneySpent() {
+		int[] keyboards0 = {3,1}, drives0 = {5,2,8}; 
+		int b = 10, expected = 9;
+		int result = getMoneySpent(keyboards0, drives0, b);
+		assertEquals(expected, result);
+		int[] keyboards1 = {4}, drives1 = {5}; 
+		b = 5; expected = -1;
+		result = getMoneySpent(keyboards1, drives1, b);
+		assertEquals(expected, result);
+	}
+	
 	// https://www.hackerrank.com/challenges/plus-minus/problem
 	@Test
 	public void testPlusMinus() {
