@@ -1,5 +1,16 @@
 module.exports = obj = {
 
+	getMoneySpent(keyboards, drives, b) {
+		const results = [];
+		for (let i = 0; i < keyboards.length; i++) {
+			for (let j = 0; j < drives.length; j++) {
+				const sum = keyboards[i] + drives[j];
+				if (b >= sum) results.push(sum);
+			}
+		}
+		return results.length === 0 ? -1 : Math.max(...results);
+	},
+
 	plusMinus(arr) {
 		let positives = 0, negatives = 0, zeros = 0;
 		for (let i = 0; i < arr.length; i++) {

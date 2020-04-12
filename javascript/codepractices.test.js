@@ -1,5 +1,17 @@
 const practices = require('./codepractices.js');
 
+// https://www.hackerrank.com/challenges/electronics-shop/problem
+test("getMoneySpent", () => {
+	let keyboards = [3,1], drives = [5,2,8]; 
+	let b = 10, expected = 9;
+	let result = practices.getMoneySpent(keyboards, drives, b);
+	expect(result).toBe(expected);
+	keyboards = [4]; drives = [5]; 
+	b = 5; expected = -1;
+	result = practices.getMoneySpent(keyboards, drives, b);
+	expect(result).toBe(expected);
+}),
+
 // https://www.hackerrank.com/challenges/plus-minus/problem
 test("plusMinus", () => {
 	const input = [-4, 3, -9, 0, 4, 1];
