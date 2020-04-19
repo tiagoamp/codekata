@@ -9,7 +9,7 @@ internal class CodePracticesKtTest {
 
     // https://www.hackerrank.com/challenges/electronics-shop/problem
     @Test
-    fun testGetMoneySpent() {
+    fun `test getMoneySpent`() {
         val keyboards0 = intArrayOf(3, 1)
         val drives0 = intArrayOf(5, 2, 8)
         var b = 10; var expected = 9
@@ -24,7 +24,7 @@ internal class CodePracticesKtTest {
 
     // https://www.hackerrank.com/challenges/queens-attack-2/problem
     @Test
-    fun testQueensAttack() {
+    fun `test queensAttack`() {
         var n = 4; var k = 0
         var r_q = 4; var c_q = 4
         var obstacles = Array(0) { IntArray(2) }
@@ -53,7 +53,7 @@ internal class CodePracticesKtTest {
 
     // https://www.hackerrank.com/challenges/save-the-prisoner/problem
     @Test
-    fun testSaveThePrisoner() {
+    fun `test saveThePrisoner`() {
         var n = 5; var m = 2; var s = 1
         var expected = 2
         var result = saveThePrisoner(n, m, s)
@@ -78,7 +78,7 @@ internal class CodePracticesKtTest {
 
     // https://www.hackerrank.com/challenges/magic-square-forming/problem
     @Test
-    fun testFormingMagicSquare() {
+    fun `test formingMagicSquare`() {
         val sample0 = arrayOf(intArrayOf(4, 9, 2), intArrayOf(3, 5, 7), intArrayOf(8, 1, 5))
         val sample1 = arrayOf(intArrayOf(4, 8, 2), intArrayOf(4, 5, 7), intArrayOf(6, 1, 6))
         val expectedResult0 = 1; val expectedResult1 = 4
@@ -90,7 +90,7 @@ internal class CodePracticesKtTest {
 
     // https://www.hackerrank.com/challenges/utopian-tree/problem
     @Test
-    fun testUtopianTree() {
+    fun `test utopianTree`() {
         val inputs = arrayOf(0, 1, 4)
         val expected = arrayOf(1, 2, 7)
         for (i in inputs.indices) assertEquals(expected[i], utopianTree(inputs[i]))
