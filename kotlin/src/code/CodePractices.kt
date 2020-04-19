@@ -1,5 +1,30 @@
 package code
 
+import kotlin.collections.HashSet
+import kotlin.collections.List
+import kotlin.collections.MutableSet
+import kotlin.collections.filter
+import kotlin.collections.indexOf
+import kotlin.collections.indices
+import kotlin.collections.map
+import kotlin.collections.max
+import kotlin.collections.sort
+
+
+fun birthdayChoc(s: List<Int>?, d: Int, m: Int): Int {
+    var m = m; var result = 0; var index = 0
+    if (s == null || s.isEmpty()) return result
+    var isOver = m > s.size
+    while (!isOver) {
+        val inner = s.subList(index, m)
+        val sum = inner.stream().reduce(0) { x: Int, y: Int -> x + y }
+        if (sum.toInt() == d) result++
+        index++
+        m++
+        isOver = m > s.size
+    }
+    return result
+}
 
 fun sockMerchant(n: Int, arr: IntArray): Int {
     val colors: MutableSet<Int> = HashSet()

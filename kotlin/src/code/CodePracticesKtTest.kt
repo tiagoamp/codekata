@@ -4,11 +4,28 @@ import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
+
 internal class CodePracticesKtTest {
+
+    // https://www.hackerrank.com/challenges/the-birthday-bar/problem
+    @Test
+    fun `test birthdayChoc`() {
+        var s = listOf(1, 2, 1, 3, 2)
+        var d = 3; var m = 2
+        var result = birthdayChoc(s, d, m)
+        assertEquals(2, result)
+        s = listOf(1, 1, 1, 1, 1, 1)
+        result = birthdayChoc(s, d, m)
+        assertEquals(0, result)
+        s = listOf(2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1)
+        d = 18; m = 7
+        result = birthdayChoc(s, d, m)
+        assertEquals(3, result)
+    }
 
     // https://www.hackerrank.com/challenges/sock-merchant/problem
     @Test
-    fun testSockMerchant() {
+    fun `test sockMerchant`() {
         var n = 9
         var arr = intArrayOf(10, 20, 20, 10, 10, 30, 50, 10, 20)
         var result = sockMerchant(n, arr)
@@ -21,7 +38,7 @@ internal class CodePracticesKtTest {
 
     // https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
     @Test
-    fun testBreakingRecords() {
+    fun `test breakingRecords`() {
         val sample0 = intArrayOf(10, 5, 20, 20, 4, 5, 2, 25, 1)
         var result = breakingRecords(sample0)
         assertEquals(2, result!![0])
