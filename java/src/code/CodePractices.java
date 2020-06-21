@@ -19,6 +19,12 @@ import java.util.stream.IntStream;
 
 public class CodePractices {
 	
+	public static String bonAppetit(List<Integer> bill, int k, int b) {
+		Integer total = bill.stream().reduce(0, (acc, e) -> acc + e);
+		Integer actualCharge = (total - bill.get(k)) / 2; 
+		return (b == actualCharge) ? "Bon Appetit" : String.valueOf(b - actualCharge);
+    }
+	
 	public static int getMoneySpent(int[] keyboards, int[] drives, int b) {
 		List<Integer> results = new ArrayList<>();
 		for (int i = 0; i < keyboards.length; i++) {
