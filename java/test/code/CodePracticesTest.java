@@ -13,6 +13,24 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
+	// https://www.hackerrank.com/challenges/bon-appetit/problem
+	@Test
+	public void testBonAppetit() {
+		List<Integer> bill = Arrays.asList(3, 10, 2, 9);
+		int k = 1, b = 12;
+		String result = bonAppetit(bill, k, b);
+		assertEquals("5", result);
+		b = 7;
+		result = bonAppetit(bill, k, b);
+		assertEquals("Bon Appetit", result);
+		bill = Arrays.asList(72, 53, 60, 66, 90, 62, 12, 31, 36, 94);
+		k = 6; b = 288;
+		result = bonAppetit(bill, k, b);
+		assertEquals("6", result);
+		
+	}
+	
+	
 	// https://www.hackerrank.com/challenges/electronics-shop/problem
 	@Test
 	public void testGetMoneySpent() {
