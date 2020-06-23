@@ -1,5 +1,20 @@
 const practices = require('./codepractices.js');
 
+// https://www.hackerrank.com/challenges/bon-appetit/problem
+test("bonAppetit", () => {
+	let bill = [3, 10, 2, 9];
+	let k = 1, b = 12;
+	let result = practices.bonAppetit(bill, k, b);
+	expect(result).toBe("5");
+	b = 7;
+	result = practices.bonAppetit(bill, k, b);
+	expect(result).toBe("Bon Appetit");
+	bill = [72, 53, 60, 66, 90, 62, 12, 31, 36, 94];
+	k = 6; b = 288;
+	result = practices.bonAppetit(bill, k, b);
+	expect(result).toBe("6");		
+}),
+
 // https://www.hackerrank.com/challenges/electronics-shop/problem
 test("getMoneySpent", () => {
 	let keyboards = [3,1], drives = [5,2,8]; 

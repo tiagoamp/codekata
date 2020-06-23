@@ -1,5 +1,11 @@
 module.exports = obj = {
 
+	bonAppetit(bill, k, b) {
+		const total = bill.reduce((acc, e) => acc + e, 0);
+		const actualCharge = (total - bill[k]) / 2; 
+		return (b == actualCharge) ? "Bon Appetit" : (b - actualCharge).toString();
+    },
+
 	getMoneySpent(keyboards, drives, b) {
 		const results = [];
 		for (let i = 0; i < keyboards.length; i++) {
