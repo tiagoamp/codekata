@@ -13,6 +13,11 @@ import kotlin.collections.sort
 import kotlin.math.abs
 import kotlin.math.min
 
+fun bonAppetit(bill: Array<Int>, k: Int, b: Int): String {
+    val total = bill.sum()
+    val actualCharge = (total - bill[k]) / 2
+    return if (b == actualCharge) "Bon Appetit" else (b - actualCharge).toString()
+}
 
 fun getMoneySpent(keyboards: IntArray, drives: IntArray, b: Int): Int {
     val results: MutableList<Int> = ArrayList()

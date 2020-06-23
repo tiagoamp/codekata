@@ -26,8 +26,7 @@ public class CodePracticesTest {
 		bill = Arrays.asList(72, 53, 60, 66, 90, 62, 12, 31, 36, 94);
 		k = 6; b = 288;
 		result = bonAppetit(bill, k, b);
-		assertEquals("6", result);
-		
+		assertEquals("6", result);		
 	}
 	
 	

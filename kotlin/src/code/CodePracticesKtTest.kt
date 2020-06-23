@@ -7,6 +7,22 @@ import kotlin.test.assertTrue
 
 internal class CodePracticesKtTest {
 
+    // https://www.hackerrank.com/challenges/bon-appetit/problem
+    @Test
+    fun `test bonAppetit`() {
+        var bill = arrayOf(3, 10, 2, 9)
+        var k = 1; var b = 12
+        var result = bonAppetit(bill, k, b)
+        assertEquals("5", result)
+        b = 7
+        result = bonAppetit(bill, k, b)
+        assertEquals("Bon Appetit", result)
+        bill = arrayOf(72, 53, 60, 66, 90, 62, 12, 31, 36, 94)
+        k = 6; b = 288
+        result = bonAppetit(bill, k, b)
+        assertEquals("6", result)
+    }
+
     // https://www.hackerrank.com/challenges/electronics-shop/problem
     @Test
     fun `test getMoneySpent`() {
