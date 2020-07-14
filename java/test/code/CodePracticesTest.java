@@ -13,6 +13,17 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
+	@Test
+	public void testFizzBuzz() {
+		int n = 15;
+		List<String> result = fizzbuzz(n);
+		assertEquals("1", result.get(0));
+		assertEquals("2", result.get(1));
+		assertEquals("Fizz", result.get(2));
+		assertEquals("4", result.get(3));
+		assertEquals("Buzz", result.get(4));
+	}
+	
 	// https://www.hackerrank.com/challenges/bon-appetit/problem
 	@Test
 	public void testBonAppetit() {
