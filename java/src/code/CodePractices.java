@@ -19,6 +19,21 @@ import java.util.stream.IntStream;
 
 public class CodePractices {
 	
+	public static List<String> fizzbuzz(int n) {
+		List<String> result = new ArrayList<>();
+		for (int i = 1; i <= n; i++) {
+            if (i >= (3*5) && i % 3 == 0 && n % 5 == 0) 
+                result.add("FizzBuzz");
+            else if (i >= 3 && i % 3 == 0)
+            	result.add("Fizz");
+            else if (i >= 5 && i % 5 == 0)
+            	result.add("Buzz");
+            else 
+            	result.add(String.valueOf(i));
+        }
+		return result;
+	}
+	
 	public static String bonAppetit(List<Integer> bill, int k, int b) {
 		Integer total = bill.stream().reduce(0, (acc, e) -> acc + e);
 		Integer actualCharge = (total - bill.get(k)) / 2; 
