@@ -7,6 +7,17 @@ import kotlin.test.assertTrue
 
 internal class CodePracticesKtTest {
 
+    // https://www.hackerrank.com/challenges/maximum-draws/problem
+    @Test
+    fun `test maximumDraws`() {
+        var n = 1
+        var result = maximumDraws(n)
+        assertEquals(2, result)
+        n = 2
+        result = maximumDraws(n)
+        assertEquals(3, result)
+    }
+
     // https://www.hackerrank.com/challenges/bon-appetit/problem
     @Test
     fun `test bonAppetit`() {

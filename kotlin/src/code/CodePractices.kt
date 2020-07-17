@@ -13,6 +13,8 @@ import kotlin.collections.sort
 import kotlin.math.abs
 import kotlin.math.min
 
+fun maximumDraws(n: Int) = ( (n * 2) / 2 ) + 1
+
 fun bonAppetit(bill: Array<Int>, k: Int, b: Int): String {
     val total = bill.sum()
     val actualCharge = (total - bill[k]) / 2
@@ -115,8 +117,8 @@ fun utopianTree(n: Int): Int {
     return result
 }
 
-fun birthdayChoc(s: List<Int>?, d: Int, m: Int): Int {
-    var m = m; var result = 0; var index = 0
+fun birthdayChoc(s: List<Int>?, d: Int, mv: Int): Int {
+    var m = mv; var result = 0; var index = 0
     if (s == null || s.isEmpty()) return result
     var isOver = m > s.size
     while (!isOver) {
