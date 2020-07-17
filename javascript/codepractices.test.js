@@ -1,5 +1,15 @@
 const practices = require('./codepractices.js');
 
+// https://www.hackerrank.com/challenges/maximum-draws/problem
+test("maximumDraws", () => {
+	let n = 1;
+	let result = practices.maximumDraws(n);
+	expect(result).toBe(2);
+	n = 2;
+	result = practices.maximumDraws(n);		
+	expect(result).toBe(3);
+}),
+
 // https://www.hackerrank.com/challenges/bon-appetit/problem
 test("bonAppetit", () => {
 	let bill = [3, 10, 2, 9];

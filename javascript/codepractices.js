@@ -1,5 +1,9 @@
 module.exports = obj = {
 
+	maximumDraws(n) {
+        return ( (n * 2) / 2 ) + 1;
+	},
+	
 	bonAppetit(bill, k, b) {
 		const total = bill.reduce((acc, e) => acc + e, 0);
 		const actualCharge = (total - bill[k]) / 2; 
