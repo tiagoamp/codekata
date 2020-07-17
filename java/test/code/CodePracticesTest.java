@@ -13,6 +13,17 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
+	// https://www.hackerrank.com/challenges/maximum-draws/problem
+	@Test
+	public void testMaximumDraws() {
+		int n = 1;
+		int result = maximumDraws(n);
+		assertEquals(2, result);
+		n = 2;
+		result = maximumDraws(n);		
+		assertEquals(3, result);
+	}
+	
 	@Test
 	public void testFizzBuzz() {
 		int n = 15;
