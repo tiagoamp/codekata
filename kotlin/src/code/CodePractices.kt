@@ -117,8 +117,8 @@ fun utopianTree(n: Int): Int {
     return result
 }
 
-fun birthdayChoc(s: List<Int>?, d: Int, m: Int): Int {
-    var m = m; var result = 0; var index = 0
+fun birthdayChoc(s: List<Int>?, d: Int, mv: Int): Int {
+    var m = mv; var result = 0; var index = 0
     if (s == null || s.isEmpty()) return result
     var isOver = m > s.size
     while (!isOver) {
