@@ -19,6 +19,10 @@ import java.util.stream.IntStream;
 
 public class CodePractices {
 	
+	public static int maximumDraws(int n) {
+        return ( (n * 2) / 2 ) + 1;
+    }
+	
 	public static List<String> fizzbuzz(int n) {
 		List<String> result = new ArrayList<>();
 		for (int i = 1; i <= n; i++) {
