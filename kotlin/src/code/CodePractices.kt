@@ -13,6 +13,8 @@ import kotlin.collections.sort
 import kotlin.math.abs
 import kotlin.math.min
 
+fun maximumDraws(n: Int) = ( (n * 2) / 2 ) + 1
+
 fun bonAppetit(bill: Array<Int>, k: Int, b: Int): String {
     val total = bill.sum()
     val actualCharge = (total - bill[k]) / 2
