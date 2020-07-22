@@ -1,5 +1,15 @@
 const practices = require('./codepractices.js');
 
+// https://www.hackerrank.com/challenges/lowest-triangle/problem
+test("lowestTriangle", () => {
+	let b = 2, a = 2;
+	let result = practices.lowestTriangle(b, a);
+	expect(result).toBe(2);
+	b = 17; a = 100;
+	result = practices.lowestTriangle(b, a);
+	expect(result).toBe(12);
+}),
+
 // https://www.hackerrank.com/challenges/maximum-draws/problem
 test("maximumDraws", () => {
 	let n = 1;

@@ -1,5 +1,9 @@
 module.exports = obj = {
 
+	lowestTriangle(base, area){
+		return Math.ceil( (area * 2.0) / base ) ;
+    },
+
 	maximumDraws(n) {
         return ( (n * 2) / 2 ) + 1;
 	},
