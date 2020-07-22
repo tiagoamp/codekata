@@ -1,17 +1,10 @@
 package code
 
-import kotlin.collections.HashSet
-import kotlin.collections.List
-import kotlin.collections.MutableSet
-import kotlin.collections.filter
-import kotlin.collections.indexOf
-import kotlin.collections.indices
-import kotlin.collections.map
-import kotlin.collections.max
-import kotlin.collections.min
-import kotlin.collections.sort
 import kotlin.math.abs
+import kotlin.math.ceil
 import kotlin.math.min
+
+fun lowestTriangle(base: Int, area: Int) = ceil(area * 2.0 / base.toFloat()).toInt()
 
 fun maximumDraws(n: Int) = ( (n * 2) / 2 ) + 1
 

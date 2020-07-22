@@ -7,6 +7,17 @@ import kotlin.test.assertTrue
 
 internal class CodePracticesKtTest {
 
+    // https://www.hackerrank.com/challenges/lowest-triangle/problem
+    @Test
+    fun `lowestTriangle`() {
+        var b = 2; var a = 2
+        var result = lowestTriangle(b, a)
+        assertEquals(2, result)
+        b = 17; a = 100
+        result = lowestTriangle(b, a)
+        assertEquals(12, result)
+    }
+
     // https://www.hackerrank.com/challenges/maximum-draws/problem
     @Test
     fun `test maximumDraws`() {
