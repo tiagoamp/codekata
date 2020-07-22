@@ -13,6 +13,17 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
+	//https://www.hackerrank.com/challenges/lowest-triangle/problem
+	@Test
+	public void testLowestTriangle() {
+		int b = 2, a = 2;
+		int result = lowestTriangle(b, a);
+		assertEquals(2, result);
+		b = 17; a = 100;
+		result = lowestTriangle(b, a);
+		assertEquals(12, result);
+	}
+	
 	// https://www.hackerrank.com/challenges/maximum-draws/problem
 	@Test
 	public void testMaximumDraws() {

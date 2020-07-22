@@ -19,6 +19,10 @@ import java.util.stream.IntStream;
 
 public class CodePractices {
 	
+	static int lowestTriangle(int base, int area){
+		return (int) Math.ceil( (area * 2.0) / (float)base ) ;
+    }
+	
 	public static int maximumDraws(int n) {
         return ( (n * 2) / 2 ) + 1;
     }
