@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
-	//https://www.hackerrank.com/challenges/lowest-triangle/problem
+	// https://www.hackerrank.com/challenges/lowest-triangle/problem
 	@Test
 	public void testLowestTriangle() {
 		int b = 2, a = 2;
