@@ -1,2 +1,2 @@
 # codekata
-My personal code kata and code practices
+My personal code kata and deliberate practices
