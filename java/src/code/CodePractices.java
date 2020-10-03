@@ -18,6 +18,16 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class CodePractices {
+
+	static int findDigits(int n) {
+		int curr = n, counter = 0;
+		while (curr > 0) {
+		    if ( (curr % 10 != 0) && (n % (curr % 10) == 0) )
+		    	counter++;
+		    curr = curr / 10;
+		}
+		return counter;
+    }
 	
 	static int lowestTriangle(int base, int area){
 		return (int) Math.ceil( (area * 2.0) / (float)base ) ;

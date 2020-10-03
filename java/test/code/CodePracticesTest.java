@@ -13,6 +13,17 @@ import org.junit.Test;
 
 public class CodePracticesTest {
 	
+	// https://www.hackerrank.com/challenges/find-digits/problem
+	@Test
+	public void testFindDigits() {
+		int input0 = 12, input1 = 1012;
+		int expected0 = 2, expected1 = 3;
+		int result0 = findDigits(input0);
+		int result1 = findDigits(input1);
+		assertEquals(expected0, result0);
+		assertEquals(expected1, result1);
+	}
+		
 	// https://www.hackerrank.com/challenges/lowest-triangle/problem
 	@Test
 	public void testLowestTriangle() {
