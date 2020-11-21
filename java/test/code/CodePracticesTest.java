@@ -21,7 +21,6 @@ import static code.CodePractices.isAnagram;
 import static code.CodePractices.libraryFine;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
-import static code.CodePractices.minMaxSum;
 import static code.CodePractices.minPrice;
 import static code.CodePractices.minimumNumber;
 import static code.CodePractices.pangrams;
@@ -31,7 +30,6 @@ import static code.CodePractices.queensAttack;
 import static code.CodePractices.repeatedString;
 import static code.CodePractices.saveThePrisoner;
 import static code.CodePractices.sockMerchant;
-import static code.CodePractices.staircase;
 import static code.CodePractices.timeConversion;
 import static code.CodePractices.utopianTree;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -501,29 +499,11 @@ public class CodePracticesTest {
 		assertEquals(100000, result);		
 	}
 	
-	// https://www.hackerrank.com/challenges/staircase/problem
-	@Test
-	public void testStaircase() {
-		int n = 6;
-		Character[][] result = staircase(n);
-		for (int i = 0; i < n; i++) assertEquals(result[0][i].toString(), String.valueOf( (i >= 5) ? '#' : ' ') );
-		for (int i = 0; i < n; i++) assertEquals(result[1][i].toString(), String.valueOf( (i >= 4) ? '#' : ' ') );
-		for (int i = 0; i < n; i++) assertEquals(result[5][i].toString(), String.valueOf( (i >= 0) ? '#' : ' ') );
-	}
 	
 	@Test
 	public void testFibonacci_positionEquals10() {
 		int result = fibonacci(10);
 		assertEquals(55, result);
-	}
-	
-	// https://www.hackerrank.com/challenges/mini-max-sum/problem
-	@Test
-	public void testMinMaxSum() {
-		int[] arr = {1, 2, 3, 4, 5};
-		long[] result = minMaxSum(arr);
-		assertEquals(10L, result[0]);
-		assertEquals(14L, result[1]);
 	}
 		
 }

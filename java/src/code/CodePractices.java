@@ -478,16 +478,7 @@ public class CodePractices {
 		return count;
     }
 	
-	public static Character[][] staircase(int n) {
-		if (n == 0) return null;
-		Character[][] stairMatrix = new Character[n][n];		
-		for (int row = 0; row < n; row++) {
-			for (int col = 0; col < n; col++) {
-				stairMatrix[row][col] = col >= ( (n-row) - 1 ) ? '#' : ' ';
-			}
-		}		
-		return stairMatrix;
-	}
+	
 	
 	/* Fibonacci starting at 0. Fibonacci series should be as follows: 0, 1, 1, 2, 3, 5, 8, 13, etc... */	
 	public static int fibonacci(Integer n) {
@@ -495,16 +486,5 @@ public class CodePractices {
 		else if (n == 1 || n == 2) return 1;
 		else return fibonacci(n-2) + fibonacci(n-1);
 	}
-	
-	public static long[] minMaxSum(int[] arr) {
-    	Arrays.sort(arr);
-    	long min = 0, max = 0;
-    	final int len = 5;    	
-    	for (int i = 0; i < arr.length; i++) {
-			if (i < len-1) min += arr[i];
-			if (i > 0) max += arr[i];
-		}
-    	return new long[] {min,max};
-    }
-			
+				
 }
