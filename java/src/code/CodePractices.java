@@ -15,7 +15,6 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class CodePractices {
 
@@ -520,36 +519,6 @@ public class CodePractices {
 			if ( distance >= s && distance <= t ) orangeCount++;
 		}
 		return new int[] {appleCount, orangeCount};
-    }
-	
-	/* Superdigit = sum of digits until its result has only 1 digit */
-	public static int superdigit(String n, int k) {
-		if (n.length() <= 1) return Integer.parseInt(n);
-		int sum = 0;
-		for (int i = 0; i < n.length(); i++) {
-			Integer digit = Character.getNumericValue(n.charAt(i));
-			sum += digit;
-		}		
-		if (k > 1) sum *= k;
-		return superdigit(String.valueOf(sum), 1);
-	}
-	
-	public static int bestDivisor(int input) {     
-		int[] divisors = IntStream.rangeClosed(1, input).filter(i -> input % i == 0).toArray();
-    	int[] sums = Arrays.stream(divisors).map(num -> {
-				int sum = 0;
-				while (num > 0) {
-		            sum = sum + num % 10;
-		            num = num / 10;
-		        }
-	            return sum;            
-			}).toArray();
-		int maxSummedNr = Arrays.stream(sums).max().getAsInt();
-		int indexOfMaxSummedNr = 0;		
-		while (sums[indexOfMaxSummedNr] != maxSummedNr) 
-			indexOfMaxSummedNr++;
-		int bestNumber = divisors[indexOfMaxSummedNr];
-		return bestNumber;
-	}    
+    }    
 		
 }

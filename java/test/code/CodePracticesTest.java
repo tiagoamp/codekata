@@ -1,15 +1,50 @@
 package code;
 
-import static code.CodePractices.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static code.CodePractices.appendAndDelete;
+import static code.CodePractices.bigSorting;
+import static code.CodePractices.birthdayCakeCandles;
+import static code.CodePractices.birthdayChoc;
+import static code.CodePractices.bonAppetit;
+import static code.CodePractices.breakingRecords;
+import static code.CodePractices.catAndMouse;
+import static code.CodePractices.climbingLeaderboard;
+import static code.CodePractices.countApplesAndOranges;
+import static code.CodePractices.countingValleys;
+import static code.CodePractices.fibonacci;
+import static code.CodePractices.findDigits;
+import static code.CodePractices.fizzbuzz;
+import static code.CodePractices.formingMagicSquare;
+import static code.CodePractices.getMoneySpent;
+import static code.CodePractices.getSmallestAndLargest;
+import static code.CodePractices.gradingStudents;
+import static code.CodePractices.hurdleRace;
+import static code.CodePractices.isAnagram;
+import static code.CodePractices.libraryFine;
+import static code.CodePractices.lowestTriangle;
+import static code.CodePractices.maximumDraws;
+import static code.CodePractices.minMaxSum;
+import static code.CodePractices.minPrice;
+import static code.CodePractices.minimumNumber;
+import static code.CodePractices.pangrams;
+import static code.CodePractices.pickingNumbers;
+import static code.CodePractices.plusMinus;
+import static code.CodePractices.queensAttack;
+import static code.CodePractices.repeatedString;
+import static code.CodePractices.saveThePrisoner;
+import static code.CodePractices.sockMerchant;
+import static code.CodePractices.staircase;
+import static code.CodePractices.timeConversion;
+import static code.CodePractices.utopianTree;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 public class CodePracticesTest {
 	
@@ -511,30 +546,4 @@ public class CodePracticesTest {
 		assertEquals(1, result[1]);
 	}
 	
-	// https://www.hackerrank.com/challenges/super-digit/problem
-	@Test
-	public void testSuperdit() {
-		String n = "148"; int k = 3, expected = 3, result = 0;
-		result = superdigit(n,k);
-		assertEquals(expected, result);
-		n = "9875"; k = 4; expected = 8;
-		result = superdigit(n,k);
-		assertEquals(expected, result);
-		n = "123"; k = 3; expected = 9;
-		result = superdigit(n,k);
-		assertEquals(expected, result);
-		// superior threshold 
-		n = "100000"; k = 100000;
-		result = superdigit(n,k);
-		assertTrue(result > 0);
-	}
-	
-	// https://www.hackerrank.com/challenges/best-divisor/problem
-	@Test
-	public void test_bestDivisor() {
-		int sample = 12, expectedVal = 6;
-		int result = bestDivisor(sample);
-		assertEquals(expectedVal, result);
-	}
-					
 }
