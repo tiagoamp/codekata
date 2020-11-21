@@ -8,7 +8,6 @@ import static code.CodePractices.bonAppetit;
 import static code.CodePractices.breakingRecords;
 import static code.CodePractices.catAndMouse;
 import static code.CodePractices.climbingLeaderboard;
-import static code.CodePractices.countApplesAndOranges;
 import static code.CodePractices.countingValleys;
 import static code.CodePractices.fibonacci;
 import static code.CodePractices.findDigits;
@@ -526,24 +525,5 @@ public class CodePracticesTest {
 		assertEquals(10L, result[0]);
 		assertEquals(14L, result[1]);
 	}
-	
-	// https://www.hackerrank.com/challenges/apple-and-orange/problem
-	@Test
-	public void testCountApplesAndOranges() {
-		// sample case
-		int s = 7, t = 11;  // house
-		int a = 5, b = 15;  // tree
-		int[] apples = {-2, 2, 1}, oranges = {5, -6};     // fruits array
-		int[] result = countApplesAndOranges(s, t, a, b, apples, oranges);
-		assertEquals(1, result[0]);
-		assertEquals(1, result[1]);
-		// test case 2
-		s = 2; t = 3; a = 1; b = 5;
-		apples = new int[] {2}; 
-		oranges = new int[] {-2};
-		result = countApplesAndOranges(s, t, a, b, apples, oranges);
-		assertEquals(1, result[0]);
-		assertEquals(1, result[1]);
-	}
-	
+		
 }

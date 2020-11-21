@@ -14,7 +14,7 @@ public class SuperDigit {
 	
 	@Test
 	@DisplayName("Test given samples")
-	public void testSuperdit() {
+	void testSuperdit() {
 		// given
 		String[] n = { "148", "9875", "123" };
 		Integer[] k = { 3, 4, 3};
