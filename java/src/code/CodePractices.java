@@ -444,20 +444,7 @@ public class CodePractices {
         return pairs;
     }
 	
-	public static int[] breakingRecords(int[] scores) {
-    	int countMin = 0, countMax = 0;
-    	int min = scores[0], max = scores[0];
-    	for (int i = 0; i < scores.length; i++) {
-			if (scores[i] < min) {
-				min = scores[i];
-				countMin++;
-			} else if (scores[i] > max) {
-				max = scores[i];
-				countMax++;
-			}
-		}
-    	return new int[]{countMax, countMin};
-    }  
+	
 	
 	public static String kangaroo(int x1, int v1, int x2, int v2) {
     	if (x2 > x1 && v2 >= v1) return "NO";  // second kangaroo is and and is faster than the 1th one 
@@ -465,19 +452,6 @@ public class CodePractices {
     	String result = Math.abs((x2-x1)) % Math.abs((v1-v2)) == 0 ? "YES" : "NO";
     	return result;
     }
-	
-	public static int birthdayCakeCandles(int[] arr) {
-		Arrays.sort(arr);
-		int lastIndex = arr.length -1;
-		int tallest = arr[lastIndex];
-		int count = 0;		
-		for (int i = lastIndex; i >= 0; i--) {
-			if (arr[i] == tallest) count++;
-			else break;			
-		}		
-		return count;
-    }
-	
 	
 	
 	/* Fibonacci starting at 0. Fibonacci series should be as follows: 0, 1, 1, 2, 3, 5, 8, 13, etc... */	

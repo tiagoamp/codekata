@@ -2,10 +2,8 @@ package code;
 
 import static code.CodePractices.appendAndDelete;
 import static code.CodePractices.bigSorting;
-import static code.CodePractices.birthdayCakeCandles;
 import static code.CodePractices.birthdayChoc;
 import static code.CodePractices.bonAppetit;
-import static code.CodePractices.breakingRecords;
 import static code.CodePractices.catAndMouse;
 import static code.CodePractices.climbingLeaderboard;
 import static code.CodePractices.countingValleys;
@@ -471,34 +469,7 @@ public class CodePracticesTest {
 		assertEquals(4, result);		
 	}
 	
-	// https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
-	@Test
-	public void testBreakingRecords() {
-		int[] sample0 = {10, 5, 20, 20, 4, 5, 2, 25, 1};
-		int[] result = breakingRecords(sample0);
-		assertEquals(2, result[0]);
-		assertEquals(4, result[1]);
-		int[] sample1 = {3, 4, 21, 36, 10, 28, 35, 5, 24, 42};
-		result = breakingRecords(sample1);
-		assertEquals(4, result[0]);
-		assertEquals(0, result[1]);		
-	}
-	
-	// https://www.hackerrank.com/challenges/birthday-cake-candles/problem
-	@Test
-	public void testBirthdayCakeCandles() {
-		int[] arr = {3, 2, 1, 3};
-		int result = birthdayCakeCandles(arr);
-		assertEquals(2, result);
-		// threshold case 
-		int n = 100000;
-		arr = new int[n];
-		for (int i=0; i<n; i++) 
-			arr[i] = 9999999;
-		result = birthdayCakeCandles(arr);
-		assertEquals(100000, result);		
-	}
-	
+			
 	
 	@Test
 	public void testFibonacci_positionEquals10() {
