@@ -1,15 +1,47 @@
 package code;
 
-import static code.CodePractices.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static code.CodePractices.appendAndDelete;
+import static code.CodePractices.bigSorting;
+import static code.CodePractices.birthdayCakeCandles;
+import static code.CodePractices.birthdayChoc;
+import static code.CodePractices.bonAppetit;
+import static code.CodePractices.breakingRecords;
+import static code.CodePractices.catAndMouse;
+import static code.CodePractices.climbingLeaderboard;
+import static code.CodePractices.countingValleys;
+import static code.CodePractices.fibonacci;
+import static code.CodePractices.findDigits;
+import static code.CodePractices.fizzbuzz;
+import static code.CodePractices.formingMagicSquare;
+import static code.CodePractices.getMoneySpent;
+import static code.CodePractices.getSmallestAndLargest;
+import static code.CodePractices.gradingStudents;
+import static code.CodePractices.hurdleRace;
+import static code.CodePractices.isAnagram;
+import static code.CodePractices.libraryFine;
+import static code.CodePractices.lowestTriangle;
+import static code.CodePractices.maximumDraws;
+import static code.CodePractices.minPrice;
+import static code.CodePractices.minimumNumber;
+import static code.CodePractices.pangrams;
+import static code.CodePractices.pickingNumbers;
+import static code.CodePractices.plusMinus;
+import static code.CodePractices.queensAttack;
+import static code.CodePractices.repeatedString;
+import static code.CodePractices.saveThePrisoner;
+import static code.CodePractices.sockMerchant;
+import static code.CodePractices.timeConversion;
+import static code.CodePractices.utopianTree;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 public class CodePracticesTest {
 	
@@ -467,74 +499,11 @@ public class CodePracticesTest {
 		assertEquals(100000, result);		
 	}
 	
-	// https://www.hackerrank.com/challenges/staircase/problem
-	@Test
-	public void testStaircase() {
-		int n = 6;
-		Character[][] result = staircase(n);
-		for (int i = 0; i < n; i++) assertEquals(result[0][i].toString(), String.valueOf( (i >= 5) ? '#' : ' ') );
-		for (int i = 0; i < n; i++) assertEquals(result[1][i].toString(), String.valueOf( (i >= 4) ? '#' : ' ') );
-		for (int i = 0; i < n; i++) assertEquals(result[5][i].toString(), String.valueOf( (i >= 0) ? '#' : ' ') );
-	}
 	
 	@Test
 	public void testFibonacci_positionEquals10() {
 		int result = fibonacci(10);
 		assertEquals(55, result);
 	}
-	
-	// https://www.hackerrank.com/challenges/mini-max-sum/problem
-	@Test
-	public void testMinMaxSum() {
-		int[] arr = {1, 2, 3, 4, 5};
-		long[] result = minMaxSum(arr);
-		assertEquals(10L, result[0]);
-		assertEquals(14L, result[1]);
-	}
-	
-	// https://www.hackerrank.com/challenges/apple-and-orange/problem
-	@Test
-	public void testCountApplesAndOranges() {
-		// sample case
-		int s = 7, t = 11;  // house
-		int a = 5, b = 15;  // tree
-		int[] apples = {-2, 2, 1}, oranges = {5, -6};     // fruits array
-		int[] result = countApplesAndOranges(s, t, a, b, apples, oranges);
-		assertEquals(1, result[0]);
-		assertEquals(1, result[1]);
-		// test case 2
-		s = 2; t = 3; a = 1; b = 5;
-		apples = new int[] {2}; 
-		oranges = new int[] {-2};
-		result = countApplesAndOranges(s, t, a, b, apples, oranges);
-		assertEquals(1, result[0]);
-		assertEquals(1, result[1]);
-	}
-	
-	// https://www.hackerrank.com/challenges/super-digit/problem
-	@Test
-	public void testSuperdit() {
-		String n = "148"; int k = 3, expected = 3, result = 0;
-		result = superdigit(n,k);
-		assertEquals(expected, result);
-		n = "9875"; k = 4; expected = 8;
-		result = superdigit(n,k);
-		assertEquals(expected, result);
-		n = "123"; k = 3; expected = 9;
-		result = superdigit(n,k);
-		assertEquals(expected, result);
-		// superior threshold 
-		n = "100000"; k = 100000;
-		result = superdigit(n,k);
-		assertTrue(result > 0);
-	}
-	
-	// https://www.hackerrank.com/challenges/best-divisor/problem
-	@Test
-	public void test_bestDivisor() {
-		int sample = 12, expectedVal = 6;
-		int result = bestDivisor(sample);
-		assertEquals(expectedVal, result);
-	}
-					
+		
 }
