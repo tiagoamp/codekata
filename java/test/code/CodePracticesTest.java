@@ -27,7 +27,6 @@ import static code.CodePractices.plusMinus;
 import static code.CodePractices.queensAttack;
 import static code.CodePractices.repeatedString;
 import static code.CodePractices.saveThePrisoner;
-import static code.CodePractices.sockMerchant;
 import static code.CodePractices.timeConversion;
 import static code.CodePractices.utopianTree;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -454,19 +453,6 @@ public class CodePracticesTest {
 		cost.add( Arrays.asList(2,100,100) );
 		result = minPrice(cost);
 		assertEquals(12, result);
-	}
-	
-	// https://www.hackerrank.com/challenges/sock-merchant/problem
-	@Test
-	public void testSockMerchant() {
-		int n = 9;
-		int[] arr = {10, 20, 20, 10, 10, 30, 50, 10, 20};
-		int result = sockMerchant(n, arr);
-		assertEquals(3, result);
-		n = 10;
-		arr = new int[]{1, 1, 3, 1, 2, 1, 3, 3, 3, 3};
-		result = sockMerchant(n, arr);
-		assertEquals(4, result);		
 	}
 	
 			
