@@ -430,20 +430,6 @@ public class CodePractices {
         return result;        
     }
 	
-	public static int sockMerchant(int n, int[] arr) {
-    	Set<Integer> colors = new HashSet<>();
-        int pairs = 0;
-        for (int i = 0; i < n; i++) {
-            if (!colors.contains(arr[i])) {
-                colors.add(arr[i]);
-            } else {
-                pairs++;
-                colors.remove(arr[i]);
-            }
-        }
-        return pairs;
-    }
-	
 	
 	
 	public static String kangaroo(int x1, int v1, int x2, int v2) {
