@@ -7,11 +7,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -396,40 +394,7 @@ public class CodePractices {
     	return result;
     }
 	
-	public static int minPrice(List<List<Integer>> cost) {
-        if (cost == null || cost.isEmpty()) return 0;
-        if (cost.size() == 1) return Collections.min(cost.get(0));
-        
-        int prevMin=0 , prevSec=0, prevIndex=-1; 
-     
-        for(List<Integer> list : cost){ // for each blocks list
-        	int currMin=Integer.MAX_VALUE, currSec = Integer.MAX_VALUE, currIndex = 0;
-     
-            for(int i = 0; i < list.size(); i++) { // for each color value
-            	int val = list.get(i);
-            	
-                if(prevIndex == i) val += prevSec;
-                else val += prevMin;
-                list.set(i, val);
-     
-                if(currMin > val){
-                    currSec = currMin;
-                    currMin = val;
-                    currIndex = i;
-                } else if(currSec > val ){
-                    currSec = val;
-                }
-            }
-     
-            prevMin = currMin;
-            prevSec = currSec;
-            prevIndex = currIndex;
-        }
-     
-        int result = Collections.min( cost.get(cost.size()-1) );
-        return result;        
-    }
-	
+		
 	
 	
 	public static String kangaroo(int x1, int v1, int x2, int v2) {
