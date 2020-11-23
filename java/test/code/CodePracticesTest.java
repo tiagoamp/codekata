@@ -19,7 +19,6 @@ import static code.CodePractices.isAnagram;
 import static code.CodePractices.libraryFine;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
-import static code.CodePractices.minPrice;
 import static code.CodePractices.minimumNumber;
 import static code.CodePractices.pangrams;
 import static code.CodePractices.pickingNumbers;
@@ -33,7 +32,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -431,29 +429,6 @@ public class CodePracticesTest {
 		assertEquals(3, result);		
 	}
 	
-	@Test
-	public void testMinPrice() {
-		List<List<Integer>> cost = new ArrayList<>();
-		// sample 0
-		cost.add( Arrays.asList(1,2,2) );
-		cost.add( Arrays.asList(2,2,1) );
-		cost.add( Arrays.asList(2,1,2) );
-		int result = minPrice(cost);
-		assertEquals(3, result);
-		// sample 1
-		cost.clear();
-		cost.add( Arrays.asList(1,2,2) );
-		cost.add( Arrays.asList(2,3,3) );
-		cost.add( Arrays.asList(3,3,1) );
-		result = minPrice(cost);
-		assertEquals(5, result);
-		// sample 3
-		cost.clear();
-		cost.add( Arrays.asList(1,10,20) );
-		cost.add( Arrays.asList(2,100,100) );
-		result = minPrice(cost);
-		assertEquals(12, result);
-	}
 	
 			
 	
