@@ -2,7 +2,6 @@ package code;
 
 import static code.CodePractices.appendAndDelete;
 import static code.CodePractices.bigSorting;
-import static code.CodePractices.birthdayChoc;
 import static code.CodePractices.bonAppetit;
 import static code.CodePractices.catAndMouse;
 import static code.CodePractices.climbingLeaderboard;
@@ -412,23 +411,6 @@ public class CodePracticesTest {
 		String[] expectedArr = {"1", "2", "100", "111", "200", "3084193741082937", "3084193741082938", "12303479849857341718340192371"};
 		assertEquals(Arrays.toString(expectedArr), Arrays.toString(result));
 	}
-	
-	// https://www.hackerrank.com/challenges/the-birthday-bar/problem
-	@Test
-	public void testBirthdayChoc() {
-		List<Integer> s = Arrays.asList(1, 2, 1, 3, 2);
-		int d = 3, m = 2;
-		int result = birthdayChoc(s, d, m);
-		assertEquals(2, result);
-		s = Arrays.asList(1, 1, 1, 1, 1, 1);
-		result = birthdayChoc(s, d, m);
-		assertEquals(0, result);
-		s = Arrays.asList(2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1);
-		d = 18; m = 7;
-		result = birthdayChoc(s, d, m);
-		assertEquals(3, result);		
-	}
-	
 	
 			
 	
