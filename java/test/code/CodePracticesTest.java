@@ -6,10 +6,8 @@ import static code.CodePractices.climbingLeaderboard;
 import static code.CodePractices.countingValleys;
 import static code.CodePractices.findDigits;
 import static code.CodePractices.fizzbuzz;
-import static code.CodePractices.formingMagicSquare;
 import static code.CodePractices.getMoneySpent;
 import static code.CodePractices.getSmallestAndLargest;
-import static code.CodePractices.hurdleRace;
 import static code.CodePractices.isAnagram;
 import static code.CodePractices.libraryFine;
 import static code.CodePractices.lowestTriangle;
@@ -22,7 +20,6 @@ import static code.CodePractices.queensAttack;
 import static code.CodePractices.repeatedString;
 import static code.CodePractices.saveThePrisoner;
 import static code.CodePractices.timeConversion;
-import static code.CodePractices.utopianTree;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -346,38 +343,5 @@ public class CodePracticesTest {
 		 result = pickingNumbers(sample1);
 		assertEquals(expected1, result);
 	}
-	
-	// https://www.hackerrank.com/challenges/magic-square-forming/problem
-	@Test
-	public void testFormingMagicSquare() {
-		int[][] sample0 = { {4,9,2},{3,5,7},{8,1,5} };
-		int[][] sample1 = { {4,8,2},{4,5,7},{6,1,6} };
-		int expectedResult0 = 1, expectedResult1 = 4;
-		int result = formingMagicSquare(sample0);
-		assertEquals(expectedResult0, result);
-		result = formingMagicSquare(sample1);
-		assertEquals(expectedResult1, result);
-	}
-	
-	// https://www.hackerrank.com/challenges/utopian-tree/problem
-	@Test
-	public void testUtopianTree() {
-		Integer[] inputs = {0, 1, 4}, expected = {1, 2, 7};
-		for (int i=0; i<inputs.length; i++) 
-			assertEquals(expected[i].intValue(), utopianTree(inputs[i]));
-	}
-	
-	// https://www.hackerrank.com/challenges/the-hurdle-race/problem
-	@Test
-	public void testHurdleRace() {
-		int k0 = 4, k1 = 7;
-		int[] height0 = {1, 6, 3, 5, 2}, height1 = {2, 5, 4, 5, 2};
-		int result = hurdleRace(k0, height0);
-		assertEquals(2, result);
-		result = hurdleRace(k1, height1);
-		assertEquals(0, result);
-	}
-	
-	
 			
 }

@@ -14,7 +14,7 @@ public class GradingStudents {
 	
 	@Test
 	@DisplayName("Test given samples")
-	public void testGradingStudents() {
+	void testGradingStudents() {
 		List<Integer> input = Arrays.asList(73, 67, 38, 33);
 		List<Integer> expected = Arrays.asList(75, 67, 40, 33);
 		List<Integer> result = gradingStudents(input);
