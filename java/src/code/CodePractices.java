@@ -3,13 +3,11 @@ package code;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.regex.Pattern;
 
 public class CodePractices {
@@ -273,36 +271,6 @@ public class CodePractices {
     	int r = s + (m-1);
     	if (r <= n) return r;
     	return (r%n == 0) ? n : r%n;
-    }
-	
-	public static int[] climbingLeaderboard(int[] scores, int[] alice) {
-    	int[] uniqueScores = Arrays.stream(scores).distinct().toArray();
-    	int[] result = new int[alice.length];
-    	int i = uniqueScores.length-1;
-        for(int j=0; j<alice.length; j++) {
-        	int  a = alice[j];
-            while(i>=0) {
-                if(a>=uniqueScores[i]) 
-                	i--;
-                else {
-                	result[j] = i+2; 
-                	break;
-                }
-            }
-            if(i<0) result[j] = 1;
-        }
-        return result;
-    }
-	
-	public static int pickingNumbers(List<Integer> a) {
-        Map<Integer, Integer> map = new TreeMap<>();
-        a.forEach(i -> {
-        	Integer qtt = map.getOrDefault(i, 0);
-        	map.put(i, qtt+1);
-        });
-        int maxRange = map.keySet().stream()
-        		.map(k -> map.get(k) + map.getOrDefault(k+1, 0)).max(Integer::compare).get();
-        return maxRange;
     }
 	
 			

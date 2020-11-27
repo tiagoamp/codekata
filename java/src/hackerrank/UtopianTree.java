@@ -10,7 +10,7 @@ public class UtopianTree {
 	
 	@Test
 	@DisplayName("Test given samples")
-	public void testUtopianTree() {
+	void testUtopianTree() {
 		Integer[] inputs = {0, 1, 4}, expected = {1, 2, 7};
 		for (int i=0; i<inputs.length; i++) 
 			assertEquals(expected[i].intValue(), utopianTree(inputs[i]));
