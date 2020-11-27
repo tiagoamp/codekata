@@ -13,7 +13,7 @@ public class BirthdayChoc {
 		
 	@Test
 	@DisplayName("Test given samples")
-	public void testBirthdayChoc() {
+	void testBirthdayChoc() {
 		List<List<Integer>> s = Arrays.asList( Arrays.asList(1, 2, 1, 3, 2), Arrays.asList(1, 1, 1, 1, 1, 1), 
 				Arrays.asList(2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1) );
 		int[] d = { 3, 3, 18 }, m = { 2, 2, 7 }, expected = { 2, 0, 3 };

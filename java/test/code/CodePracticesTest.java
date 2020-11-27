@@ -1,7 +1,6 @@
 package code;
 
 import static code.CodePractices.appendAndDelete;
-import static code.CodePractices.bigSorting;
 import static code.CodePractices.bonAppetit;
 import static code.CodePractices.catAndMouse;
 import static code.CodePractices.climbingLeaderboard;
@@ -402,16 +401,7 @@ public class CodePracticesTest {
 		result = catAndMouse(x, y, z);
 		assertEquals("Mouse C", result);
 	}
-	
-	// https://www.hackerrank.com/challenges/big-sorting/problem
-	@Test
-	public void testBigSorting() {
-		String[] input = {"1", "2", "100", "12303479849857341718340192371", "3084193741082937", "3084193741082938", "111", "200"};
-		String[] result = bigSorting(input);
-		String[] expectedArr = {"1", "2", "100", "111", "200", "3084193741082937", "3084193741082938", "12303479849857341718340192371"};
-		assertEquals(Arrays.toString(expectedArr), Arrays.toString(result));
-	}
-	
+		
 			
 	
 	@Test

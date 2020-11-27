@@ -5,7 +5,6 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -358,26 +357,6 @@ public class CodePractices {
     	return distanceCatAFromMouse < distanceCatBFromMouse ? "Cat A" : "Cat B";
     }
 	
-	public static String[] bigSorting(String[] unsorted) {    	
-    	Comparator<String> comparator = new Comparator<String>() {
-    		public int compare(String a, String b) {
-    			// different sizes
-                if (a.length() != b.length()) 
-                    return a.length() - b.length();
-                // same sizes, compare per digits
-                for (int i = 0; i < a.length(); i++) {
-                	Integer digitFromA = Character.getNumericValue(a.charAt(i));
-                	Integer digitFromB = Character.getNumericValue(b.charAt(i));
-                    if (digitFromA != digitFromB) 
-                    	return digitFromA - digitFromB;
-                }
-                // numbers are the same.
-                return 0;
-             }
-		};    	
-    	String[] result = Arrays.stream(unsorted).sorted(comparator).toArray(String[]::new);    	
-        return result;
-    }
 	
 		
 	
