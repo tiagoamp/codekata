@@ -2,10 +2,8 @@ package code;
 
 import static code.CodePractices.appendAndDelete;
 import static code.CodePractices.bonAppetit;
-import static code.CodePractices.catAndMouse;
 import static code.CodePractices.climbingLeaderboard;
 import static code.CodePractices.countingValleys;
-import static code.CodePractices.fibonacci;
 import static code.CodePractices.findDigits;
 import static code.CodePractices.fizzbuzz;
 import static code.CodePractices.formingMagicSquare;
@@ -390,24 +388,5 @@ public class CodePracticesTest {
 		for (int i = 0; i < result.size(); i++) 
 			assertEquals(expected.get(i), result.get(i));
 	}
-	
-	// https://www.hackerrank.com/challenges/cats-and-a-mouse/problem
-	@Test
-	public void testCatAndMouse() {
-		int x = 1, y = 2, z = 3;
-		String result = catAndMouse(x, y, z);
-		assertEquals("Cat B", result);
-		x = 1; y = 3; z = 2;
-		result = catAndMouse(x, y, z);
-		assertEquals("Mouse C", result);
-	}
-		
 			
-	
-	@Test
-	public void testFibonacci_positionEquals10() {
-		int result = fibonacci(10);
-		assertEquals(55, result);
-	}
-		
 }
