@@ -379,23 +379,7 @@ public class CodePractices {
         return result;
     }
 	
-	public static int birthdayChoc(List<Integer> s, int d, int m) {
-    	int result = 0, index  = 0;
-    	if (s == null || s.isEmpty()) return result;
-    	boolean isOver = m > s.size();
-    	while (!isOver) {    		
-    		List<Integer> inner = s.subList(index, m);
-    		Integer sum = inner.stream().reduce(0, (x,y) -> x+y);
-    		if (sum.intValue() == d) result++;
-    		index++;
-    		m++;
-    		isOver = m > s.size();
-    	}    	
-    	return result;
-    }
-	
 		
-	
 	
 	public static String kangaroo(int x1, int v1, int x2, int v2) {
     	if (x2 > x1 && v2 >= v1) return "NO";  // second kangaroo is and and is faster than the 1th one 
