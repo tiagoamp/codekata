@@ -9,7 +9,6 @@ import static code.CodePractices.fizzbuzz;
 import static code.CodePractices.formingMagicSquare;
 import static code.CodePractices.getMoneySpent;
 import static code.CodePractices.getSmallestAndLargest;
-import static code.CodePractices.gradingStudents;
 import static code.CodePractices.hurdleRace;
 import static code.CodePractices.isAnagram;
 import static code.CodePractices.libraryFine;
@@ -379,14 +378,6 @@ public class CodePracticesTest {
 		assertEquals(0, result);
 	}
 	
-	// https://www.hackerrank.com/challenges/grading/problem
-	@Test
-	public void testGradingStudents() {
-		List<Integer> input = Arrays.asList(73, 67, 38, 33);
-		List<Integer> expected = Arrays.asList(75, 67, 40, 33);
-		List<Integer> result = gradingStudents(input);
-		for (int i = 0; i < result.size(); i++) 
-			assertEquals(expected.get(i), result.get(i));
-	}
+	
 			
 }
