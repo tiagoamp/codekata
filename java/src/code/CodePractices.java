@@ -349,30 +349,5 @@ public class CodePractices {
     	}).collect(Collectors.toList());
     	return roundedGrades;
     }
-	
-	public static String catAndMouse(int x, int y, int z) {
-    	int distanceCatAFromMouse = Math.abs(z - x);
-    	int distanceCatBFromMouse = Math.abs(z - y);
-    	if (distanceCatAFromMouse == distanceCatBFromMouse) return "Mouse C";
-    	return distanceCatAFromMouse < distanceCatBFromMouse ? "Cat A" : "Cat B";
-    }
-	
-	
 		
-	
-	public static String kangaroo(int x1, int v1, int x2, int v2) {
-    	if (x2 > x1 && v2 >= v1) return "NO";  // second kangaroo is and and is faster than the 1th one 
-    	// x1 + n * v1 = x2 + n * v2 , then n = (x2-x1)%(v1-v2) must be == 0 to make them meet
-    	String result = Math.abs((x2-x1)) % Math.abs((v1-v2)) == 0 ? "YES" : "NO";
-    	return result;
-    }
-	
-	
-	/* Fibonacci starting at 0. Fibonacci series should be as follows: 0, 1, 1, 2, 3, 5, 8, 13, etc... */	
-	public static int fibonacci(Integer n) {
-		if (n == 0) return 0;
-		else if (n == 1 || n == 2) return 1;
-		else return fibonacci(n-2) + fibonacci(n-1);
-	}
-				
 }
