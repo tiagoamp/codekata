@@ -11,7 +11,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class CodePractices {
 
@@ -306,48 +305,5 @@ public class CodePractices {
         return maxRange;
     }
 	
-	public static int formingMagicSquare(int[][] s) {
-    	int costs[] = {0,0,0,0,0,0,0,0};
-        int magicSquares[][] = 
-        { {2,7,6,9,5,1,4,3,8}, {6,7,2,1,5,9,8,3,4}, {8,3,4,1,5,9,6,7,2}, {4,3,8,9,5,1,2,7,6},
-          {6,1,8,7,5,3,2,9,4}, {2,9,4,7,5,3,6,1,8}, {4,9,2,3,5,7,8,1,6}, {8,1,6,3,5,7,4,9,2}
-        };
-        for(int i=0;i<magicSquares.length;i++) {        
-        	costs[i] = Math.abs(magicSquares[i][0]-s[0][0]) + Math.abs(magicSquares[i][1]-s[0][1]) + Math.abs(magicSquares[i][2]-s[0][2]);
-        	costs[i] = costs[i] + Math.abs(magicSquares[i][3]-s[1][0]) + Math.abs(magicSquares[i][4]-s[1][1]) + Math.abs(magicSquares[i][5]-s[1][2]);
-        	costs[i] = costs[i] + Math.abs(magicSquares[i][6]-s[2][0]) + Math.abs(magicSquares[i][7]-s[2][1]) + Math.abs(magicSquares[i][8]-s[2][2]);
-        }   
-        int minCost = Arrays.stream(costs).min().getAsInt();
-        return minCost;
-    }
-	
-	public static int utopianTree(int n) {
-    	int result = 1;
-    	if (n == 0) return result;
-    	for(int i=1; i <=n; i++) {
-    		boolean shouldDoubleSize = i%2 != 0; // odd numbers double size
-    		result = shouldDoubleSize ? result * 2 : result + 1; 
-    	}
-    	return result;
-    }
-	
-	public static int hurdleRace(int k, int[] height) {
-    	Arrays.sort(height);
-    	int max = height[height.length-1];
-    	return k >= max ? 0 : (max-k);
-    }
-	
-	public static List<Integer> gradingStudents(List<Integer> grades) {
-    	if (grades == null || grades.isEmpty()) return grades;
-    	List<Integer> roundedGrades = grades.stream().map(n -> {
-    		if (n < 38) {
-    			return n;
-    		} else {
-    			int nextMultipleOfFive = (int) (5*Math.ceil(Double.valueOf(n)/5));
-    			return (nextMultipleOfFive - n) < 3 ? nextMultipleOfFive : n;
-    		}
-    	}).collect(Collectors.toList());
-    	return roundedGrades;
-    }
-		
+			
 }
