@@ -230,19 +230,5 @@ public class CodePractices {
     	int monthsLate = m1-m2;
     	return 500 * monthsLate;
     }
-	
-	public static long repeatedString(String s, long n) {
-    	if (s.length() == 1) return s.equals("a") ? n : 0L;
-    	if (!s.contains("a")) return 0L;
-    	long count = 0;
-    	for (char ch : s.toCharArray()) 
-			if (ch == 'a') count++;
-        long d = n / s.length();
-        long r =  n % s.length();
-        count *=  d;
-        for(int i=0;i<r;i++)
-            if(s.charAt(i) == 'a') count++;
-        return count;
-    }
 				
 }
