@@ -13,7 +13,7 @@ public class LibraryFine {
 
 	@Test
 	@DisplayName("Test sample 0")
-	public void testLibraryFine0() {
+	void testLibraryFine0() {
 		int d1=9, m1=6, y1=2015;
 		int d2=6, m2=6, y2=2015;
 		int expected = 45;
@@ -23,7 +23,7 @@ public class LibraryFine {
 	
 	@Test
 	@DisplayName("Test sample 1")
-	public void testLibraryFine1() {
+	void testLibraryFine1() {
 		int d1=5, m1=5, y1=2014;
 		int d2=23, m2=2, y2=2014;
 		int expected = 1500;
@@ -33,7 +33,7 @@ public class LibraryFine {
 	
 	@Test
 	@DisplayName("Test sample 2")
-	public void testLibraryFine2() {
+	void testLibraryFine2() {
 		int d1=2, m1=7, y1=1014;
 		int d2=1, m2=1, y2=1014;
 		int expected = 3000;

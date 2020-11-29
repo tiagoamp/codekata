@@ -12,7 +12,6 @@ import static code.CodePractices.maximumDraws;
 import static code.CodePractices.minimumNumber;
 import static code.CodePractices.pangrams;
 import static code.CodePractices.plusMinus;
-import static code.CodePractices.queensAttack;
 import static code.CodePractices.timeConversion;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -184,32 +183,4 @@ public class CodePracticesTest {
         assertEquals(expected4, result);        
     }
 	
-	// https://www.hackerrank.com/challenges/queens-attack-2/problem
-	@Test
-	public void testQueensAttack() {
-		int n = 4, k = 0, r_q = 4, c_q = 4; 
-		int[][] obstacles = new int[0][2];
-		int expected0 = 9;
-		int result0 = queensAttack(n, k, r_q, c_q, obstacles);
-		assertEquals(expected0, result0);
-		n = 8; k = 0; r_q = 4; c_q = 4; 
-		obstacles = new int[0][2];
-		int expected = 27;
-		int result = queensAttack(n, k, r_q, c_q, obstacles);
-		assertEquals(expected, result);
-		n = 5; k = 3; r_q = 4; c_q = 3; 
-		obstacles = new int[k][2];
-		obstacles[0][0] = 5; obstacles[0][1] = 5; 
-		obstacles[1][0] = 4; obstacles[1][1] = 2;
-		obstacles[2][0] = 2; obstacles[2][1] = 3;
-		int expected1 = 10;
-		int result1 = queensAttack(n, k, r_q, c_q, obstacles);
-		assertEquals(expected1, result1);
-		n = 1; k = 0; r_q = 1; c_q = 1; 
-		obstacles = new int[0][2];
-		int expected2 = 0;
-		int result2 = queensAttack(n, k, r_q, c_q, obstacles);
-		assertEquals(expected2, result2);
-	}
-
 }
