@@ -216,19 +216,5 @@ public class CodePractices {
         		  min_distance_ob_left_up + min_distance_ob_left_down + min_distance_ob_right_up + min_distance_ob_right_down;
     	return sum;
     }
-	
-	public static int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
-    	if (y1 > y2) return 10_000;
-    	LocalDate returnedDate = LocalDate.of(y1, m1, d1);
-    	LocalDate dueDate = LocalDate.of(y2, m2, d2);
-    	if (returnedDate.isBefore(dueDate) || returnedDate.isEqual(dueDate))
-    		return 0;
-    	if (returnedDate.getMonth() == dueDate.getMonth()) {
-    		int daysLate = Period.between(dueDate, returnedDate).getDays();
-    		return 15 * daysLate;
-    	}
-    	int monthsLate = m1-m2;
-    	return 500 * monthsLate;
-    }
-				
+					
 }

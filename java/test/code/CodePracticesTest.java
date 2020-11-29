@@ -7,7 +7,6 @@ import static code.CodePractices.fizzbuzz;
 import static code.CodePractices.getMoneySpent;
 import static code.CodePractices.getSmallestAndLargest;
 import static code.CodePractices.isAnagram;
-import static code.CodePractices.libraryFine;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
 import static code.CodePractices.minimumNumber;
@@ -213,24 +212,4 @@ public class CodePracticesTest {
 		assertEquals(expected2, result2);
 	}
 
-	// https://www.hackerrank.com/challenges/library-fine/problem
-	@Test
-	public void testLibraryFine() {
-		int d1=9, m1=6, y1=2015;
-		int d2=6, m2=6, y2=2015;
-		int expected = 45;
-		int result = libraryFine(d1, m1, y1, d2, m2, y2);
-		assertEquals(expected, result);
-		d1=5; m1=5; y1=2014;
-		d2=23; m2=2; y2=2014;
-		expected = 1500;
-		result = libraryFine(d1, m1, y1, d2, m2, y2);
-		assertEquals(expected, result);
-		d1=2; m1=7; y1=1014;
-		d2=1; m2=1; y2=1014;
-		expected = 3000;
-		result = libraryFine(d1, m1, y1, d2, m2, y2);
-		assertEquals(expected, result);
-	}
-					
 }
