@@ -1,6 +1,5 @@
 package code;
 
-import static code.CodePractices.appendAndDelete;
 import static code.CodePractices.bonAppetit;
 import static code.CodePractices.countingValleys;
 import static code.CodePractices.findDigits;
@@ -8,15 +7,11 @@ import static code.CodePractices.fizzbuzz;
 import static code.CodePractices.getMoneySpent;
 import static code.CodePractices.getSmallestAndLargest;
 import static code.CodePractices.isAnagram;
-import static code.CodePractices.libraryFine;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
 import static code.CodePractices.minimumNumber;
 import static code.CodePractices.pangrams;
 import static code.CodePractices.plusMinus;
-import static code.CodePractices.queensAttack;
-import static code.CodePractices.repeatedString;
-import static code.CodePractices.saveThePrisoner;
 import static code.CodePractices.timeConversion;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -188,119 +183,4 @@ public class CodePracticesTest {
         assertEquals(expected4, result);        
     }
 	
-	// https://www.hackerrank.com/challenges/queens-attack-2/problem
-	@Test
-	public void testQueensAttack() {
-		int n = 4, k = 0, r_q = 4, c_q = 4; 
-		int[][] obstacles = new int[0][2];
-		int expected0 = 9;
-		int result0 = queensAttack(n, k, r_q, c_q, obstacles);
-		assertEquals(expected0, result0);
-		n = 8; k = 0; r_q = 4; c_q = 4; 
-		obstacles = new int[0][2];
-		int expected = 27;
-		int result = queensAttack(n, k, r_q, c_q, obstacles);
-		assertEquals(expected, result);
-		n = 5; k = 3; r_q = 4; c_q = 3; 
-		obstacles = new int[k][2];
-		obstacles[0][0] = 5; obstacles[0][1] = 5; 
-		obstacles[1][0] = 4; obstacles[1][1] = 2;
-		obstacles[2][0] = 2; obstacles[2][1] = 3;
-		int expected1 = 10;
-		int result1 = queensAttack(n, k, r_q, c_q, obstacles);
-		assertEquals(expected1, result1);
-		n = 1; k = 0; r_q = 1; c_q = 1; 
-		obstacles = new int[0][2];
-		int expected2 = 0;
-		int result2 = queensAttack(n, k, r_q, c_q, obstacles);
-		assertEquals(expected2, result2);
-	}
-
-	// https://www.hackerrank.com/challenges/library-fine/problem
-	@Test
-	public void testLibraryFine() {
-		int d1=9, m1=6, y1=2015;
-		int d2=6, m2=6, y2=2015;
-		int expected = 45;
-		int result = libraryFine(d1, m1, y1, d2, m2, y2);
-		assertEquals(expected, result);
-		d1=5; m1=5; y1=2014;
-		d2=23; m2=2; y2=2014;
-		expected = 1500;
-		result = libraryFine(d1, m1, y1, d2, m2, y2);
-		assertEquals(expected, result);
-		d1=2; m1=7; y1=1014;
-		d2=1; m2=1; y2=1014;
-		expected = 3000;
-		result = libraryFine(d1, m1, y1, d2, m2, y2);
-		assertEquals(expected, result);
-	}
-	
-	// https://www.hackerrank.com/challenges/repeated-string/problem
-	@Test
-	public void testRepeatedString() {
-		String sample0 = "aba"; long n0 = 10L; long expected0 = 7;
-		String sample1 = "a"; long n1 = 1000000000000L; long expected1 = 1000000000000L;
-		String sample7 = "kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm";
-		long n7 = 736778906400L; long expected7 = 51574523448L;
-		long result0 = repeatedString(sample0, n0);
-		long result1 = repeatedString(sample1, n1);
-		long result7 = repeatedString(sample7, n7);
-		assertEquals(expected0, result0);
-		assertEquals(expected1, result1);
-		assertEquals(expected7, result7);
-    }
-	
-	// https://www.hackerrank.com/challenges/append-and-delete/problem
-	@Test 
-	public void testAppendAndDelete() {
-		String s = "hackerhappy", t = "hackerrank"; int k = 9;
-		String result = appendAndDelete(s, t, k);
-		assertEquals("Yes", result);
-		s = "aba"; t = "aba"; k = 7;
-		result = appendAndDelete(s, t, k);
-		assertEquals("Yes", result);
-		s = "ashley"; t = "ash"; k = 2;
-		result = appendAndDelete(s, t, k);
-		assertEquals("No", result);
-		s = "y"; t = "yu"; k = 2;
-		result = appendAndDelete(s, t, k);
-		assertEquals("No", result);
-		s = "asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv"; 
-		t = "asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv";
-		k = 20;
-		result = appendAndDelete(s, t, k);
-		assertEquals("Yes", result);
-		s = "abcd"; t = "abcdert"; k = 10;
-		result = appendAndDelete(s, t, k);
-		assertEquals("No", result);
-		s = "abcdef"; t = "fedcba"; k = 15;
-		result = appendAndDelete(s, t, k);
-		assertEquals("Yes", result);
-		s = "aaa"; t = "a"; k = 5;
-		result = appendAndDelete(s, t, k);
-		assertEquals("Yes", result);
-    }
-	
-	// https://www.hackerrank.com/challenges/save-the-prisoner/problem
-	@Test
-	public void testSaveThePrisoner() {
-		int n = 5, m = 2, s = 1, expected = 2;
-		int result = saveThePrisoner(n, m, s);
-		assertEquals(expected, result);
-		n = 5; m = 2; s = 2; expected = 3;
-		result = saveThePrisoner(n, m, s);
-		assertEquals(expected, result);
-		n = 7; m = 19; s = 2; expected = 6;
-		result = saveThePrisoner(n, m, s);
-		assertEquals(expected, result);
-		n = 3; m = 7; s = 3; expected = 3;
-		result = saveThePrisoner(n, m, s);
-		assertEquals(expected, result);
-		n= 352926151; m = 380324688; s = 94730870; expected = 122129406;
-		result = saveThePrisoner(n, m, s);
-		assertEquals(expected, result);
-	}
-	
-				
 }
