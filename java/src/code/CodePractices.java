@@ -267,11 +267,5 @@ public class CodePractices {
     	return (k >= diffOfS.length()+diffOfT.length()) && (k - diffOfS.length()+diffOfT.length())%2==0 ? "Yes" : "No";
     }
 	
-	public static int saveThePrisoner(int n, int m, int s) {
-    	int r = s + (m-1);
-    	if (r <= n) return r;
-    	return (r%n == 0) ? n : r%n;
-    }
-	
 			
 }
