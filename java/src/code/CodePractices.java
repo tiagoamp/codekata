@@ -71,28 +71,5 @@ public class CodePractices {
 		results[2] = String.format(Locale.US, "%.06f", ((double) zeros) / ((double) length));
 		return results;
     }
-	
-	public static int countingValleys(int n, String s) {
-		int countOfValleys = 0, path = 0, seaLevel = 0;
-		boolean enteredValley = false;		
-		for (int i = 0; i < n; i++) {
-			Character letter = s.charAt(i);
-			if (letter.equals('U')) path += 1;
-			else if (letter.equals('D')) path -= 1;
-			if (path == seaLevel && enteredValley)
-				countOfValleys++;
-			enteredValley = path < 0;
-		}
-		return countOfValleys;
-    }
-	
-	public static String getSmallestAndLargest(String s, int k) {
-        List<String> substrings = new ArrayList<>();
-        for(int i=0; i<=s.length()-k; i++) 
-        	substrings.add(s.substring(i, i+k));
-        String smallest = substrings.stream().sorted().min(String::compareTo).get();
-        String largest = substrings.stream().sorted().max(String::compareTo).get();
-        return smallest + "\n" + largest;
-    }
 					
 }
