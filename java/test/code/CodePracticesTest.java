@@ -6,13 +6,10 @@ import static code.CodePractices.findDigits;
 import static code.CodePractices.fizzbuzz;
 import static code.CodePractices.getMoneySpent;
 import static code.CodePractices.getSmallestAndLargest;
-import static code.CodePractices.isAnagram;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
-import static code.CodePractices.pangrams;
 import static code.CodePractices.plusMinus;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
@@ -121,31 +118,6 @@ public class CodePracticesTest {
 		String s = "welcometojava"; int k = 3;
 		String result = getSmallestAndLargest(s, k);
 		assertTrue(result.contains("ava") && result.contains("wel"));
-	}
-	
-	// https://www.hackerrank.com/challenges/java-anagrams/problem
-	@Test
-	public void testIsAnagram() {
-		String a = "anagram", b = "margana";
-		boolean result = isAnagram(a, b);
-		assertTrue(result);
-		a = "anagramm"; b = "marganaa";
-		result = isAnagram(a, b);
-		assertFalse(result);
-		a = "Hello"; b = "hello";
-		result = isAnagram(a, b);
-		assertTrue(result);
-	}
-	
-	// https://www.hackerrank.com/challenges/pangrams/problem
-	@Test
-	public void testPangrams() {
-		String s = "We promptly judged antique ivory buckles for the next prize";
-		String result = pangrams(s);
-		assertEquals("pangram", result);
-		s = "We promptly judged antique ivory buckles for the prize";
-		result = pangrams(s);
-		assertEquals("not pangram", result);
 	}
 	
 }

@@ -2,11 +2,8 @@ package code;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.regex.Pattern;
 
 public class CodePractices {
 
@@ -96,39 +93,6 @@ public class CodePractices {
         String smallest = substrings.stream().sorted().min(String::compareTo).get();
         String largest = substrings.stream().sorted().max(String::compareTo).get();
         return smallest + "\n" + largest;
-    }
-	
-	public static boolean isAnagram(String a, String b) {
-    	if (a.length() != b.length()) return false;
-    	int len = a.length();
-    	Map<Character, Integer> resultFrequency = new HashMap<>();
-    	for(int i=0; i<len; i++) 
-    		resultFrequency.compute(a.toLowerCase().charAt(i), (k,v) -> (v == null) ? 1 : v+1);
-    	for(int i=0; i<len; i++) 
-    		resultFrequency.computeIfPresent(b.toLowerCase().charAt(i), (k,v) -> v-1);
-    	Integer absSum = resultFrequency.values().stream().reduce(0, (x,y) -> Math.abs(x)+Math.abs(y));
-    	return absSum == 0;
-    }
-	
-	public static String pangrams(String s) {
-    	final String letters = "abcdefghijklmnopqrstuvxywz";
-    	char[] charArr = letters.toCharArray();
-    	int[] qt = new int[charArr.length];    	
-    	if (s == null || s.length() < charArr.length)
-    		return "not pangram";    	
-    	for (int i=0; i<s.length(); i++) {
-    		char currChar = s.toLowerCase().charAt(i);
-    		for(int j=0; j<charArr.length; j++) {
-    			if (currChar == charArr[j]) {
-    				qt[j]++;
-    				break;
-    			}
-    		}
-    	}    	
-    	boolean result = true;
-    	for(int j=0; j<charArr.length; j++) 
-    		result = result && (qt[j] > 0);
-    	return result ? "pangram" : "not pangram";	
     }
 					
 }
