@@ -9,7 +9,6 @@ import static code.CodePractices.getSmallestAndLargest;
 import static code.CodePractices.isAnagram;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
-import static code.CodePractices.pangrams;
 import static code.CodePractices.plusMinus;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -135,17 +134,6 @@ public class CodePracticesTest {
 		a = "Hello"; b = "hello";
 		result = isAnagram(a, b);
 		assertTrue(result);
-	}
-	
-	// https://www.hackerrank.com/challenges/pangrams/problem
-	@Test
-	public void testPangrams() {
-		String s = "We promptly judged antique ivory buckles for the next prize";
-		String result = pangrams(s);
-		assertEquals("pangram", result);
-		s = "We promptly judged antique ivory buckles for the prize";
-		result = pangrams(s);
-		assertEquals("not pangram", result);
 	}
 	
 }
