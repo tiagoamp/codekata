@@ -9,7 +9,6 @@ import static code.CodePractices.getSmallestAndLargest;
 import static code.CodePractices.isAnagram;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
-import static code.CodePractices.minimumNumber;
 import static code.CodePractices.pangrams;
 import static code.CodePractices.plusMinus;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -147,19 +146,6 @@ public class CodePracticesTest {
 		s = "We promptly judged antique ivory buckles for the prize";
 		result = pangrams(s);
 		assertEquals("not pangram", result);
-	}
-	
-	@Test
-	public void testMinimumNumber() {
-		int n = 3; String password = "Ab1";
-		int result = minimumNumber(n, password);
-		assertEquals(3, result);
-		n = 11; password = "#HackerRank";
-		result = minimumNumber(n, password);
-		assertEquals(1, result);
-		n = 7; password = "AUzs-nV";
-		result = minimumNumber(n, password);
-		assertEquals(1, result);
 	}
 	
 }

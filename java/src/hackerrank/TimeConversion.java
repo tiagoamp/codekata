@@ -10,7 +10,7 @@ public class TimeConversion {
 
 	@Test
 	@DisplayName("Test given samples")
-	public void testTimeConversion() {
+	void testTimeConversion() {
 		String[] samples = { "07:05:45PM", "12:00:00AM", "12:00:00PM", "12:40:22AM", "12:45:54PM" };
 		String[] expected = { "19:05:45", "00:00:00", "12:00:00", "00:40:22", "12:45:54" };
 		for (int i = 0; i < expected.length; i++) { 
