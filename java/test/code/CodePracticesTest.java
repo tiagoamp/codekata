@@ -9,10 +9,8 @@ import static code.CodePractices.getSmallestAndLargest;
 import static code.CodePractices.isAnagram;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
-import static code.CodePractices.minimumNumber;
 import static code.CodePractices.pangrams;
 import static code.CodePractices.plusMinus;
-import static code.CodePractices.timeConversion;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -149,38 +147,5 @@ public class CodePracticesTest {
 		result = pangrams(s);
 		assertEquals("not pangram", result);
 	}
-	
-	@Test
-	public void testMinimumNumber() {
-		int n = 3; String password = "Ab1";
-		int result = minimumNumber(n, password);
-		assertEquals(3, result);
-		n = 11; password = "#HackerRank";
-		result = minimumNumber(n, password);
-		assertEquals(1, result);
-		n = 7; password = "AUzs-nV";
-		result = minimumNumber(n, password);
-		assertEquals(1, result);
-	}
-
-	// https://www.hackerrank.com/challenges/time-conversion/problem
-	@Test
-	public void testTimeConversion() {
-        String sample0 = "07:05:45PM", expected0 = "19:05:45";
-        String result = timeConversion(sample0);
-        assertEquals(expected0, result);
-        String sample = "12:00:00AM", expected = "00:00:00";
-        result = timeConversion(sample);
-        assertEquals(expected, result);
-        sample = "12:00:00PM"; expected = "12:00:00";
-        result = timeConversion(sample);
-        assertEquals(expected, result);
-        String sample1 = "12:40:22AM", expected1 = "00:40:22";
-        result = timeConversion(sample1);
-        assertEquals(expected1, result);
-        String sample4 = "12:45:54PM", expected4 = "12:45:54";
-        result = timeConversion(sample4);
-        assertEquals(expected4, result);        
-    }
 	
 }

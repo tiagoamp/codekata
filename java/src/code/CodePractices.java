@@ -130,34 +130,5 @@ public class CodePractices {
     		result = result && (qt[j] > 0);
     	return result ? "pangram" : "not pangram";	
     }
-	
-	public static int minimumNumber(int n, String password) {
-    	final int MIN_PASS_LEN = 6;
-    	int minCharstoAdd = 0;
-    	if (!Pattern.compile("[0-9]").matcher(password).find()) minCharstoAdd++;
-    	if (!Pattern.compile("[a-z]").matcher(password).find()) minCharstoAdd++;
-    	if (!Pattern.compile("[A-Z]").matcher(password).find()) minCharstoAdd++;
-    	if (!Pattern.compile("[!@#\\$%^&*()\\-\\+]").matcher(password).find()) minCharstoAdd++;
-    	if ( (password.length() + minCharstoAdd) < MIN_PASS_LEN )
-    		minCharstoAdd += MIN_PASS_LEN - (password.length() + minCharstoAdd);
-    	return minCharstoAdd;
-    }
-	
-	public static String timeConversion(String s) {
-    	if (s.endsWith("AM")) {
-        	if (s.startsWith("12:")) {
-        		String[] timeFields = s.split(":");
-                timeFields[0] = "00";
-                s = String.join(":", timeFields);
-        	}
-        	return s.replace("AM", "");
-        }
-        // pm
-        if (s.startsWith("12:")) return s.replace("PM", "");
-        s = s.replace("PM", "");
-        String[] timeFields = s.split(":");
-        timeFields[0] = String.valueOf(Integer.valueOf(timeFields[0]) + 12);
-        return String.join(":", timeFields);
-    }
 					
 }
