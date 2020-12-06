@@ -1,16 +1,13 @@
 package code;
 
 import static code.CodePractices.bonAppetit;
-import static code.CodePractices.countingValleys;
 import static code.CodePractices.findDigits;
 import static code.CodePractices.fizzbuzz;
 import static code.CodePractices.getMoneySpent;
-import static code.CodePractices.getSmallestAndLargest;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
 import static code.CodePractices.plusMinus;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -103,21 +100,5 @@ public class CodePracticesTest {
 		assertEquals("0.333333", result[1]);
 		assertEquals("0.166667", result[2]);
     }
-	
-	// https://www.hackerrank.com/challenges/counting-valleys/problem
-	@Test
-	public void testCountingValleys() {
-		int n = 8; String s = "UDDDUDUU";
-		int result = countingValleys(n, s);
-		assertEquals(1, result);		
-	}
-	
-	// https://www.hackerrank.com/challenges/java-string-compare/problem
-	@Test
-	public void testGetSmallestAndLargest() {
-		String s = "welcometojava"; int k = 3;
-		String result = getSmallestAndLargest(s, k);
-		assertTrue(result.contains("ava") && result.contains("wel"));
-	}
-	
+			
 }
