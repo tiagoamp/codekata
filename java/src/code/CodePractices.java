@@ -3,7 +3,6 @@ package code;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 
 public class CodePractices {
 
@@ -56,20 +55,5 @@ public class CodePractices {
 		}
 		return results.isEmpty() ? -1 : Collections.max(results);
 	}
-	
-	public static String[] plusMinus(int[] arr) {
-		int positives = 0, negatives = 0, zeros = 0;
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] == 0) zeros++;
-			else if (arr[i] > 0) positives++;
-			else negatives++;
-		}
-		int length = arr.length;
-		String[] results = new String[3];
-		results[0] = String.format(Locale.US, "%.06f", ((double) positives) / ((double) length));
-		results[1] = String.format(Locale.US, "%.06f", ((double) negatives) / ((double) length));
-		results[2] = String.format(Locale.US, "%.06f", ((double) zeros) / ((double) length));
-		return results;
-    }
 					
 }

@@ -6,7 +6,6 @@ import static code.CodePractices.fizzbuzz;
 import static code.CodePractices.getMoneySpent;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
-import static code.CodePractices.plusMinus;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
@@ -90,15 +89,5 @@ public class CodePracticesTest {
 		result = getMoneySpent(keyboards1, drives1, b);
 		assertEquals(expected, result);
 	}
-	
-	// https://www.hackerrank.com/challenges/plus-minus/problem
-	@Test
-	public void testPlusMinus() {
-		int[] input = {-4, 3, -9, 0, 4, 1};
-		String[] result = plusMinus(input);
-		assertEquals("0.500000", result[0]);
-		assertEquals("0.333333", result[1]);
-		assertEquals("0.166667", result[2]);
-    }
 			
 }
