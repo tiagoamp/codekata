@@ -1,7 +1,6 @@
 package code;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class CodePractices {
@@ -44,16 +43,5 @@ public class CodePractices {
 		Integer actualCharge = (total - bill.get(k)) / 2; 
 		return (b == actualCharge) ? "Bon Appetit" : String.valueOf(b - actualCharge);
     }
-	
-	public static int getMoneySpent(int[] keyboards, int[] drives, int b) {
-		List<Integer> results = new ArrayList<>();
-		for (int i = 0; i < keyboards.length; i++) {
-			for (int j = 0; j < drives.length; j++) {
-				int sum = keyboards[i] + drives[j];
-				if (b >= sum) results.add(sum);
-			}
-		}
-		return results.isEmpty() ? -1 : Collections.max(results);
-	}
 					
 }
