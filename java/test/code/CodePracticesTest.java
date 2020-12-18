@@ -3,7 +3,6 @@ package code;
 import static code.CodePractices.bonAppetit;
 import static code.CodePractices.findDigits;
 import static code.CodePractices.fizzbuzz;
-import static code.CodePractices.getMoneySpent;
 import static code.CodePractices.lowestTriangle;
 import static code.CodePractices.maximumDraws;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -74,20 +73,6 @@ public class CodePracticesTest {
 		k = 6; b = 288;
 		result = bonAppetit(bill, k, b);
 		assertEquals("6", result);		
-	}
-	
-	
-	// https://www.hackerrank.com/challenges/electronics-shop/problem
-	@Test
-	public void testGetMoneySpent() {
-		int[] keyboards0 = {3,1}, drives0 = {5,2,8}; 
-		int b = 10, expected = 9;
-		int result = getMoneySpent(keyboards0, drives0, b);
-		assertEquals(expected, result);
-		int[] keyboards1 = {4}, drives1 = {5}; 
-		b = 5; expected = -1;
-		result = getMoneySpent(keyboards1, drives1, b);
-		assertEquals(expected, result);
 	}
 			
 }
