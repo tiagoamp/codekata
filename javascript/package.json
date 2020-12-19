@@ -8,8 +8,8 @@
   },
   "author": "tiagoamp",
   "license": "ISC",
-  "devDependencies": {
-    "babel-jest": "^23.6.0",
-    "jest": "^23.6.0"
+  "devDependencies": {},
+  "dependencies": {
+    "jest": "^26.6.3"
   }
 }
