@@ -343,26 +343,3 @@ test("CountApplesAndOranges", () => {
     expect(result[1]).toEqual(1);
 });
 
-// https://www.hackerrank.com/challenges/super-digit/problem
-test("Superdigit", () => {
-    let n = "148"; k = 3, expected = 3, result = 0;
-    result = practices.superdigit(n,k);
-    expect(result).toEqual(expected);
-	n = "9875"; k = 4; expected = 8;
-	result = practices.superdigit(n,k);
-	expect(result).toEqual(expected);
-	n = "123"; k = 3; expected = 9;
-	result = practices.superdigit(n,k);
-    expect(result).toEqual(expected);
-	n = "100000"; k = 100000;  // superior threshold 
-    result = practices.superdigit(n,k);
-    expect(result).toBeGreaterThan(0);
-});
-
-// https://www.hackerrank.com/challenges/best-divisor/problem
-test('Best Divisor', () => {
-    const sample = 12; 
-    const expectedVal = 6;
-	const result = practices.bestDivisor(sample);
-	expect(result).toEqual(expectedVal);
-});
