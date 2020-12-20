@@ -1,12 +1,5 @@
 // https://www.hackerrank.com/challenges/best-divisor/problem
 
-test('Best Divisor', () => {
-    const sample = 12, expectedVal = 6;
-	const result = bestDivisor(sample);
-	expect(result).toEqual(expectedVal);
-});
-
-
 const bestDivisor = (input) => {
     const arr = Array(input).fill().map((item, index) => index + 1);
     const divisors = arr.filter(x => input % x == 0);
@@ -24,3 +17,9 @@ const bestDivisor = (input) => {
     return bestNumber;
 }
 
+
+test('Best Divisor', () => {
+    const sample = 12, expectedVal = 6;
+	const result = bestDivisor(sample);
+	expect(result).toEqual(expectedVal);
+});

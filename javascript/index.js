@@ -1,1 +1,0 @@
-console.log('Code practices are in [codepractices] js file.');

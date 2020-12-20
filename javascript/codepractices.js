@@ -355,38 +355,6 @@ module.exports = obj = {
             stairMatrix.push(mRow);
         }        
 		return stairMatrix;
-	},
-	
-	/* Fibonacci starting at 0. Fibonacci series should be as follows: 0, 1, 1, 2, 3, 5, 8, 13, etc... */	
-	fibonacci: function(n) {
-		if (n == 0) return 0;
-		else if (n == 1 || n == 2) return 1;
-		else return obj.fibonacci(n-2) + obj.fibonacci(n-1);
-	},
-
-	minMaxSum: function(arr) {
-        arr.sort(function(a, b){return a-b});
-        let min = 0, max = 0;
-    	const len = 5;    	
-    	for (let i = 0; i < arr.length; i++) {
-			if (i < len-1) min += arr[i];
-			if (i > 0) max += arr[i];
-		}
-    	return [min,max];
-	},
-	
-	countApplesAndOranges: function(s, t, a, b, apples, oranges) {
-		let appleCount = 0;
-		for (let i = 0; i < apples.length; i++) {
-			let distance = apples[i] + a;
-			if ( distance >= s && distance <= t ) appleCount++;
-		}
-		let orangeCount = 0;
-		for (let i = 0; i < oranges.length; i++) {
-			let distance = oranges[i] + b;
-			if ( distance >= s && distance <= t ) orangeCount++;
-        }
-        return [appleCount, orangeCount];
-	},
-
+	}
+		
 }
