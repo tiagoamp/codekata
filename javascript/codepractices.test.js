@@ -316,30 +316,3 @@ test("Fibonacci", () => {
     let result = practices.fibonacci(10);
     expect(result).toEqual(55);
 });
-
-// https://www.hackerrank.com/challenges/mini-max-sum/problem
-test("minMaxSum", () => {
-    const arr = [1, 2, 3, 4, 5];
-    const result = practices.minMaxSum(arr);
-    expect(result[0]).toEqual(10);
-    expect(result[1]).toEqual(14);    
-});
-
-// https://www.hackerrank.com/challenges/apple-and-orange/problem
-test("CountApplesAndOranges", () => {
-    // sample case
-    let s = 7, t = 11;  // house
-    let a = 5, b = 15;  // tree
-    let apples = [-2, 2, 1];   // fruits array
-    let oranges = [5, -6];     // fruits array
-    let result = practices.countApplesAndOranges(s, t, a, b, apples, oranges);
-    expect(result[0]).toEqual(1);
-    expect(result[1]).toEqual(1);
-    // test case 2
-    s = 2; t = 3; a = 1; b = 5;
-    apples = [2]; oranges = [-2];
-    result = practices.countApplesAndOranges(s, t, a, b, apples, oranges);
-    expect(result[0]).toEqual(1);
-    expect(result[1]).toEqual(1);
-});
-
