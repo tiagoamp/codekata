@@ -329,32 +329,4 @@ module.exports = obj = {
     	return result;
     },
 	
-	birthdayCakeCandles: function(arr) {
-        arr.sort(function(a, b) {
-                return a - b;
-            });
-        const lastIndex = arr.length -1;
-		let tallest = arr[lastIndex];
-		let count = 0;		
-		for (let i = lastIndex; i >= 0; i--) {
-			if (arr[i] == tallest) count++;
-			else break;			
-		}		
-		return count;
-	},
-	
-	staircase: function(n) {
-		if (n == 0) return null;
-        const stairMatrix = [];
-        for (let row = 0; row < n; row++) {
-            let mRow = [];
-			for (let col = 0; col < n; col++) {
-                const value = (col >=  parseInt((n-row) - 1 )) ? '#' : ' ';
-                mRow.push(value);
-            }
-            stairMatrix.push(mRow);
-        }        
-		return stairMatrix;
-	}
-		
 }
