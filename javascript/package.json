@@ -11,5 +11,8 @@
   "devDependencies": {},
   "dependencies": {
     "jest": "^26.6.3"
+  },
+  "jest": {
+    "testRegex": "(/hackerrank/.*|/codewars/.*|(\\.|/)(test|spec))\\.[jt]sx?$"
   }
 }
