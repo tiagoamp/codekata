@@ -291,28 +291,3 @@ test("kangaroo", () => {
     expect(result).toEqual("NO");
 });
 
-// https://www.hackerrank.com/challenges/birthday-cake-candles/problem
-test("birthdayCakeCandles", () => {
-    let arr = [3, 2, 1, 3];
-	let result = practices.birthdayCakeCandles(arr);
-	expect(result).toEqual(2);
-	// threshold case 
-	const n = 100000;
-	arr = Array(n).fill(9999999);
-	result = practices.birthdayCakeCandles(arr);
-	expect(result).toEqual(100000);
-});
-
-// https://www.hackerrank.com/challenges/staircase/problem
-test("Staircase", () => {
-    const n = 6;
-    const result = practices.staircase(n);
-    for (let i = 0; i < n; i++) expect(result[0][i]).toEqual( (i >= 5) ? '#' : ' ');
-	for (let i = 0; i < n; i++) expect(result[1][i]).toEqual( (i >= 4) ? '#' : ' ');
-	for (let i = 0; i < n; i++) expect(result[5][i]).toEqual( (i >= 0) ? '#' : ' ');
-});
-
-test("Fibonacci", () => {
-    let result = practices.fibonacci(10);
-    expect(result).toEqual(55);
-});
