@@ -15,7 +15,7 @@ birthdayCakeCandles = (arr) => {
 
 test("birthdayCakeCandles", () => {
     let arr = [3, 2, 1, 3];
-	let result = practices.birthdayCakeCandles(arr);
+	let result = birthdayCakeCandles(arr);
 	expect(result).toEqual(2);
 	// threshold case 
 	const n = 100000;
