@@ -279,15 +279,4 @@ test("breakingRecords", () => {
 	expect(result[1]).toEqual(0);
 });
 
-test("kangaroo", () => {
-    let x1 = 0; v1 = 3; x2 = 4; v2 = 2;
-	let result = practices.kangaroo(x1, v1, x2, v2);
-	expect(result).toEqual("YES");
-	x1 = 0; v1 = 2; x2 = 5; v2 = 3;
-	result = practices.kangaroo(x1, v1, x2, v2);
-	expect(result).toEqual("NO");
-	x1 = 43; v1 = 2; x2 = 70; v2 = 2;
-	result = practices.kangaroo(x1, v1, x2, v2);
-    expect(result).toEqual("NO");
-});
 
