@@ -304,22 +304,4 @@ module.exports = obj = {
         return pairs;
 	},
 	
-	breakingRecords: function(scores) {
-    	let countMin = 0, countMax = 0;
-    	let min = scores[0], max = scores[0];
-    	
-    	for (let i = 0; i < scores.length; i++) {
-			if (scores[i] < min) {
-				min = scores[i];
-				countMin++;
-			} else if (scores[i] > max) {
-				max = scores[i];
-				countMax++;
-			}
-        }
-        
-        const result = [countMax, countMin];
-    	return result;
-	},
-
 }

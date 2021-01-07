@@ -267,16 +267,5 @@ test("sockMerchant", () => {
     expect(result).toEqual(4);
 });
 
-// https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
-test("breakingRecords", () => {
-    const sample0 = [10, 5, 20, 20, 4, 5, 2, 25, 1];
-	let result = practices.breakingRecords(sample0);
-	expect(result[0]).toEqual(2);
-	expect(result[1]).toEqual(4);
-	const sample1 = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42];
-	result = practices.breakingRecords(sample1);
-	expect(result[0]).toEqual(4);
-	expect(result[1]).toEqual(0);
-});
 
 
