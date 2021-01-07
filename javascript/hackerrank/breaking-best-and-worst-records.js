@@ -18,13 +18,16 @@ const breakingRecords = (scores) => {
     return result;
 }
 
-test("breakingRecords", () => {
+test("sample 0", () => {
     const sample0 = [10, 5, 20, 20, 4, 5, 2, 25, 1];
-	let result = breakingRecords(sample0);
+	const result = breakingRecords(sample0);
 	expect(result[0]).toEqual(2);
 	expect(result[1]).toEqual(4);
-	const sample1 = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42];
-	result = breakingRecords(sample1);
+});
+
+test("sample 1", () => {
+    const sample1 = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42];
+	const result = breakingRecords(sample1);
 	expect(result[0]).toEqual(4);
 	expect(result[1]).toEqual(0);
 });
