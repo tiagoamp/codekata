@@ -18,6 +18,7 @@ const breakingRecords = (scores) => {
     return result;
 }
 
+
 test("sample 0", () => {
     const sample0 = [10, 5, 20, 20, 4, 5, 2, 25, 1];
 	const result = breakingRecords(sample0);
