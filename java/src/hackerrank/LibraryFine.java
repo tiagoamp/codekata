@@ -9,7 +9,22 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 //https://www.hackerrank.com/challenges/library-fine/problem
-public class LibraryFine {	
+public class LibraryFine {
+
+	public static int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
+		if (y1 > y2) return 10_000;
+		LocalDate returnedDate = LocalDate.of(y1, m1, d1);
+		LocalDate dueDate = LocalDate.of(y2, m2, d2);
+		if (returnedDate.isBefore(dueDate) || returnedDate.isEqual(dueDate))
+			return 0;
+		if (returnedDate.getMonth() == dueDate.getMonth()) {
+			int daysLate = Period.between(dueDate, returnedDate).getDays();
+			return 15 * daysLate;
+		}
+		int monthsLate = m1 - m2;
+		return 500 * monthsLate;
+	}
+
 
 	@Test
 	@DisplayName("Test sample 0")
@@ -40,20 +55,5 @@ public class LibraryFine {
 		int result = libraryFine(d1, m1, y1, d2, m2, y2);
 		assertEquals(expected, result);
 	}
-	
-
-	public static int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
-    	if (y1 > y2) return 10_000;
-    	LocalDate returnedDate = LocalDate.of(y1, m1, d1);
-    	LocalDate dueDate = LocalDate.of(y2, m2, d2);
-    	if (returnedDate.isBefore(dueDate) || returnedDate.isEqual(dueDate))
-    		return 0;
-    	if (returnedDate.getMonth() == dueDate.getMonth()) {
-    		int daysLate = Period.between(dueDate, returnedDate).getDays();
-    		return 15 * daysLate;
-    	}
-    	int monthsLate = m1 - m2;
-    	return 500 * monthsLate;
-    }
 
 }

@@ -12,7 +12,19 @@ import org.junit.jupiter.api.Test;
 
 //https://www.hackerrank.com/challenges/picking-numbers/problem
 public class PickingNumbers {
-		
+
+	public static int pickingNumbers(List<Integer> input) {
+		Map<Integer, Integer> map = new TreeMap<>();
+		input.forEach(i -> {
+			Integer qtt = map.getOrDefault(i, 0);
+			map.put(i, qtt+1);
+		});
+		int maxRange = map.keySet().stream()
+				.map(k -> map.get(k) + map.getOrDefault(k+1, 0)).max(Integer::compare).get();
+		return maxRange;
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testPickingNumbers() {
@@ -24,16 +36,5 @@ public class PickingNumbers {
 			assertEquals(expected[i], result);			
 		}
 	}
-
-	public static int pickingNumbers(List<Integer> input) {
-        Map<Integer, Integer> map = new TreeMap<>();
-        input.forEach(i -> {
-        	Integer qtt = map.getOrDefault(i, 0);
-        	map.put(i, qtt+1);
-        });
-        int maxRange = map.keySet().stream()
-        		.map(k -> map.get(k) + map.getOrDefault(k+1, 0)).max(Integer::compare).get();
-        return maxRange;
-    }
 	
 }

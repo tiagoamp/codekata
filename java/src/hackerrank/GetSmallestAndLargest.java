@@ -11,6 +11,16 @@ import org.junit.jupiter.api.Test;
 // https://www.hackerrank.com/challenges/java-string-compare/problem
 public class GetSmallestAndLargest {
 
+	public static String getSmallestAndLargest(String s, int k) {
+		List<String> substrings = new ArrayList<>();
+		for(int i=0; i<=s.length()-k; i++)
+			substrings.add(s.substring(i, i+k));
+		String smallest = substrings.stream().sorted().min(String::compareTo).get();
+		String largest = substrings.stream().sorted().max(String::compareTo).get();
+		return smallest + "\n" + largest;
+	}
+
+
 	@Test
 	@DisplayName("Test given sample")
 	void testGetSmallestAndLargest() {
@@ -18,14 +28,5 @@ public class GetSmallestAndLargest {
 		String result = getSmallestAndLargest(s, k);
 		assertTrue(result.contains("ava") && result.contains("wel"));
 	}
-	
-	public static String getSmallestAndLargest(String s, int k) {
-        List<String> substrings = new ArrayList<>();
-        for(int i=0; i<=s.length()-k; i++) 
-        	substrings.add(s.substring(i, i+k));
-        String smallest = substrings.stream().sorted().min(String::compareTo).get();
-        String largest = substrings.stream().sorted().max(String::compareTo).get();
-        return smallest + "\n" + largest;
-    }
 
 }

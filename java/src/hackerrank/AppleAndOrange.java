@@ -7,7 +7,22 @@ import org.junit.jupiter.api.Test;
 
 // https://www.hackerrank.com/challenges/apple-and-orange/problem
 public class AppleAndOrange {
-	
+
+	public static int[] countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+		int appleCount = 0;
+		for (int i = 0; i < apples.length; i++) {
+			int distance = apples[i] + a;
+			if ( distance >= s && distance <= t ) appleCount++;
+		}
+		int orangeCount = 0;
+		for (int i = 0; i < oranges.length; i++) {
+			int distance = oranges[i] + b;
+			if ( distance >= s && distance <= t ) orangeCount++;
+		}
+		return new int[] {appleCount, orangeCount};
+	}
+
+
 	@Test
 	@DisplayName("Test sample case 1")
 	void testCountApplesAndOranges1() {
@@ -29,20 +44,5 @@ public class AppleAndOrange {
 		assertEquals(1, result[0]);
 		assertEquals(1, result[1]);
 	}
-	
-	
-	public static int[] countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
-		int appleCount = 0;
-		for (int i = 0; i < apples.length; i++) {
-			int distance = apples[i] + a;
-			if ( distance >= s && distance <= t ) appleCount++;
-		}
-		int orangeCount = 0;
-		for (int i = 0; i < oranges.length; i++) {
-			int distance = oranges[i] + b;
-			if ( distance >= s && distance <= t ) orangeCount++;
-		}
-		return new int[] {appleCount, orangeCount};
-    }
 
 }

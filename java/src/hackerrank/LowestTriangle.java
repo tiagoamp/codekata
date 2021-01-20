@@ -7,7 +7,12 @@ import org.junit.jupiter.api.Test;
 
 // https://www.hackerrank.com/challenges/lowest-triangle/problem
 public class LowestTriangle {
-	
+
+	public static int lowestTriangle(int base, int area){
+		return (int) Math.ceil( (area * 2.0) / (float)base ) ;
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testLowestTriangle() {
@@ -17,10 +22,5 @@ public class LowestTriangle {
 			assertEquals(expected[i], result);
 		}
 	}
-	
-
-	public static int lowestTriangle(int base, int area){
-		return (int) Math.ceil( (area * 2.0) / (float)base ) ;
-    }
 	
 }

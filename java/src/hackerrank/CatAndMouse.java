@@ -7,7 +7,15 @@ import org.junit.jupiter.api.Test;
 
 //https://www.hackerrank.com/challenges/cats-and-a-mouse/problem
 public class CatAndMouse {
-	
+
+	public static String catAndMouse(int x, int y, int z) {
+		int distanceCatAFromMouse = Math.abs(z - x);
+		int distanceCatBFromMouse = Math.abs(z - y);
+		if (distanceCatAFromMouse == distanceCatBFromMouse) return "Mouse C";
+		return distanceCatAFromMouse < distanceCatBFromMouse ? "Cat A" : "Cat B";
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testCatAndMouse() {
@@ -18,12 +26,5 @@ public class CatAndMouse {
 			assertEquals(expected[i], result);
 		}
 	}
-	
-	public static String catAndMouse(int x, int y, int z) {
-    	int distanceCatAFromMouse = Math.abs(z - x);
-    	int distanceCatBFromMouse = Math.abs(z - y);
-    	if (distanceCatAFromMouse == distanceCatBFromMouse) return "Mouse C";
-    	return distanceCatAFromMouse < distanceCatBFromMouse ? "Cat A" : "Cat B";
-    }
 	
 }
