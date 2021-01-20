@@ -7,7 +7,12 @@ import org.junit.jupiter.api.Test;
 
 // https://www.hackerrank.com/challenges/maximum-draws/problem
 public class MaximumDraws {
-	
+
+	public static int maximumDraws(int n) {
+		return ( (n * 2) / 2 ) + 1;
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testMaximumDraws() {
@@ -17,9 +22,5 @@ public class MaximumDraws {
 			assertEquals(expected[i], result);
 		}
 	}
-
-	public static int maximumDraws(int n) {
-        return ( (n * 2) / 2 ) + 1;
-    }
 	
 }

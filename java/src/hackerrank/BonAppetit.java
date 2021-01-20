@@ -11,6 +11,13 @@ import org.junit.jupiter.api.Test;
 // https://www.hackerrank.com/challenges/bon-appetit/problem
 public class BonAppetit {
 
+	public static String bonAppetit(List<Integer> bill, int k, int b) {
+		Integer total = bill.stream().reduce(0, (acc, e) -> acc + e);
+		int actualCharge = (total - bill.get(k)) / 2;
+		return (b == actualCharge) ? "Bon Appetit" : String.valueOf(b - actualCharge);
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testBonAppetit() {
@@ -26,11 +33,5 @@ public class BonAppetit {
 		result = bonAppetit(bill, k, b);
 		assertEquals("6", result);		
 	}
-
-	public static String bonAppetit(List<Integer> bill, int k, int b) {
-		Integer total = bill.stream().reduce(0, (acc, e) -> acc + e);
-		Integer actualCharge = (total - bill.get(k)) / 2; 
-		return (b == actualCharge) ? "Bon Appetit" : String.valueOf(b - actualCharge);
-    }
 	
 }

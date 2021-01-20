@@ -10,7 +10,23 @@ import org.junit.jupiter.api.Test;
 
 //https://www.hackerrank.com/challenges/the-birthday-bar/problem
 public class BirthdayChoc {
-		
+
+	public static int birthdayChoc(List<Integer> s, int d, int m) {
+		int result = 0, index  = 0;
+		if (s == null || s.isEmpty()) return result;
+		boolean isOver = m > s.size();
+		while (!isOver) {
+			List<Integer> inner = s.subList(index, m);
+			int sum = inner.stream().reduce(0, (x,y) -> x+y);
+			if (sum == d) result++;
+			index++;
+			m++;
+			isOver = m > s.size();
+		}
+		return result;
+	}
+
+	
 	@Test
 	@DisplayName("Test given samples")
 	void testBirthdayChoc() {
@@ -22,21 +38,5 @@ public class BirthdayChoc {
 			assertEquals(expected[i], result);
 		}		
 	}
-	
-	
-	public static int birthdayChoc(List<Integer> s, int d, int m) {
-    	int result = 0, index  = 0;
-    	if (s == null || s.isEmpty()) return result;
-    	boolean isOver = m > s.size();
-    	while (!isOver) {    		
-    		List<Integer> inner = s.subList(index, m);
-    		int sum = inner.stream().reduce(0, (x,y) -> x+y);
-    		if (sum == d) result++;
-    		index++;
-    		m++;
-    		isOver = m > s.size();
-    	}    	
-    	return result;
-    }
 
 }

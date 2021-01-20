@@ -8,6 +8,17 @@ import org.junit.jupiter.api.Test;
 // https://www.hackerrank.com/challenges/find-digits/problem
 public class FindDigits {
 
+	public static int findDigits(int n) {
+		int curr = n, counter = 0;
+		while (curr > 0) {
+			if ( (curr % 10 != 0) && (n % (curr % 10) == 0) )
+				counter++;
+			curr = curr / 10;
+		}
+		return counter;
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testFindDigits() {
@@ -17,15 +28,5 @@ public class FindDigits {
 			assertEquals(expected[i], result);			
 		}
 	}
-	
-	public static int findDigits(int n) {
-		int curr = n, counter = 0;
-		while (curr > 0) {
-		    if ( (curr % 10 != 0) && (n % (curr % 10) == 0) )
-		    	counter++;
-		    curr = curr / 10;
-		}
-		return counter;
-    }
-	
+
 }

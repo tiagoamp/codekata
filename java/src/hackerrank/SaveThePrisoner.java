@@ -6,7 +6,14 @@ import org.junit.jupiter.api.Test;
 
 //https://www.hackerrank.com/challenges/save-the-prisoner/problem
 public class SaveThePrisoner {
-	
+
+	public static int saveThePrisoner(int n, int m, int s) {
+		int r = s + (m-1);
+		if (r <= n) return r;
+		return (r%n == 0) ? n : r%n;
+	}
+
+
 	@Test
 	void testSaveThePrisoner() {
 		int[] n = { 5, 5, 7, 3, 352926151 }, m = { 2, 2, 19, 7, 380324688 }, 
@@ -16,11 +23,5 @@ public class SaveThePrisoner {
 			assertEquals(expected[i], result);			
 		}
 	}
-	
-	public static int saveThePrisoner(int n, int m, int s) {
-    	int r = s + (m-1);
-    	if (r <= n) return r;
-    	return (r%n == 0) ? n : r%n;
-    }
 	
 }

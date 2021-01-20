@@ -11,7 +11,20 @@ import org.junit.jupiter.api.Test;
 
 //https://www.hackerrank.com/challenges/super-digit/problem
 public class SuperDigit {
-	
+
+	// Superdigit = sum of digits until its result has only 1 digit
+	public static int superdigit(String n, int k) {
+		if (n.length() <= 1) return Integer.parseInt(n);
+		int sum = 0;
+		for (int i = 0; i < n.length(); i++) {
+			int digit = Character.getNumericValue(n.charAt(i));
+			sum += digit;
+		}
+		if (k > 1) sum *= k;
+		return superdigit(String.valueOf(sum), 1);
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testSuperdit() {
@@ -32,19 +45,6 @@ public class SuperDigit {
 		String n = "100000"; int k = 100000;
 		int result = superdigit(n,k);
 		assertTrue(result > 0);
-	}
-	
-	
-	// Superdigit = sum of digits until its result has only 1 digit 
-	public static int superdigit(String n, int k) {
-		if (n.length() <= 1) return Integer.parseInt(n);
-		int sum = 0;
-		for (int i = 0; i < n.length(); i++) {
-			Integer digit = Character.getNumericValue(n.charAt(i));
-			sum += digit;
-		}		
-		if (k > 1) sum *= k;
-		return superdigit(String.valueOf(sum), 1);
 	}
 
 }

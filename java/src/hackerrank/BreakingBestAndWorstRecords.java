@@ -4,10 +4,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-
 //https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
 public class BreakingBestAndWorstRecords {
-	
+
+	public static int[] breakingRecords(int[] scores) {
+		int countMin = 0, countMax = 0;
+		int min = scores[0], max = scores[0];
+		for (int score : scores) {
+			if (score < min) {
+				min = score;
+				countMin++;
+			} else if (score > max) {
+				max = score;
+				countMax++;
+			}
+		}
+		return new int[]{countMax, countMin};
+	}
+
+
 	@Test
 	void testBreakingRecords() {
 		int[] sample0 = {10, 5, 20, 20, 4, 5, 2, 25, 1};
@@ -19,20 +34,5 @@ public class BreakingBestAndWorstRecords {
 		assertEquals(4, result[0]);
 		assertEquals(0, result[1]);		
 	}
-	
-	public static int[] breakingRecords(int[] scores) {
-    	int countMin = 0, countMax = 0;
-    	int min = scores[0], max = scores[0];
-    	for (int i = 0; i < scores.length; i++) {
-			if (scores[i] < min) {
-				min = scores[i];
-				countMin++;
-			} else if (scores[i] > max) {
-				max = scores[i];
-				countMax++;
-			}
-		}
-    	return new int[]{countMax, countMin};
-    }
 	
 }

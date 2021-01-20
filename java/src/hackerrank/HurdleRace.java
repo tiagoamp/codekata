@@ -9,7 +9,14 @@ import org.junit.jupiter.api.Test;
 
 //https://www.hackerrank.com/challenges/the-hurdle-race/problem
 public class HurdleRace {
-	
+
+	public static int hurdleRace(int k, int[] height) {
+		Arrays.sort(height);
+		int max = height[height.length-1];
+		return k >= max ? 0 : (max-k);
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testHurdleRace() {
@@ -20,12 +27,5 @@ public class HurdleRace {
 		result = hurdleRace(k1, height1);
 		assertEquals(0, result);
 	}
-	
-	
-	public static int hurdleRace(int k, int[] height) {
-    	Arrays.sort(height);
-    	int max = height[height.length-1];
-    	return k >= max ? 0 : (max-k);
-    }
 	
 }

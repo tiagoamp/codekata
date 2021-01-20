@@ -10,6 +10,26 @@ import org.junit.jupiter.api.Test;
 //https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
 public class ClimbingLeaderboard {
 
+	public static int[] climbingLeaderboard(int[] scores, int[] alice) {
+		int[] uniqueScores = Arrays.stream(scores).distinct().toArray();
+		int[] result = new int[alice.length];
+		int i = uniqueScores.length-1;
+		for(int j=0; j<alice.length; j++) {
+			int  a = alice[j];
+			while(i>=0) {
+				if(a>=uniqueScores[i])
+					i--;
+				else {
+					result[j] = i+2;
+					break;
+				}
+			}
+			if(i<0) result[j] = 1;
+		}
+		return result;
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testClimbingLeaderboard() {
@@ -34,24 +54,5 @@ public class ClimbingLeaderboard {
 		for (int i=0; i<expected3.length; i++) 
 			assertEquals(expected3[i], result3[i]);
 	}
-
-	public static int[] climbingLeaderboard(int[] scores, int[] alice) {
-    	int[] uniqueScores = Arrays.stream(scores).distinct().toArray();
-    	int[] result = new int[alice.length];
-    	int i = uniqueScores.length-1;
-        for(int j=0; j<alice.length; j++) {
-        	int  a = alice[j];
-            while(i>=0) {
-                if(a>=uniqueScores[i]) 
-                	i--;
-                else {
-                	result[j] = i+2; 
-                	break;
-                }
-            }
-            if(i<0) result[j] = 1;
-        }
-        return result;
-    }
 	
 }

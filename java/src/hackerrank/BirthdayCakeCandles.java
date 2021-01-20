@@ -9,6 +9,19 @@ import org.junit.jupiter.api.Test;
 
 // https://www.hackerrank.com/challenges/birthday-cake-candles/problem
 public class BirthdayCakeCandles {
+
+	public static int birthdayCakeCandles(int[] arr) {
+		Arrays.sort(arr);
+		int lastIndex = arr.length -1;
+		int tallest = arr[lastIndex];
+		int count = 0;
+		for (int i = lastIndex; i >= 0; i--) {
+			if (arr[i] == tallest) count++;
+			else break;
+		}
+		return count;
+	}
+
 	
 	@Test
 	@DisplayName("Test sample")
@@ -28,18 +41,5 @@ public class BirthdayCakeCandles {
 		int result = birthdayCakeCandles(arr);
 		assertEquals(100000, result);		
 	}
-
-	
-	public static int birthdayCakeCandles(int[] arr) {
-		Arrays.sort(arr);
-		int lastIndex = arr.length -1;
-		int tallest = arr[lastIndex];
-		int count = 0;		
-		for (int i = lastIndex; i >= 0; i--) {
-			if (arr[i] == tallest) count++;
-			else break;			
-		}		
-		return count;
-    }
 	
 }

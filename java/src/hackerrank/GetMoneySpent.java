@@ -12,6 +12,18 @@ import org.junit.jupiter.api.Test;
 // https://www.hackerrank.com/challenges/electronics-shop/problem
 public class GetMoneySpent {
 
+	public static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+		List<Integer> results = new ArrayList<>();
+		for (int i = 0; i < keyboards.length; i++) {
+			for (int j = 0; j < drives.length; j++) {
+				int sum = keyboards[i] + drives[j];
+				if (b >= sum) results.add(sum);
+			}
+		}
+		return results.isEmpty() ? -1 : Collections.max(results);
+	}
+
+
 	@Test
 	@DisplayName("Test sample 0")
 	void testGetMoneySpent0() {
@@ -28,18 +40,6 @@ public class GetMoneySpent {
 		int b = 5, expected = -1;
 		int result = getMoneySpent(keyboards1, drives1, b);
 		assertEquals(expected, result);
-	}
-	
-	
-	public static int getMoneySpent(int[] keyboards, int[] drives, int b) {
-		List<Integer> results = new ArrayList<>();
-		for (int i = 0; i < keyboards.length; i++) {
-			for (int j = 0; j < drives.length; j++) {
-				int sum = keyboards[i] + drives[j];
-				if (b >= sum) results.add(sum);
-			}
-		}
-		return results.isEmpty() ? -1 : Collections.max(results);
 	}
 	
 }

@@ -8,6 +8,24 @@ import org.junit.jupiter.api.Test;
 // https://www.hackerrank.com/challenges/time-conversion/problem
 public class TimeConversion {
 
+	public static String timeConversion(String s) {
+		if (s.endsWith("AM")) {
+			if (s.startsWith("12:")) {
+				String[] timeFields = s.split(":");
+				timeFields[0] = "00";
+				s = String.join(":", timeFields);
+			}
+			return s.replace("AM", "");
+		}
+		// pm
+		if (s.startsWith("12:")) return s.replace("PM", "");
+		s = s.replace("PM", "");
+		String[] timeFields = s.split(":");
+		timeFields[0] = String.valueOf(Integer.valueOf(timeFields[0]) + 12);
+		return String.join(":", timeFields);
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testTimeConversion() {
@@ -19,22 +37,4 @@ public class TimeConversion {
 		}
     }
 
-	
-	public static String timeConversion(String s) {
-    	if (s.endsWith("AM")) {
-        	if (s.startsWith("12:")) {
-        		String[] timeFields = s.split(":");
-                timeFields[0] = "00";
-                s = String.join(":", timeFields);
-        	}
-        	return s.replace("AM", "");
-        }
-        // pm
-        if (s.startsWith("12:")) return s.replace("PM", "");
-        s = s.replace("PM", "");
-        String[] timeFields = s.split(":");
-        timeFields[0] = String.valueOf(Integer.valueOf(timeFields[0]) + 12);
-        return String.join(":", timeFields);
-    }
-	
 }

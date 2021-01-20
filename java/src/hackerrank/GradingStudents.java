@@ -11,7 +11,19 @@ import org.junit.jupiter.api.Test;
 
 //https://www.hackerrank.com/challenges/grading/problem
 public class GradingStudents {
-	
+
+	public static List<Integer> gradingStudents(List<Integer> grades) {
+		if (grades == null || grades.isEmpty()) return grades;
+		List<Integer> roundedGrades = grades.stream().map(n -> {
+			if (n < 38)
+				return n;
+			int nextMultipleOfFive = (int) (5*Math.ceil(Double.valueOf(n)/5));
+			return (nextMultipleOfFive - n) < 3 ? nextMultipleOfFive : n;
+		}).collect(toList());
+		return roundedGrades;
+	}
+
+
 	@Test
 	@DisplayName("Test given samples")
 	void testGradingStudents() {
@@ -21,16 +33,5 @@ public class GradingStudents {
 		for (int i = 0; i < result.size(); i++) 
 			assertEquals(expected.get(i), result.get(i));
 	}
-
-	public static List<Integer> gradingStudents(List<Integer> grades) {
-    	if (grades == null || grades.isEmpty()) return grades;
-    	List<Integer> roundedGrades = grades.stream().map(n -> {
-    		if (n < 38) 
-    			return n;
-    		int nextMultipleOfFive = (int) (5*Math.ceil(Double.valueOf(n)/5));
-    		return (nextMultipleOfFive - n) < 3 ? nextMultipleOfFive : n;    		
-    	}).collect(toList());
-    	return roundedGrades;
-    }
 	
 }
