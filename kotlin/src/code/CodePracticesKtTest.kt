@@ -241,13 +241,4 @@ internal class CodePracticesKtTest {
         assertTrue(result > 0)
     }
 
-    // https://www.hackerrank.com/challenges/best-divisor/problem
-    @Test
-    fun `test bestDivsor`() {
-        val sample = 12
-        val expectedVal = 6;
-        val result = bestDivisor(sample);
-        assertEquals(expectedVal, result)
-    }
-
 }
