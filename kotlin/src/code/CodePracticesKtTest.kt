@@ -224,21 +224,4 @@ internal class CodePracticesKtTest {
         assertEquals(1, result[1])
     }
 
-    // https://www.hackerrank.com/challenges/super-digit/problem
-    @Test
-    fun `test superdit`() {
-        var n = "148"; var k = 3; var expected = 3
-        var result = superdigit(n,k)
-        assertEquals(expected, result)
-        n = "9875"; k = 4; expected = 8
-        result = superdigit(n,k)
-        assertEquals(expected, result)
-        n = "123"; k = 3; expected = 9
-        result = superdigit(n,k)
-        assertEquals(expected, result)
-        n = "100000"; k = 100000  // superior threshold
-        result = superdigit(n,k)
-        assertTrue(result > 0)
-    }
-
 }

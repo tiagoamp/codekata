@@ -200,14 +200,4 @@ fun countApplesAndOranges(s: Int, t: Int, a: Int, b: Int, apples: IntArray, oran
     return intArrayOf(appleCount, orangeCount)
 }
 
-fun superdigit(n: String, k: Int) : Int {
-    if (n.length <= 1) return n.toInt()
-    var sum = 0
-    for (ch in n) {
-        val digit: Int = Character.getNumericValue(ch)
-        sum += digit
-    }
-    if (k > 1) sum *= k
-    return superdigit(sum.toString(), 1)
-}
 
