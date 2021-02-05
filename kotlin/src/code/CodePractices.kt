@@ -186,18 +186,5 @@ fun minMaxSum(arr: IntArray): LongArray? {
     return longArrayOf(min, max)
 }
 
-fun countApplesAndOranges(s: Int, t: Int, a: Int, b: Int, apples: IntArray, oranges: IntArray): IntArray {
-    var appleCount = 0
-    for (i in apples.indices) {
-        val distance = apples[i] + a
-        if (distance in s..t) appleCount++
-    }
-    var orangeCount = 0
-    for (i in oranges.indices) {
-        val distance = oranges[i] + b
-        if (distance in s..t) orangeCount++
-    }
-    return intArrayOf(appleCount, orangeCount)
-}
 
 
