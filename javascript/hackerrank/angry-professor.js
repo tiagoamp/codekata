@@ -1,8 +1,8 @@
 // https://www.hackerrank.com/challenges/angry-professor/problem
 
 function angryProfessor(k, a) {
-    const ontTime = a.filter(n => n<=0).length;
-    return ontTime >= k ? "NO" : "YES";
+    const onTime = a.filter(n => n<=0).length;
+    return onTime >= k ? "NO" : "YES";
 }
 
 
