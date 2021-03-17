@@ -1,7 +1,7 @@
 // https://www.hackerrank.com/challenges/angry-professor/problem
 
-function angryProfessor(k, a) {
-    const onTime = a.filter(n => n<=0).length;
+function angryProfessor(k:number, a:number[]): string {
+    const onTime: number = a.filter(n => n<=0).length;
     return onTime >= k ? "NO" : "YES";
 }
 
