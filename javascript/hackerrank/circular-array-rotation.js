@@ -1,18 +1,16 @@
 // https://www.hackerrank.com/challenges/circular-array-rotation/problem
 
 function circularArrayRotation_Solution2(a, k, queries) {
-    if (k > a.length)
-        k = k % a.length;
-    const rotationIndex = a.length - k;
-    const result = queries.map( q => (q < k) ? a[rotationIndex+q] : a[q-k] );
+    const nrOfRotations = (k > a.length) ? k % a.length : k;
+    const rotationIndex = a.length - nrOfRotations;
+    const result = queries.map( q => (q < nrOfRotations) ? a[rotationIndex+q] : a[q-nrOfRotations] );
     return result;
 }
 
 function circularArrayRotation_Solution1(a, k, queries) {
-    if (k > a.length)
-        k = k % a.length;    
-    const lastKelemts = a.slice( k * (-1) );  
-    const splitIndex = a.length - k;
+    const nrOfRotations = (k > a.length) ? k % a.length : k;    
+    const lastKelemts = a.slice( nrOfRotations * (-1) );  
+    const splitIndex = a.length - nrOfRotations;
     const firstElemts = a.slice(0, splitIndex); 
     const rotatedArr = [ ...lastKelemts , ...firstElemts ];
     const result = queries.map(i => rotatedArr[i]);
