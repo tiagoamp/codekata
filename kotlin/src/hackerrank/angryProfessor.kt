@@ -3,10 +3,6 @@ package hackerrank
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
-import java.util.Arrays
-
-
-
 
 
 // https://www.hackerrank.com/challenges/angry-professor/problem
