@@ -69,6 +69,5 @@ public class EqualityInAarray {
         assertEquals(result2, result3);
         assertEquals(expected, result2);
     }
-    
 
 }
