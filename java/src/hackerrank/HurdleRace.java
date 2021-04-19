@@ -22,10 +22,10 @@ public class HurdleRace {
 	void testHurdleRace() {
 		int k0 = 4, k1 = 7;
 		int[] height0 = {1, 6, 3, 5, 2}, height1 = {2, 5, 4, 5, 2};
-		int result = hurdleRace(k0, height0);
-		assertEquals(2, result);
-		result = hurdleRace(k1, height1);
-		assertEquals(0, result);
+		int result0 = hurdleRace(k0, height0);
+		int result1 = hurdleRace(k1, height1);
+		assertEquals(2, result0);
+		assertEquals(0, result1);
 	}
 	
 }
