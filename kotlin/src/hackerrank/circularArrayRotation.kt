@@ -9,8 +9,7 @@ import org.junit.jupiter.api.Test
 fun circularArrayRotation(a: Array<Int>, k: Int, queries: Array<Int>): Array<Int> {
     val nrOfRotations = if (k > a.size) k % a.size else k
     val rotationIndex = a.size - nrOfRotations
-    val result = queries.map { it -> if (it < nrOfRotations) a[rotationIndex+it] else a[it-nrOfRotations] }.toTypedArray<Int>()
-    return result
+    return queries.map { it -> if (it < nrOfRotations) a[rotationIndex+it] else a[it-nrOfRotations] }.toTypedArray<Int>()
 }
 
 
