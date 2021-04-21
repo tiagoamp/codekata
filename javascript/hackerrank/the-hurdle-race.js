@@ -13,6 +13,6 @@ test("hurdleRace", () => {
     const expected0 = 2, expected1 = 0;
     const result0 = hurdleRace(k0, height0);
     const result1 = hurdleRace(k1, height1);
-    expect(expected0).toEqual(result0);
-    expect(expected1).toEqual(result1);
+    expect(result0).toEqual(expected0);
+    expect(result1).toEqual(expected1);
 });
