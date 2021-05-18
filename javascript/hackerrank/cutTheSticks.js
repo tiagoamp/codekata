@@ -4,7 +4,7 @@ function cutTheSticks_IterativeSolution(arr) {
     const result = [];
     let inputArr = [...arr];
     while (inputArr.length > 0) {
-        const min = Math.min(...inputArr)
+        const min = Math.min(...inputArr);
         if (min != null) {
              result.push(inputArr.length);
              inputArr = inputArr.filter(i => i != min).map(i => i - min);
@@ -18,7 +18,7 @@ function cutTheSticks_RecursiveSolution(arr) {
     return result;
 }
 
-function _cutArray(input, output = []) {
+const _cutArray = (input, output = []) => {
     if (input.length == 0) return output
     let inputArr = [...input];
     const min = Math.min(...inputArr);
