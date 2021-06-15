@@ -11,7 +11,7 @@ fun dayOfProgrammer(year: Int): String {
     if (year == 1918)
         day += 13  // lost days from Feb 1st to Feb 14th
     if (year.isLeap())
-        day -= 1;
+        day -= 1
     return "$day.09.$year"
 }
 
