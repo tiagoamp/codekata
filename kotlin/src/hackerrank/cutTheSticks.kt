@@ -24,7 +24,7 @@ fun cutTheSticks_IterativeSolution(arr: Array<Int>): Array<Int> {
 fun cutTheSticks_RecursiveSolution(arr: Array<Int>): Array<Int> {
     var result = mutableListOf<Int>()
     result = cutArray(arr, result)
-    return result.toTypedArray();
+    return result.toTypedArray()
 }
 
 private fun cutArray(input: Array<Int>, output: MutableList<Int>): MutableList<Int> {
