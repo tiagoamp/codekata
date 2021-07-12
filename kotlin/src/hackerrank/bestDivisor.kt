@@ -28,8 +28,8 @@ internal class BestDivisorKtTest {
     @Test
     fun `test bestDivsor`() {
         val sample = 12
-        val expectedVal = 6;
-        val result = bestDivisor(sample);
+        val expectedVal = 6
+        val result = bestDivisor(sample)
         assertEquals(expectedVal, result)
     }
 
