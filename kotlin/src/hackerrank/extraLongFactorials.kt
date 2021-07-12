@@ -12,7 +12,7 @@ fun extraLongFactorials(n: Int): Unit {
     factorial(n)  // at hackerrank site should be ==> println( factorial(n) )
 }
 
-var memo = mutableMapOf<Int, BigInteger>();
+var memo = mutableMapOf<Int, BigInteger>()
 
 fun factorial(n: Int): BigInteger {
     if (n == 1) return BigInteger.ONE
