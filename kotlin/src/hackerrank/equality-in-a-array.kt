@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 // https://www.hackerrank.com/challenges/equality-in-a-array/problem
 
 fun equalizeArray_solution3(arr: Array<Int>): Int {
-    var mostFreqNr = arr[0];
+    var mostFreqNr = arr[0]
     val map : MutableMap<Int, Int> = emptyMap<Int,Int>().toMutableMap()
     arr.forEach { n: Int ->
         map[n] =  map[n]?.plus(1) ?: 1
