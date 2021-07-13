@@ -14,7 +14,7 @@ fun formingMagicSquare(s: Array<IntArray>): Int {
         costs[i] = costs[i] + abs(magicSquares[i][3] - s[1][0]) + abs(magicSquares[i][4] - s[1][1]) + abs(magicSquares[i][5] - s[1][2])
         costs[i] = costs[i] + abs(magicSquares[i][6] - s[2][0]) + abs(magicSquares[i][7] - s[2][1]) + abs(magicSquares[i][8] - s[2][2])
     }
-    return costs.min()!!;
+    return costs.min()!!
 }
 
 internal class FormingagicSquareTest {
