@@ -15,7 +15,8 @@ import org.junit.jupiter.api.Test;
 public class IsAnagram {
 
 	public static boolean isAnagram_Solution1(String a, String b) {
-		if (a.length() != b.length()) return false;
+		if (a.length() != b.length())
+			return false;
 		int len = a.length();
 		Map<Character, Integer> resultFrequency = new HashMap<>();
 		for(int i=0; i<len; i++)
